@@ -57,18 +57,28 @@
     }
     table.data-table tr:nth-child(even) td { background: rgba(30, 64, 175, 0.025); }
 
-    /* Modeloverzicht-diagram: de SVG heeft een grote intrinsieke breedte
-       (viewBox + width/height-attributen). Begrens hem op de paginabreedte en
-       schaal mee; de viewBox houdt de verhoudingen correct. */
-    figure.model-figure { margin: 12px 0; text-align: center; }
-    figure.model-figure > div { overflow-x: auto; }
-    /* De inline width/height op de root-<svg> dwingen de grote pixelmaat af;
-       overrule ze zodat de SVG binnen de paginabreedte schaalt. De viewBox
-       blijft intact en houdt de verhoudingen correct. */
+    /* Modeloverzicht-diagram: de SVG kan een grote intrinsieke breedte hebben
+       (veel losse concepten -> brede viewBox). Toon 'm in een horizontaal
+       scrollbaar kader met een leesbare hoogte, i.p.v. hem plat te persen tot
+       een onleesbaar streepje. De viewBox houdt de verhoudingen intact; de
+       gebruiker scrollt zijwaarts door een breed diagram. */
+    figure.model-figure { margin: 12px 0; }
+    figure.model-figure > div {
+      overflow-x: auto;
+      border: 1px solid #dfe4ee;
+      border-radius: 6px;
+      padding: 8px;
+      background: #fff;
+    }
     figure.model-figure svg {
-      max-width: 100% !important;
-      width: 100% !important;
-      height: auto !important;
+      /* Een vaste, leesbare hoogte forceren; de breedte groeit mee met de
+         viewBox-verhouding (kan veel breder zijn dan het kader -> horizontaal
+         scrollen). Zonder deze vaste hoogte perst de extreme viewBox-verhouding
+         de SVG plat tot een streepje. !important overrulet de inline
+         height/width-attributen op de root-<svg>. */
+      height: 360px !important;
+      width: auto !important;
+      max-width: none !important;
     }
     figure.model-figure figcaption {
       font-size: 0.85rem;
@@ -105,6 +115,11 @@
 <body>
   
   <h1 id="title">TEL-TSI</h1>
+
+  
+  <section id="abstract">
+    <p>TEL TSI</p>
+  </section>
 
   
   <div class="status-banner status-published">
