@@ -1,0 +1,16 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/schemes/datexii-conceptual-model/v0//concept-1783070953318> a skos:Concept ;
+    dct:source "https://eur-lex.eu/" ;
+    skos:definition "Lorem Ipsum"@en ;
+    skos:inScheme <https://example.org/schemes/datexii-conceptual-model/v0/> ;
+    skos:prefLabel "accident"@en .
+
+<https://example.org/schemes/datexii-conceptual-model/v0/> a skos:ConceptScheme ;
+    dct:created "2026-07-03T09:27:29.778322+00:00"^^xsd:dateTime ;
+    dct:description "Describes the concepts for the DATEXII conceptual model"@en ;
+    dct:modified "2026-07-03T09:27:29.783264+00:00"^^xsd:dateTime ;
+    dct:title "DATEXII conceptual model"@en .
+
