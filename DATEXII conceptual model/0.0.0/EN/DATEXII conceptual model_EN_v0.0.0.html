@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>DATEXII conceptual model</title>
+  {# ReSpec draait client-side: het bouwt de inhoudsopgave, het statusblok
+     en de kruisverwijzingen in de browser. class="remove" haalt ReSpec zelf
+     het script + de config uit de gepubliceerde HTML weg. #}
+  <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
+  <script class="remove">
+    var respecConfig = {"specStatus": "unofficial", "title": "DATEXII conceptual model", "shortName": "DATEXII conceptual model", "editors": [{"name": "NAPCORE"}], "lint": false};
+  </script>
+</head>
+<body>
+  {# ReSpec verwacht de titel in een <h1 id="title">; het statusblok en de TOC
+     genereert het zelf uit respecConfig. #}
+  <h1 id="title">DATEXII conceptual model</h1>
+
+  
+    {# Recursieve sectie-render voor ReSpec. Spiegelt docpublish/pdf/_section.html,
+   maar zonder pagina-layout-hints (ReSpec is web, geen print). ReSpec bouwt de
+   nummering + inhoudsopgave zelf uit de <section>/<h*>-structuur. #}
+<section>
+  <h2>Introduction to semantic modelling</h2>
+  
+    
+      <p class="prose"><p>A <strong>concept scheme</strong> (in SKOS: <em>ConceptScheme</em>) is a structured collection of concepts that carry a fixed, shared meaning within a particular domain. The goal is for everyone working with the model — people and systems alike — to use the same words for the same things. That sounds obvious, but in practice language causes a surprising amount of confusion: what one organisation calls a <em>measurement point</em>, another calls a <em>sensor</em>, a <em>location</em>, or an <em>observation station</em>.</p>
+<p>A concept scheme solves this by recording, for each concept:</p>
+<ul>
+<li>a <strong>preferred label</strong> (prefLabel) it is known by,</li>
+<li>a <strong>definition</strong> that unambiguously describes what the concept does and does not cover,</li>
+<li>and optionally a <strong>scope note</strong> or <strong>example</strong> to clarify borderline cases.</li>
+</ul>
+<p>Concepts rarely stand on their own. They are related <strong>hierarchically</strong> (a vehicle is broader than a truck) or <strong>associatively</strong> (a road user relates to a road segment). These relationships make it possible for queries and analyses to navigate between general and specific concepts, and to make connections between concepts explicit. Within SKOS we use <code>broader</code>, <code>narrower</code>, and <code>related</code> for that.</p>
+<p>When a concept also exists elsewhere — in a national or European standard, for instance — we record that as a <strong>mapping relation</strong>. This prevents reinventing the wheel: we link to the source so interoperability with external systems remains possible.</p>
+<p>This document describes the concept scheme as it is currently recorded. The following sections list the metadata, every concept, the relationships between them, and — where the model is connected to a data source — how it is linked to that source data.</p></p>
+    
+  
+</section>
+
+  
+    {# Recursieve sectie-render voor ReSpec. Spiegelt docpublish/pdf/_section.html,
+   maar zonder pagina-layout-hints (ReSpec is web, geen print). ReSpec bouwt de
+   nummering + inhoudsopgave zelf uit de <section>/<h*>-structuur. #}
+<section>
+  <h1>DATEXII conceptual model</h1>
+  
+    
+      <p class="prose">Describes the concepts for the DATEXII conceptual model</p>
+    
+  
+    
+      {# Tabel-render voor ReSpec. Geen size_class (dat is een PDF-layout-hint);
+   ReSpec/CSS regelt de breedte in de browser. #}
+<table>
+  <caption>Metadata</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>URI</td><td>https://example.org/schemes/datexii-conceptual-model/v0/</td>
+      </tr>
+    
+      <tr>
+        <td>Version</td><td>not set</td>
+      </tr>
+    
+      <tr>
+        <td>Publication status</td><td>Draft</td>
+      </tr>
+    
+      <tr>
+        <td>Management status</td><td>Active</td>
+      </tr>
+    
+      <tr>
+        <td>Organization</td><td>NAPCORE</td>
+      </tr>
+    
+      <tr>
+        <td>Created on</td><td>2026-07-03</td>
+      </tr>
+    
+      <tr>
+        <td>Last modified on</td><td>2026-07-03</td>
+      </tr>
+    
+      <tr>
+        <td>Last modified by</td><td>Arthur Keesen</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+  
+    {# Recursieve sectie-render voor ReSpec. Spiegelt docpublish/pdf/_section.html,
+   maar zonder pagina-layout-hints (ReSpec is web, geen print). ReSpec bouwt de
+   nummering + inhoudsopgave zelf uit de <section>/<h*>-structuur. #}
+<section>
+  <h1>Concepts</h1>
+  
+    
+      {# Tabel-render voor ReSpec. Geen size_class (dat is een PDF-layout-hint);
+   ReSpec/CSS regelt de breedte in de browser. #}
+<table>
+  <caption>Concepts overview</caption>
+  <thead>
+    <tr>
+      <th>Concept</th><th>Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>accident</td><td>Lorem Ipsum</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+  
+</body>
+</html>
