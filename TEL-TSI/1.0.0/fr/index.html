@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Modèle sans titre</title>
+  
+  <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
+  <script class="remove">
+    var respecConfig = {"specStatus": "unofficial", "title": "Modèle sans titre", "shortName": "Modèle sans titre", "editors": [{"name": "NAPCORE"}], "lint": false, "edDraftURI": "", "additionalCopyrightHolders": "NAPCORE"};
+  </script>
+  
+  <style>
+    /* Opmaak afgeleid van de PDF (docpublish/pdf/styles/_base.css): dezelfde
+       huisstijl-kleuren en tabelstijl, zodat de ReSpec-pagina en de PDF op
+       elkaar aansluiten. Staat NA ReSpec's basis-stylesheet, dus dit wint. */
+    body {
+      font-family: 'Source Sans 3', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: #303c54;
+      line-height: 1.5;
+    }
+    h1, h2, h3, h4, h5, h6 { color: #1e40af; font-weight: 600; }
+    p.prose { text-align: justify; }
+    p.disclaimer {
+      background: rgba(30, 64, 175, 0.06);
+      border-left: 3px solid #1e40af;
+      padding: 6px 10px;
+      font-style: italic;
+      color: #636f83;
+      margin: 8px 0;
+    }
+    table.data-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 10px 0 18px;
+      font-size: 0.95rem;
+    }
+    table.data-table caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: 600;
+      color: #1e40af;
+      padding-bottom: 4px;
+    }
+    table.data-table th {
+      background: rgba(30, 64, 175, 0.08);
+      border-bottom: 1px solid #1e40af;
+      color: #1e40af;
+      font-weight: 600;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.data-table td {
+      border-bottom: 1px solid #dfe4ee;
+      padding: 6px 8px;
+      vertical-align: top;
+      overflow-wrap: break-word;
+    }
+    table.data-table tr:nth-child(even) td { background: rgba(30, 64, 175, 0.025); }
+
+    /* Modeloverzicht-diagram: de server-side force-directed layout geeft een
+       compacte, normaal-geproportioneerde SVG (net als de visuele editor). Schaal
+       hem responsive binnen de paginabreedte. Voor het zeldzame extreem brede
+       geval blijft het kader horizontaal scrollbaar. */
+    figure.model-figure { margin: 12px 0; width: 100%; }
+    figure.model-figure > div {
+      overflow-x: auto;
+      border: 1px solid #dfe4ee;
+      border-radius: 6px;
+      padding: 8px;
+      background: #fff;
+    }
+    figure.model-figure svg {
+      display: block;
+      /* Vaste breedte 100% van het kader; de hoogte volgt uit de viewBox-
+         verhouding. Alleen height:auto laten renderen faalt als de container
+         nog geen breedte heeft (chicken-egg): dan wordt de SVG 0×0. De inline
+         width/height-attributen op de root-<svg> worden hierdoor overruled. */
+      width: 100%;
+      height: auto;
+    }
+    figure.model-figure figcaption {
+      font-size: 0.85rem;
+      color: #636f83;
+      margin-top: 4px;
+    }
+  </style>
+  
+  
+  <style>
+    .status-banner {
+      border-left: 8px solid var(--status-color, #6b7280);
+      background: var(--status-bg, #f3f4f6);
+      padding: 0.6rem 1rem;
+      margin: 0 0 1.5rem;
+      font-family: sans-serif;
+    }
+    .status-banner .status-badge {
+      display: inline-block;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--status-color, #374151);
+    }
+    .status-banner .status-version { color: #4b5563; }
+    .status-draft       { --status-color: #d97706; --status-bg: #fffbeb; }
+    .status-under_review{ --status-color: #2563eb; --status-bg: #eff6ff; }
+    .status-published   { --status-color: #16a34a; --status-bg: #f0fdf4; }
+    .status-deprecated  { --status-color: #dc2626; --status-bg: #fef2f2; }
+    .status-withdrawn   { --status-color: #991b1b; --status-bg: #fef2f2; }
+  </style>
+  
+</head>
+<body>
+  
+  <h1 id="title">Modèle sans titre</h1>
+
+  
+  <section id="abstract">
+    <p>This introduction has not been translated to &#x27;fr&#x27; yet; showing the English version.</p>
+  </section>
+
+  
+  
+  <div id="beschikbare-talen" class="language-switch">
+    <table class="data-table">
+      <caption>Beschikbare talen</caption>
+      <thead>
+        <tr><th>Taal</th><th>Document</th></tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>EN</td>
+          <td><a href="../index.html">TEL-TSI</a></td>
+        </tr>
+        
+        <tr>
+          <td>NL</td>
+          <td><a href="../nl/index.html">TEL-TSI</a></td>
+        </tr>
+        
+        <tr>
+          <td><strong>FR</strong></td>
+          <td><strong>TEL-TSI</strong></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+
+  
+  <div class="status-banner status-under_review">
+    <span class="status-badge">En révision</span><span class="status-version"> — versie 1.0.0</span>
+  </div>
+  
+
+  
+    
+<section>
+  <h2>Introduction à la modélisation sémantique</h2>
+  
+    
+      <p class="disclaimer">This introduction has not been translated to &#x27;fr&#x27; yet; showing the English version.</p>
+    
+  
+    
+      <p class="prose"><p>A <strong>concept scheme</strong> (in SKOS: <em>ConceptScheme</em>) is a structured collection of concepts that carry a fixed, shared meaning within a particular domain. The goal is for everyone working with the model — people and systems alike — to use the same words for the same things. That sounds obvious, but in practice language causes a surprising amount of confusion: what one organisation calls a <em>measurement point</em>, another calls a <em>sensor</em>, a <em>location</em>, or an <em>observation station</em>.</p>
+<p>A concept scheme solves this by recording, for each concept:</p>
+<ul>
+<li>a <strong>preferred label</strong> (prefLabel) it is known by,</li>
+<li>a <strong>definition</strong> that unambiguously describes what the concept does and does not cover,</li>
+<li>and optionally a <strong>scope note</strong> or <strong>example</strong> to clarify borderline cases.</li>
+</ul>
+<p>Concepts rarely stand on their own. They are related <strong>hierarchically</strong> (a vehicle is broader than a truck) or <strong>associatively</strong> (a road user relates to a road segment). These relationships make it possible for queries and analyses to navigate between general and specific concepts, and to make connections between concepts explicit. Within SKOS we use <code>broader</code>, <code>narrower</code>, and <code>related</code> for that.</p>
+<p>When a concept also exists elsewhere — in a national or European standard, for instance — we record that as a <strong>mapping relation</strong>. This prevents reinventing the wheel: we link to the source so interoperability with external systems remains possible.</p>
+<p>This document describes the concept scheme as it is currently recorded. The following sections list the metadata, every concept, the relationships between them, and — where the model is connected to a data source — how it is linked to that source data.</p></p>
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Naamloos model</h2>
+  
+    
+      
+<table class="data-table">
+  <caption>Métadonnées</caption>
+  <thead>
+    <tr>
+      <th>Champ</th><th>Valeur</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>URI</td><td>https://github.com/NAPCORE/its-data-dictionary/tel-tsi</td>
+      </tr>
+    
+      <tr>
+        <td>Version</td><td>1.0.0</td>
+      </tr>
+    
+      <tr>
+        <td>Statut de publication</td><td>En révision</td>
+      </tr>
+    
+      <tr>
+        <td>Statut de gestion</td><td>Actif</td>
+      </tr>
+    
+      <tr>
+        <td>Organisation</td><td>NAPCORE</td>
+      </tr>
+    
+      <tr>
+        <td>Créé le</td><td>2026-05-21</td>
+      </tr>
+    
+      <tr>
+        <td>Dernière modification le</td><td>2026-10-01</td>
+      </tr>
+    
+      <tr>
+        <td>Dernière modification par</td><td>Arthur Keesen</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Aperçu du modèle</h2>
+  
+    
+      <p class="prose">Aperçu visuel des concepts et de leurs relations. Les relations hiérarchiques sont représentées par des flèches pleines ; les relations associatives par des flèches en pointillés.</p>
+    
+  
+    
+      {# Een <figure> zonder <figcaption> laat de ReSpec core/figures-plugin een
+         waarschuwing tonen op de gepubliceerde pagina. Val daarom terug op de
+         sectie-kop als er geen expliciete caption is (anders dan de PDF, waar
+         een captionloze figuur op een eigen pagina bewust is). #}
+      <figure class="model-figure">
+        <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="-309.0 -287.8 1548.0 1230.0" width="1548" height="1230"><defs><marker id="arrow-hierarchy" viewBox="0 0 8 8" refX="8" refY="4.0" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 8 4.0 L 0 8 z" fill="#475569" /></marker><marker id="arrow-related" viewBox="0 0 8 8" refX="8" refY="4.0" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 8 4.0 L 0 8 z" fill="#8b5cf6" /></marker></defs><g class="edges"><line x1="1150.9" y1="78.0" x2="1150.2" y2="-8.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /></g><g class="nodes"><circle cx="418.3" cy="147.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="92.5" y="171.3" width="651.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="418.3" y="185.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">TrainRunningInformationMessage (message d'information sur la circulation du train)</text><circle cx="394.0" cy="30.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="298.3" y="54.0" width="191.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="394.0" y="68.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Planificateur de voyage</text><circle cx="335.5" cy="78.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="220.3" y="102.0" width="230.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="335.5" y="116.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Départ du wagon de l'origine</text><circle cx="619.0" cy="251.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="511.6" y="275.0" width="214.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="619.0" y="289.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Objet de demande de sillon</text><circle cx="756.0" cy="325.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="558.9" y="349.0" width="394.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="756.0" y="363.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PathDetailsMessage (message de détails du sillon)</text><circle cx="432.0" cy="223.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="379.2" y="247.0" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="432.0" y="261.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Objet sillon</text><circle cx="637.0" cy="82.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="537.4" y="106.0" width="199.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="637.0" y="120.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Heure de départ publique</text><circle cx="226.9" cy="347.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-87.2" y="371.3" width="628.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="226.9" y="385.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PassengerTrainCompositionMessage (message de composition du train de voyageurs)</text><circle cx="578.2" cy="242.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="338.2" y="266.2" width="480.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="578.2" y="280.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">TrainDelayCauseMessage (message de cause de retard du train)</text><circle cx="238.4" cy="150.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-79.6" y="174.8" width="636.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="238.4" y="189.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">TrainRunningInterruptionMessage (message d'interruption de circulation du train)</text><circle cx="816.1" cy="465.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="739.9" y="489.9" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="816.1" y="504.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Horaire de service</text><circle cx="493.1" cy="251.6" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="424.7" y="275.6" width="136.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="493.1" y="289.8" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Objet itinéraire</text><circle cx="634.6" cy="330.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="585.7" y="354.3" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="634.6" y="368.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Objet train</text><circle cx="362.9" cy="174.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="243.8" y="198.5" width="238.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="362.9" y="212.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Objet de référence de dossier</text><circle cx="714.5" cy="470.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="517.4" y="494.4" width="394.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="714.5" y="508.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PathRequestMessage (message de demande de sillon)</text><circle cx="542.1" cy="316.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="317.7" y="340.9" width="448.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="542.1" y="355.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PathConfirmedMessage (message de confirmation du sillon)</text><circle cx="749.8" cy="602.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="541.0" y="626.3" width="417.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="749.8" y="640.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PathCanceledMessage (message d'annulation du sillon)</text><circle cx="461.1" cy="319.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="228.9" y="343.7" width="464.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="461.1" y="357.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PathNotAvailableMessage (message de sillon non disponible)</text><circle cx="595.3" cy="402.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="363.1" y="426.2" width="464.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="595.3" y="440.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">ReceiptConfirmationMessage (message d'accusé de réception)</text><circle cx="309.2" cy="228.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="80.9" y="252.2" width="456.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="309.2" y="266.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">TrainCompositionMessage (message de composition du train)</text><circle cx="645.3" cy="587.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="350.7" y="611.5" width="589.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="645.3" y="625.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">TrainRunningForecastMessage (message de prévision de circulation du train)</text><circle cx="624.8" cy="512.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="458.9" y="536.2" width="331.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="624.8" y="550.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">TrainReadyMessage (message de train prêt)</text><circle cx="608.2" cy="699.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="520.3" y="723.1" width="175.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="608.2" y="737.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Irrégularité du wagon</text><circle cx="515.1" cy="388.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="466.2" y="412.7" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="515.1" y="426.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagon remis</text><circle cx="554.0" cy="479.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="470.0" y="503.7" width="168.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="554.0" y="517.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagon pris en charge</text><circle cx="440.8" cy="407.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="317.8" y="431.5" width="246.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="440.8" y="445.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Irrégularité du wagon corrigée</text><circle cx="526.4" cy="648.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="403.4" y="672.5" width="246.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="526.4" y="686.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Arrivée du wagon à destination</text><circle cx="511.7" cy="561.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="462.8" y="585.5" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="511.7" y="599.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagon livré</text><circle cx="463.8" cy="765.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="266.7" y="789.2" width="394.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="463.8" y="803.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Bases de données de référence du matériel roulant</text><circle cx="374.2" cy="263.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="114.7" y="287.1" width="519.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="374.2" y="301.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Bases de données de référence des unités de chargement intermodal</text><circle cx="437.9" cy="633.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="112.1" y="657.5" width="651.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="437.9" y="671.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Bases de données opérationnelles des wagons et des unités de chargement intermodal</text><circle cx="470.7" cy="477.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="359.4" y="501.2" width="222.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="470.7" y="515.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Chargement du wagon de fret</text><circle cx="323.9" cy="768.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="181.4" y="792.2" width="285.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="323.9" y="806.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagon de fret chargé en circulation</text><circle cx="152.2" cy="397.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-5.9" y="421.2" width="316.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="152.2" y="435.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Départ du wagon d'un lieu intermédiaire</text><circle cx="360.4" cy="664.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="241.3" y="688.1" width="238.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="360.4" y="702.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Déchargement du wagon de fret</text><circle cx="417.5" cy="532.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="193.1" y="556.5" width="448.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="417.5" y="570.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagon de fret vide sous contrôle de la gestion de flotte</text><circle cx="188.1" cy="727.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="104.1" y="751.9" width="168.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="188.1" y="766.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Référence de dossier</text><circle cx="390.3" cy="334.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="177.6" y="358.3" width="425.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="390.3" y="372.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Message de demande de disponibilité et de réservation</text><circle cx="248.6" cy="652.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="35.9" y="676.8" width="425.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="248.6" y="691.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Message de réponse de disponibilité et de réservation</text><circle cx="328.4" cy="582.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="135.2" y="606.9" width="386.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="328.4" y="621.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Disponibilité et réservation de l'assistance PMR</text><circle cx="83.5" cy="660.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-125.3" y="684.0" width="417.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="83.5" y="698.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Disponibilité et réservation d'emplacement pour vélo</text><circle cx="289.8" cy="498.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="116.1" y="522.5" width="347.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="289.8" y="536.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Demande de remboursement ou d'indemnisation</text><circle cx="238.9" cy="564.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="151.0" y="588.8" width="175.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="238.9" y="603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Horaire des voyageurs</text><circle cx="367.2" cy="483.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="240.3" y="507.7" width="253.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="367.2" y="521.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Temps de correspondance minimal</text><circle cx="-30.6" cy="575.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-56.6" y="599.8" width="52.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-30.6" y="614.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Tarif</text><circle cx="128.5" cy="579.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="102.5" y="603.8" width="52.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="128.5" y="618.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Offre</text><circle cx="194.3" cy="447.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="114.2" y="471.8" width="160.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="194.3" y="486.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Prix ajusté (yield)</text><circle cx="156.9" cy="508.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-59.7" y="532.1" width="433.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="156.9" y="546.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PathDetailsRefusedMessage (message de refus du sillon)</text><circle cx="351.0" cy="407.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="165.6" y="431.5" width="370.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="351.0" y="445.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Enregistrement historique des données de train</text><circle cx="-92.1" cy="434.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-304.8" y="458.7" width="425.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-92.1" y="472.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">ConsignmentNoteMessage (message de lettre de voiture)</text><circle cx="46.3" cy="502.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-279.5" y="526.8" width="651.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="46.3" y="541.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">WagonRunningInformationMessage (message d'information sur la circulation du wagon)</text><circle cx="223.6" cy="224.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="69.4" y="248.4" width="308.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="223.6" y="262.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Informations de prévision sur le wagon</text><circle cx="90.3" cy="351.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-48.3" y="375.4" width="277.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="90.3" y="389.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Géolocalisation des wagons de fret</text><circle cx="264.5" cy="415.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="200.0" y="439.0" width="129.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="264.5" y="453.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Statut du wagon</text><circle cx="-123.6" cy="291.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-219.3" y="315.4" width="191.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-123.6" y="329.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagon prêt au mouvement</text><circle cx="-12.9" cy="339.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-65.7" y="363.5" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-12.9" y="377.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagon tracté</text><circle cx="148.5" cy="293.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-13.5" y="317.9" width="324.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="148.5" y="332.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Arrivée du wagon à un lieu intermédiaire</text><circle cx="-5.8" cy="260.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-140.5" y="284.5" width="269.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-5.8" y="298.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagon de fret vide en circulation</text><circle cx="317.1" cy="335.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="233.1" y="359.4" width="168.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="317.1" y="373.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Annotation du billet</text><circle cx="-96.2" cy="142.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-305.0" y="166.9" width="417.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-96.2" y="181.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Éléments de sécurité pour la délivrance électronique</text><circle cx="95.3" cy="245.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-62.8" y="269.7" width="316.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="95.3" y="283.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Informations sur les départs des trains</text><circle cx="1.8" cy="176.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-43.2" y="200.0" width="90.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1.8" y="214.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Détaillant</text><circle cx="255.4" cy="284.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="167.5" y="308.4" width="175.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="255.4" y="322.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Système d'attribution</text><circle cx="1006.0" cy="-41.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="929.8" y="-17.0" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1006.0" y="-2.8" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Ontologie de l'ERA</text><circle cx="-38.0" cy="8.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-118.1" y="32.1" width="160.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-38.0" y="46.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Produit ferroviaire</text><circle cx="78.0" cy="141.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="44.7" y="165.5" width="66.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="78.0" y="179.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Données</text><circle cx="41.9" cy="53.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-53.8" y="77.7" width="191.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="41.9" y="91.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Billettique ferroviaire</text><circle cx="157.7" cy="185.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-19.9" y="209.5" width="355.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="157.7" y="223.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Règles d'émission et de contrôle des billets</text><circle cx="61.0" cy="-101.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-65.9" y="-77.9" width="253.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="61.0" y="-63.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Informations à bord du véhicule</text><circle cx="132.3" cy="75.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-2.4" y="99.7" width="269.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="132.3" y="113.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Opérateur de transport intermodal</text><circle cx="121.4" cy="-34.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="45.2" y="-10.3" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="121.4" y="3.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Élément de données</text><circle cx="305.4" cy="124.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="123.9" y="148.2" width="363.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="305.4" y="162.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Informations sur les canaux de vente en ligne</text><circle cx="171.0" cy="-165.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="122.1" y="-141.0" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="171.0" y="-126.8" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Métadonnées</text><circle cx="206.2" cy="4.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="126.1" y="28.3" width="160.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="206.2" y="42.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Qualité des données</text><circle cx="244.1" cy="-87.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="160.1" y="-63.8" width="168.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="244.1" y="-49.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Détenteur de données</text><circle cx="277.6" cy="-209.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="181.9" y="-185.7" width="191.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="277.6" y="-171.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Conditions de transport</text><circle cx="501.6" cy="93.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="390.3" y="117.8" width="222.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="501.6" y="132.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Types et formats de billets</text><circle cx="27.0" cy="427.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-185.7" y="451.0" width="425.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="27.0" y="465.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Disponibilité et réservation du transport de voitures</text><circle cx="698.0" cy="388.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="516.5" y="412.0" width="363.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="698.0" y="426.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Mouvement de l'unité de chargement intermodal</text><circle cx="1151.0" cy="98.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="1067.0" y="122.0" width="168.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1151.0" y="136.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Données de référence</text><circle cx="344.7" cy="-112.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="100.8" y="-88.1" width="487.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="344.7" y="-73.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Données de référence communes pour la billettique ferroviaire</text><circle cx="401.1" cy="-226.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="239.1" y="-202.4" width="324.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="401.1" y="-188.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Informations sur les arrivées des trains</text><circle cx="369.3" cy="-21.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="269.7" y="2.1" width="199.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="369.3" y="16.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Heure d'arrivée publique</text><circle cx="429.0" cy="-127.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="247.5" y="-103.7" width="363.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="429.0" y="-89.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Exactitude (dimension de qualité des données)</text><circle cx="457.3" cy="52.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="361.6" y="76.4" width="191.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="457.3" y="90.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Destinataire de données</text><circle cx="537.8" cy="-227.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="403.1" y="-203.8" width="269.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="537.8" y="-189.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Identifiant de train de référence</text><circle cx="471.5" cy="-28.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="348.5" y="-4.9" width="246.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="471.5" y="9.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Code de localisation virtuelle</text><circle cx="522.3" cy="-102.6" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="496.3" y="-78.6" width="52.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="522.3" y="-64.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">EU-Id</text><circle cx="579.2" cy="146.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="542.0" y="170.1" width="74.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="579.2" y="184.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Émetteur</text><circle cx="610.8" cy="-142.6" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="464.4" y="-118.6" width="292.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="610.8" y="-104.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Organisation de contrôle des billets</text><circle cx="551.5" cy="-13.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="510.4" y="10.9" width="82.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="551.5" y="25.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Méta-gare</text><circle cx="710.1" cy="-129.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="524.7" y="-105.4" width="370.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="710.1" y="-91.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Interface de programmation d'application (API)</text><circle cx="610.2" cy="24.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="522.3" y="48.4" width="175.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="610.2" y="62.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Processus multiréseau</text><circle cx="676.4" cy="-22.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="518.3" y="1.5" width="316.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="676.4" y="15.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Service de transport ferroviaire direct</text><circle cx="653.8" cy="161.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="464.5" y="185.7" width="378.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="653.8" y="199.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Exhaustivité (dimension de qualité des données)</text><circle cx="740.8" cy="39.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="563.2" y="63.8" width="355.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="740.8" y="78.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Cohérence (dimension de qualité des données)</text><circle cx="789.4" cy="197.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="611.8" y="221.8" width="355.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="789.4" y="236.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Actualité (dimension de qualité des données)</text><circle cx="825.7" cy="-46.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="655.9" y="-22.2" width="339.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="825.7" y="-8.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Unicité (dimension de qualité des données)</text><circle cx="827.9" cy="86.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="747.8" y="110.4" width="160.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="827.9" y="124.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Code d'organisation</text><circle cx="735.0" cy="276.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="651.0" y="300.7" width="168.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="735.0" y="314.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Code de localisation</text><circle cx="897.4" cy="205.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="825.1" y="229.3" width="144.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="897.4" y="243.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Accès aux données</text><circle cx="869.3" cy="343.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="793.1" y="367.2" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="869.3" y="381.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Partage de données</text><circle cx="279.0" cy="-35.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="226.2" y="-11.0" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="279.0" y="3.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Distributeur</text><circle cx="737.0" cy="166.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="707.6" y="190.0" width="58.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="737.0" y="204.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Voyage</text><circle cx="510.0" cy="158.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="379.2" y="182.0" width="261.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="510.0" y="196.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Service de transport ferroviaire</text><circle cx="1150.0" cy="-37.0" r="20" fill="#2d7ec3" stroke="white" stroke-width="2" /><rect x="1089.4" y="-13.0" width="121.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1150.0" y="1.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Client du fret</text><circle cx="207.0" cy="67.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="68.4" y="91.0" width="277.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="207.0" y="105.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Informations sur les perturbations</text></g><g class="legend"><line x1="-309.0" y1="882.2" x2="-269.0" y2="882.2" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" /><text x="-259.0" y="886.0" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#475569">broader / narrower (hiërarchisch / Associatief)</text><line x1="-309.0" y1="906.2" x2="-269.0" y2="906.2" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" stroke-dasharray="6,4" /><text x="-259.0" y="910.0" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#475569">related (gerelateerd)</text></g><text x="-309.0" y="938.2" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#94a3b8">Bron: Ontologica — TEL-TSI</text></svg></div>
+        <figcaption>Aperçu du modèle</figcaption>
+      </figure>
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Concepts</h2>
+  
+    
+      
+<table class="data-table">
+  <caption>Aperçu des concepts</caption>
+  <thead>
+    <tr>
+      <th>Concept</th><th>Définition</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Identifiant de train de référence</td><td>Objet identifiant de manière unique un transport ferroviaire planifié (PlannedTransportIdentifier, type TR), défini par l&#x27;entreprise ferroviaire chef de file et utilisé comme référence d&#x27;un train à travers les réseaux.</td>
+      </tr>
+    
+      <tr>
+        <td>Objet train</td><td>Objet (TrainID) identifiant un train, défini par l&#x27;entreprise ferroviaire chef de file, auquel se rapportent les données opérationnelles de circulation.</td>
+      </tr>
+    
+      <tr>
+        <td>Objet de demande de sillon</td><td>Objet (PathRequestID) identifiant une demande de capacité d&#x27;infrastructure, défini par l&#x27;entreprise ferroviaire chef de file; il porte comme attributs le numéro de train opérationnel et le numéro de train commercial.</td>
+      </tr>
+    
+      <tr>
+        <td>Objet sillon</td><td>Objet (PlannedTransportIdentifier, type PA) identifiant un sillon attribué, défini par le gestionnaire de l&#x27;infrastructure.</td>
+      </tr>
+    
+      <tr>
+        <td>Objet itinéraire</td><td>Objet (PlannedTransportIdentifier, type RO) identifiant un itinéraire, défini par l&#x27;entreprise ferroviaire chef de file.</td>
+      </tr>
+    
+      <tr>
+        <td>Objet de référence de dossier</td><td>Objet (PlannedTransportIdentifier, type CR) identifiant une référence de dossier, défini par le détenteur des données.</td>
+      </tr>
+    
+      <tr>
+        <td>PathRequestMessage (message de demande de sillon)</td><td>Message par lequel un candidat demande une capacité d&#x27;infrastructure (un sillon) au gestionnaire de l&#x27;infrastructure, conformément à l&#x27;ontologie de l&#x27;ERA.</td>
+      </tr>
+    
+      <tr>
+        <td>PathDetailsMessage (message de détails du sillon)</td><td>Message par lequel le gestionnaire de l&#x27;infrastructure fournit les détails d&#x27;un sillon en réponse à une demande, conformément à l&#x27;ontologie de l&#x27;ERA.</td>
+      </tr>
+    
+      <tr>
+        <td>PathConfirmedMessage (message de confirmation du sillon)</td><td>Message par lequel le candidat confirme les détails du sillon proposés par le gestionnaire de l&#x27;infrastructure.</td>
+      </tr>
+    
+      <tr>
+        <td>PathDetailsRefusedMessage (message de refus du sillon)</td><td>Message par lequel le candidat refuse les détails du sillon proposés par le gestionnaire de l&#x27;infrastructure.</td>
+      </tr>
+    
+      <tr>
+        <td>PathCanceledMessage (message d&#x27;annulation du sillon)</td><td>Message par lequel un sillon précédemment confirmé ou demandé est annulé.</td>
+      </tr>
+    
+      <tr>
+        <td>PathNotAvailableMessage (message de sillon non disponible)</td><td>Message par lequel le gestionnaire de l&#x27;infrastructure notifie qu&#x27;un sillon demandé n&#x27;est pas disponible.</td>
+      </tr>
+    
+      <tr>
+        <td>ReceiptConfirmationMessage (message d&#x27;accusé de réception)</td><td>Message confirmant la réception d&#x27;un message entre acteurs de la télématique.</td>
+      </tr>
+    
+      <tr>
+        <td>TrainCompositionMessage (message de composition du train)</td><td>Message transmettant la composition d&#x27;un train, y compris les informations au niveau du véhicule, la masse totale du train, le numéro européen de véhicule des engins de traction, ainsi que les indicateurs pour les marchandises dangereuses, les unités de chargement intermodal, les forces armées et les itinéraires plus silencieux.</td>
+      </tr>
+    
+      <tr>
+        <td>PassengerTrainCompositionMessage (message de composition du train de voyageurs)</td><td>Message transmettant la composition d&#x27;un train de voyageurs, y compris les plans de places assises, les classes, les voitures pour les personnes à mobilité réduite et les emplacements pour vélos.</td>
+      </tr>
+    
+      <tr>
+        <td>TrainReadyMessage (message de train prêt)</td><td>Message par lequel l&#x27;entreprise ferroviaire notifie qu&#x27;un train est prêt au départ; les valeurs de statut comprennent «NotReady» avec des sous-champs pour le retard du train, l&#x27;heure à laquelle le train est prêt et la cause du retard.</td>
+      </tr>
+    
+      <tr>
+        <td>TrainRunningInformationMessage (message d&#x27;information sur la circulation du train)</td><td>Message transmettant les informations réelles sur la circulation du train aux points de signalement.</td>
+      </tr>
+    
+      <tr>
+        <td>TrainRunningForecastMessage (message de prévision de circulation du train)</td><td>Message transmettant la prévision de circulation du train, avec la précision attendue définie par la méthodologie de précision du règlement.</td>
+      </tr>
+    
+      <tr>
+        <td>TrainDelayCauseMessage (message de cause de retard du train)</td><td>Message transmettant la cause d&#x27;un retard de train.</td>
+      </tr>
+    
+      <tr>
+        <td>TrainRunningInterruptionMessage (message d&#x27;interruption de circulation du train)</td><td>Message notifiant une interruption de la circulation d&#x27;un train.</td>
+      </tr>
+    
+      <tr>
+        <td>Horaire de service</td><td>Données de l&#x27;horaire de service au sens de l&#x27;article 3, point 28, de la directive 2012/34/UE, publiées en tant que données ouvertes sous une licence Creative Commons BY-ND 4.0.</td>
+      </tr>
+    
+      <tr>
+        <td>Enregistrement historique des données de train</td><td>Enregistrement conservé (au moins 12 mois) des données de train, contenant l&#x27;horaire de service, l&#x27;identifiant de train de référence, le numéro de train commercial, les lieux de signalement, les heures réelles, le retard et sa cause ainsi que la composition du train.</td>
+      </tr>
+    
+      <tr>
+        <td>ConsignmentNoteMessage (message de lettre de voiture)</td><td>Message transmettant la lettre de voiture électronique (eCN), à savoir le document de transport visé à l&#x27;article 6 du règlement nº 11/1960 du Conseil, scellé au moyen d&#x27;un cachet électronique qualifié conformément au règlement (UE) nº 910/2014.</td>
+      </tr>
+    
+      <tr>
+        <td>WagonRunningInformationMessage (message d&#x27;information sur la circulation du wagon)</td><td>Message transmettant les informations sur la circulation d&#x27;un wagon de fret tout au long de son cycle de mouvement; décomposé en événements de wagon distincts définis à l&#x27;annexe.</td>
+      </tr>
+    
+      <tr>
+        <td>Mouvement de l&#x27;unité de chargement intermodal</td><td>Données transmettant le mouvement d&#x27;une unité de chargement intermodal.</td>
+      </tr>
+    
+      <tr>
+        <td>Informations de prévision sur le wagon</td><td>Informations de prévision pour un wagon de fret, dont la précision est déterminée par la méthodologie de précision du règlement.</td>
+      </tr>
+    
+      <tr>
+        <td>Géolocalisation des wagons de fret</td><td>Événement de wagon transmettant la position géographique d&#x27;un wagon de fret.</td>
+      </tr>
+    
+      <tr>
+        <td>Statut du wagon</td><td>Événement de wagon transmettant le statut actuel d&#x27;un wagon de fret.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagon prêt au mouvement</td><td>Événement de wagon indiquant qu&#x27;un wagon de fret est prêt à être déplacé.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagon tracté</td><td>Événement de wagon indiquant qu&#x27;un wagon de fret a été tracté.</td>
+      </tr>
+    
+      <tr>
+        <td>Départ du wagon de l&#x27;origine</td><td>Événement de wagon indiquant le départ d&#x27;un wagon de fret de son lieu d&#x27;origine.</td>
+      </tr>
+    
+      <tr>
+        <td>Arrivée du wagon à un lieu intermédiaire</td><td>Événement de wagon indiquant l&#x27;arrivée d&#x27;un wagon de fret à un lieu intermédiaire.</td>
+      </tr>
+    
+      <tr>
+        <td>Départ du wagon d&#x27;un lieu intermédiaire</td><td>Événement de wagon indiquant le départ d&#x27;un wagon de fret d&#x27;un lieu intermédiaire.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagon remis</td><td>Événement de wagon indiquant qu&#x27;un wagon de fret a été remis entre parties responsables.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagon pris en charge</td><td>Événement de wagon indiquant qu&#x27;un wagon de fret a été pris en charge par une partie responsable.</td>
+      </tr>
+    
+      <tr>
+        <td>Irrégularité du wagon</td><td>Événement de wagon signalant une irrégularité affectant un wagon de fret.</td>
+      </tr>
+    
+      <tr>
+        <td>Irrégularité du wagon corrigée</td><td>Événement de wagon indiquant qu&#x27;une irrégularité de wagon précédemment signalée a été corrigée.</td>
+      </tr>
+    
+      <tr>
+        <td>Arrivée du wagon à destination</td><td>Événement de wagon indiquant l&#x27;arrivée d&#x27;un wagon de fret à sa destination.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagon livré</td><td>Événement de wagon indiquant qu&#x27;un wagon de fret a été livré.</td>
+      </tr>
+    
+      <tr>
+        <td>Bases de données de référence du matériel roulant</td><td>Bases de données de référence du matériel roulant, comprenant le numéro européen de véhicule, le détenteur, le type et les paramètres techniques; gérées par le secteur ferroviaire et reliées au registre central commun de l&#x27;ERA.</td>
+      </tr>
+    
+      <tr>
+        <td>Bases de données de référence des unités de chargement intermodal</td><td>Bases de données de référence des unités de chargement intermodal, comprenant le code ILU, le type, les dimensions et le propriétaire.</td>
+      </tr>
+    
+      <tr>
+        <td>Bases de données opérationnelles des wagons et des unités de chargement intermodal</td><td>Bases de données opérationnelles enregistrant les états opérationnels des wagons de fret et des unités de chargement intermodal tout au long de leur mouvement.</td>
+      </tr>
+    
+      <tr>
+        <td>Chargement du wagon de fret</td><td>État opérationnel indiquant qu&#x27;un wagon de fret est en cours de chargement.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagon de fret chargé en circulation</td><td>État opérationnel indiquant qu&#x27;un wagon de fret chargé est en circulation.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagon de fret vide en circulation</td><td>État opérationnel indiquant qu&#x27;un wagon de fret vide est en circulation.</td>
+      </tr>
+    
+      <tr>
+        <td>Déchargement du wagon de fret</td><td>État opérationnel indiquant qu&#x27;un wagon de fret est en cours de déchargement.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagon de fret vide sous contrôle de la gestion de flotte</td><td>État opérationnel indiquant qu&#x27;un wagon de fret vide est sous le contrôle de la gestion de flotte.</td>
+      </tr>
+    
+      <tr>
+        <td>Référence de dossier</td><td>Référence identifiant un dossier de billettique, utilisée pour relier les billets, les réservations et les processus après-vente.</td>
+      </tr>
+    
+      <tr>
+        <td>Message de demande de disponibilité et de réservation</td><td>Message par lequel la disponibilité est vérifiée et une réservation est demandée pour un produit ferroviaire.</td>
+      </tr>
+    
+      <tr>
+        <td>Message de réponse de disponibilité et de réservation</td><td>Message transmettant la réponse à une demande de disponibilité et de réservation.</td>
+      </tr>
+    
+      <tr>
+        <td>Disponibilité et réservation de l&#x27;assistance PMR</td><td>Message permettant de vérifier la disponibilité et de réserver une assistance pour les personnes handicapées ou à mobilité réduite.</td>
+      </tr>
+    
+      <tr>
+        <td>Disponibilité et réservation d&#x27;emplacement pour vélo</td><td>Message permettant de vérifier la disponibilité et de réserver un emplacement pour vélo.</td>
+      </tr>
+    
+      <tr>
+        <td>Disponibilité et réservation du transport de voitures</td><td>Message permettant de vérifier la disponibilité et de réserver le transport de voitures, de motos ou de bateaux.</td>
+      </tr>
+    
+      <tr>
+        <td>Annotation du billet</td><td>Message après-vente enregistrant une annotation sur un billet.</td>
+      </tr>
+    
+      <tr>
+        <td>Demande de remboursement ou d&#x27;indemnisation</td><td>Message après-vente demandant un remboursement ou une indemnisation au titre d&#x27;un billet.</td>
+      </tr>
+    
+      <tr>
+        <td>Horaire des voyageurs</td><td>Date et heure des services de transport ferroviaire de voyageurs exploités en tant que service commercial par une entreprise ferroviaire pendant un intervalle de temps donné, utilisés dans le contexte de la billettique ferroviaire et de l&#x27;information sur les voyages des voyageurs visés à la section 4 de l&#x27;annexe.</td>
+      </tr>
+    
+      <tr>
+        <td>Temps de correspondance minimal</td><td>Durée minimale suffisante pour qu&#x27;un voyageur effectue une correspondance entre les nœuds d&#x27;accès de deux services de transport de voyageurs consécutifs inclus dans un voyage.</td>
+      </tr>
+    
+      <tr>
+        <td>Tarif</td><td>Données agrégées établies par une entreprise ferroviaire (ou un détenteur de données) fournissant tous les détails tarifaires pertinents, y compris le prix du service de transport ferroviaire dû par un distributeur à l&#x27;entreprise ferroviaire ainsi que les attributs et conditions associés.</td>
+      </tr>
+    
+      <tr>
+        <td>Offre</td><td>Données agrégées établies par un distributeur combinant les tarifs applicables, avec le prix du produit ferroviaire dû par le détaillant au distributeur.</td>
+      </tr>
+    
+      <tr>
+        <td>Prix ajusté (yield)</td><td>Prix associé à un tarif résultant d&#x27;un algorithme fondé sur des variables, appelé «règle de yield».</td>
+      </tr>
+    
+      <tr>
+        <td>Règles d&#x27;émission et de contrôle des billets</td><td>Données établissant les règles régissant l&#x27;émission des billets et le contrôle des billets.</td>
+      </tr>
+    
+      <tr>
+        <td>Informations sur les canaux de vente en ligne</td><td>Données décrivant les canaux de vente en ligne par lesquels les produits ferroviaires sont proposés.</td>
+      </tr>
+    
+      <tr>
+        <td>Conditions de transport</td><td>Données établissant les conditions de transport, décomposées pour les voyageurs, les personnes à mobilité réduite (avec l&#x27;accessibilité du matériel roulant et des gares), les bagages, les vélos et les voitures/motos/bateaux.</td>
+      </tr>
+    
+      <tr>
+        <td>Types et formats de billets</td><td>Le catalogue des types et formats de billets, y compris les présentations sur papier sécurisé, sur papier vierge et de billet mobile/de format flexible, avec leurs modèles de sécurité associés.</td>
+      </tr>
+    
+      <tr>
+        <td>Données de référence communes pour la billettique ferroviaire</td><td>Listes de codes pour la billettique gérées et attribuées par l&#x27;Agence, utilisées comme base pour le partage de données dans le domaine de la billettique ferroviaire.</td>
+      </tr>
+    
+      <tr>
+        <td>Éléments de sécurité pour la délivrance électronique</td><td>Éléments de sécurité utilisés pour la délivrance électronique des billets.</td>
+      </tr>
+    
+      <tr>
+        <td>Informations sur les départs des trains</td><td>Données sur les départs des trains destinées à l&#x27;affichage dans les gares.</td>
+      </tr>
+    
+      <tr>
+        <td>Informations sur les arrivées des trains</td><td>Données sur les arrivées des trains destinées à l&#x27;affichage dans les gares.</td>
+      </tr>
+    
+      <tr>
+        <td>Informations sur les perturbations</td><td>Données sur les écarts par rapport au service prévu destinées à l&#x27;affichage dans les gares.</td>
+      </tr>
+    
+      <tr>
+        <td>Informations à bord du véhicule</td><td>Informations sur les voyages des voyageurs fournies à bord du véhicule.</td>
+      </tr>
+    
+      <tr>
+        <td>Distributeur</td><td>Entité ayant la capacité technique de combiner des produits ferroviaires d&#x27;une ou plusieurs entreprises ferroviaires pour approvisionner un émetteur ou un détaillant, avec le droit d&#x27;opérer sans interrogation initiale des systèmes d&#x27;attribution et des droits autonomes de vérifier la disponibilité du prix.</td>
+      </tr>
+    
+      <tr>
+        <td>Émetteur</td><td>Entité ayant la capacité juridique et technique d&#x27;émettre, pour un détaillant, un billet sur lequel sont indiquées les parties au contrat de transport.</td>
+      </tr>
+    
+      <tr>
+        <td>Détaillant</td><td>Entité qui combine et/ou vend des produits ferroviaires d&#x27;un ou plusieurs distributeurs, en obtenant l&#x27;accès au moyen d&#x27;une demande initiale; elle peut appliquer des frais ou des réductions mais ne peut pas modifier le contenu du produit ferroviaire.</td>
+      </tr>
+    
+      <tr>
+        <td>Système d&#x27;attribution</td><td>Système numérique de l&#x27;entreprise ferroviaire hébergeant le catalogue en ligne des services de transport ferroviaire individuels et permettant aux distributeurs de vérifier la disponibilité et d&#x27;effectuer des réservations.</td>
+      </tr>
+    
+      <tr>
+        <td>Planificateur de voyage</td><td>Moteur de recherche utilisé pour trouver un voyage optimal sur la base de critères définis par son utilisateur.</td>
+      </tr>
+    
+      <tr>
+        <td>Organisation de contrôle des billets</td><td>Organisation habilitée à contrôler les billets des voyageurs, y compris aux portes d&#x27;accès aux quais.</td>
+      </tr>
+    
+      <tr>
+        <td>Produit ferroviaire</td><td>Service sur mesure lié à un service de transport ferroviaire de voyageurs, associé à un tarif.</td>
+      </tr>
+    
+      <tr>
+        <td>Méta-gare</td><td>Groupe de gares au sein d&#x27;une zone urbaine fonctionnelle, comprenant un ou plusieurs nœuds urbains énumérés à l&#x27;annexe II du règlement (UE) 2024/1679, pouvant s&#x27;étendre sur plusieurs États membres et où des gares distinctes peuvent être atteintes par des modes de transport urbain et des services de transport urbain de correspondance, qu&#x27;ils soient programmés ou non.</td>
+      </tr>
+    
+      <tr>
+        <td>Données</td><td>Représentation lisible par machine d&#x27;actes, de faits ou d&#x27;informations et toute compilation de ces actes, faits ou informations destinée à être partagée dans un format harmonisé et structuré.</td>
+      </tr>
+    
+      <tr>
+        <td>Partage de données</td><td>Mise à disposition de données par un détenteur de données à un destinataire de données aux fins de l&#x27;utilisation conjointe ou individuelle de ces données, directement ou par l&#x27;intermédiaire d&#x27;un tiers, par exemple sous licence ouverte ou commerciale, à titre onéreux ou gratuit.</td>
+      </tr>
+    
+      <tr>
+        <td>Billettique ferroviaire</td><td>Processus comprenant au moins l&#x27;un des éléments suivants pour les services de transport ferroviaire de voyageurs: la présentation numérique des services aux fins de la planification du voyage; la vérification numérique de la disponibilité ou la réservation numérique des produits ferroviaires correspondants en vue de la vente; l&#x27;émission et le contrôle numériques des billets; le traitement numérique des processus après-vente.</td>
+      </tr>
+    
+      <tr>
+        <td>Service de transport ferroviaire</td><td>Service programmé de transport par rail entre un point de départ et un point d&#x27;arrivée, couvrant les services de transport de marchandises, de voyageurs, de bagages, de vélos ou de voitures, ainsi que les arrangements de transport sur mesure et l&#x27;assistance aux voyageurs, y compris les services de réacheminement et de poursuite du voyage.</td>
+      </tr>
+    
+      <tr>
+        <td>Accès aux données</td><td>Le droit de consulter les données, avec ou sans contrôle sur celles-ci, distinct des autres droits et obligations relatifs à leur utilisation à des fins non commerciales ou commerciales.</td>
+      </tr>
+    
+      <tr>
+        <td>Processus multiréseau</td><td>Processus qui est affecté par l&#x27;exploitation d&#x27;un service de transport ferroviaire sur deux réseaux ou plus gérés par différents gestionnaires de l&#x27;infrastructure ou exploitants d&#x27;installations de service de fret ferroviaire.</td>
+      </tr>
+    
+      <tr>
+        <td>Service de transport ferroviaire direct</td><td>Service de transport ferroviaire pouvant comporter des arrêts commerciaux intermédiaires entre son origine et sa destination, mais n&#x27;impliquant aucun transbordement de voyageurs ou de marchandises entre trains.</td>
+      </tr>
+    
+      <tr>
+        <td>Interface de programmation d&#x27;application (API)</td><td>Ensemble de fonctions, de procédures, de définitions et de protocoles permettant le partage interopérable de données entre applications télématiques.</td>
+      </tr>
+    
+      <tr>
+        <td>Voyage</td><td>Trajet de bout en bout d&#x27;un voyageur ou d&#x27;un chargement pouvant comporter plusieurs segments.</td>
+      </tr>
+    
+      <tr>
+        <td>Heure de départ publique</td><td>La limite d&#x27;embarquement pour les voyageurs, à savoir le moment où l&#x27;accès au train, au quai ou à la gare est fermé en préparation du départ.</td>
+      </tr>
+    
+      <tr>
+        <td>Heure d&#x27;arrivée publique</td><td>L&#x27;heure de débarquement pour les voyageurs, à savoir le moment où les portes du train s&#x27;ouvrent sur le quai ou au terminal de destination.</td>
+      </tr>
+    
+      <tr>
+        <td>Détenteur de données</td><td>Personne physique ou morale qui a le droit d&#x27;utiliser ou l&#x27;obligation de produire et de mettre à disposition des données.</td>
+      </tr>
+    
+      <tr>
+        <td>Destinataire de données</td><td>Personne physique ou morale qui a le droit d&#x27;accéder aux données produites et mises à disposition par le détenteur de données dans des conditions d&#x27;accès spécifiées en vue de leur utilisation.</td>
+      </tr>
+    
+      <tr>
+        <td>Opérateur de transport intermodal</td><td>Entité qui organise des services de transport de fret reliant deux terminaux de fret ou plus avec plus d&#x27;un mode de transport.</td>
+      </tr>
+    
+      <tr>
+        <td>Client du fret</td><td>Entité ayant transmis les informations relatives à l&#x27;envoi à l&#x27;entreprise ferroviaire de fret et ayant conclu un contrat de transport; il peut s&#x27;agir d&#x27;un prestataire de services logistiques, d&#x27;un opérateur de transport intermodal, d&#x27;un commissionnaire de transport, d&#x27;un gestionnaire de flotte de wagons vides ou du détenteur des données.</td>
+      </tr>
+    
+      <tr>
+        <td>Ontologie de l&#x27;ERA</td><td>Document technique publié par l&#x27;Agence en application de l&#x27;article 4, paragraphe 8, de la directive (UE) 2016/797, établissant des définitions et présentations de données lisibles par l&#x27;homme et par machine ainsi que les exigences de qualité et de précision associées pour les éléments de données du système ferroviaire de l&#x27;Union.</td>
+      </tr>
+    
+      <tr>
+        <td>Élément de données</td><td>Champ, valeur ou attribut des données partagées, structuré de manière cohérente avec le protocole global utilisé pour le partage de données et portant des informations essentielles qui contribuent au sens et à la finalité des données partagées, permettant le partage de données entre systèmes, applications ou organisations.</td>
+      </tr>
+    
+      <tr>
+        <td>Données de référence</td><td>Ensemble de données d&#x27;identifiants uniques normalisés et interopérables servant de base au partage de données dans un domaine spécifique.</td>
+      </tr>
+    
+      <tr>
+        <td>Métadonnées</td><td>Métadonnées au sens de l&#x27;article 2, point 2), du règlement (UE) 2023/2854 (règlement sur les données).</td>
+      </tr>
+    
+      <tr>
+        <td>Qualité des données</td><td>Degré d&#x27;aptitude à l&#x27;emploi auquel les caractéristiques des données satisfont au niveau déclaré et implicite d&#x27;exactitude, d&#x27;exhaustivité, de cohérence, d&#x27;actualité et d&#x27;unicité des ensembles de données et créent des informations exploitables pour d&#x27;autres utilisateurs dans des conditions spécifiées.</td>
+      </tr>
+    
+      <tr>
+        <td>Exactitude (dimension de qualité des données)</td><td>Dimension de qualité des données exprimant le degré auquel les données représentent correctement la valeur du monde réel qu&#x27;elles sont censées représenter.</td>
+      </tr>
+    
+      <tr>
+        <td>Exhaustivité (dimension de qualité des données)</td><td>Dimension de qualité des données exprimant le degré auquel toutes les données requises sont présentes.</td>
+      </tr>
+    
+      <tr>
+        <td>Cohérence (dimension de qualité des données)</td><td>Dimension de qualité des données exprimant le degré auquel les données sont exemptes de contradiction entre les ensembles de données et dans le temps.</td>
+      </tr>
+    
+      <tr>
+        <td>Actualité (dimension de qualité des données)</td><td>Dimension de qualité des données exprimant le degré auquel les données sont disponibles dans le délai requis.</td>
+      </tr>
+    
+      <tr>
+        <td>Unicité (dimension de qualité des données)</td><td>Dimension de qualité des données exprimant le degré auquel il n&#x27;y a pas de duplication indésirable de données.</td>
+      </tr>
+    
+      <tr>
+        <td>Code d&#x27;organisation</td><td>Identifiant unique de toute organisation ou de tout rôle intervenant dans le partage de données ferroviaires, attribué par l&#x27;Agence.</td>
+      </tr>
+    
+      <tr>
+        <td>Code de localisation</td><td>Identifiant unique de tout point géographique pertinent pour le partage de données ferroviaires, attribué par l&#x27;Agence.</td>
+      </tr>
+    
+      <tr>
+        <td>Code de localisation virtuelle</td><td>Code attribué aux localisations hors réseau ferroviaire utilisées par les services de transport de substitution ferroviaire, les services vendus comme ferroviaires mais non exploités sur rail, ainsi que les méta-gares.</td>
+      </tr>
+    
+      <tr>
+        <td>EU-Id</td><td>Identifiant européen canonique utilisé par les détenteurs de données lorsqu&#x27;ils alimentent les points d&#x27;accès nationaux.</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+  
+</body>
+</html>
