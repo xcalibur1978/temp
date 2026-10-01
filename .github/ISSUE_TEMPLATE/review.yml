@@ -1,13 +1,13 @@
-name: Reviewcommentaar
-description: Commentaar op een gepubliceerd model of specificatie
+name: Review comment
+description: Comment on a published model or specification
 title: "[Review] "
-labels: ["review", "status: nieuw"]
+labels: ["review", "status: new", "source: respec"]
 body:
   - type: markdown
     attributes:
       value: |
-        Bedankt voor je review. De velden hieronder zijn grotendeels vooraf ingevuld vanuit de specificatie.
-        Vul je commentaar aan en klik op **Submit new issue**.
+        Thanks for your review. The fields below are mostly pre-filled from the specification.
+        Add your comment and click **Submit new issue**.
 
   - type: input
     id: model
@@ -19,56 +19,56 @@ body:
   - type: input
     id: versie
     attributes:
-      label: Versie
-      description: Versie van het model waarop het commentaar betrekking heeft.
+      label: Version
+      description: Version of the model the comment applies to.
     validations:
       required: true
 
   - type: input
     id: sectie
     attributes:
-      label: Sectie / concept
+      label: Section / concept
 
   - type: textarea
     id: citaat
     attributes:
-      label: Geciteerde tekst
+      label: Quoted text
       render: text
 
   - type: input
     id: locatie
     attributes:
-      label: Directe link naar de passage
+      label: Direct link to the passage
 
   - type: dropdown
     id: type
     attributes:
-      label: Soort commentaar
+      label: Type of comment
       options:
-        - Redactioneel (spelling, formulering)
-        - Inhoudelijk (definitie, betekenis)
-        - Structureel (relaties, hiërarchie, ontbrekend concept)
-        - Breaking change (heeft impact op implementaties)
-        - Vraag / verduidelijking
+        - Editorial (spelling, phrasing)
+        - Substantive (definition, meaning)
+        - Structural (relations, hierarchy, missing concept)
+        - Breaking change (impacts implementations)
+        - Question / clarification
     validations:
       required: true
 
   - type: textarea
     id: commentaar
     attributes:
-      label: Commentaar
-      description: Wat is het probleem?
+      label: Comment
+      description: What is the problem?
     validations:
       required: true
 
   - type: textarea
     id: voorstel
     attributes:
-      label: Voorstel
-      description: Optioneel — hoe zou het volgens jou moeten luiden?
+      label: Proposal
+      description: Optional — how do you think it should read?
 
   - type: input
     id: organisatie
     attributes:
-      label: Organisatie
-      description: Optioneel
+      label: Organisation
+      description: Optional
