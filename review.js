@@ -37,15 +37,15 @@
     const parts = decodeURIComponent(location.pathname).split("/").filter(Boolean);
     const rest = parts.slice(1).filter((p) => !/\.html?$/i.test(p));
     return {
-      model: cfg.model || rest[0] || document.title || "onbekend",
-      version: cfg.version || rest[1] || "onbekend",
+      model: cfg.model || rest[0] || document.title || "unknown",
+      version: cfg.version || rest[1] || "unknown",
     };
   }
 
   function sectionOf(node) {
     const el = node?.nodeType === 1 ? node : node?.parentElement;
     const sec = el?.closest("section[id], [id].section, h1[id], h2[id], h3[id], dt[id], dfn[id]");
-    if (!sec) return { id: "", title: "Algemeen" };
+    if (!sec) return { id: "", title: "General" };
     const heading = sec.matches("h1,h2,h3") ? sec : sec.querySelector("h1, h2, h3, h4, h5, h6");
     const title = (heading?.textContent || sec.id).replace(/\s+/g, " ").trim();
     return { id: sec.id, title };
@@ -101,7 +101,7 @@
 
   function init() {
     if (!cfg.repo) {
-      console.warn("[review.js] Geen repo bekend; zet data-repo=\"owner/repo\" op de script-tag.");
+      console.warn("[review.js] No repo known; set data-repo=\"owner/repo\" on the script tag.");
       return;
     }
     const style = document.createElement("style");
@@ -111,15 +111,15 @@
     const btn = document.createElement("button");
     btn.className = "rv-btn";
     btn.type = "button";
-    btn.textContent = "💬 Reviewcommentaar";
+    btn.textContent = "💬 Review comment";
     document.body.appendChild(btn);
 
     const banner = document.createElement("div");
     banner.className = "rv-banner";
     banner.innerHTML =
-      `<button type="button" aria-label="Sluiten">×</button><b>Review-modus</b>` +
-      `Selecteer tekst en klik op <i>Reviewcommentaar</i> om een GitHub-issue aan te maken. ` +
-      `<a href="https://github.com/${cfg.repo}/issues?q=label%3Areview" target="_blank" rel="noopener">Bekijk commentaar</a>`;
+      `<button type="button" aria-label="Close">×</button><b>Review mode</b>` +
+      `Select text and click <i>Review comment</i> to create a GitHub issue. ` +
+      `<a href="https://github.com/${cfg.repo}/issues?q=label%3Areview" target="_blank" rel="noopener">View comments</a>`;
     banner.querySelector("button").onclick = () => banner.remove();
     document.body.appendChild(banner);
 
