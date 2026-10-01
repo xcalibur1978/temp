@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <title>Naamloos model</title>
+  
+  <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
+  <script class="remove">
+    var respecConfig = {"specStatus": "unofficial", "title": "Naamloos model", "shortName": "Naamloos model", "editors": [{"name": "NAPCORE"}], "lint": false, "edDraftURI": "", "additionalCopyrightHolders": "NAPCORE"};
+  </script>
+  
+  <style>
+    /* Opmaak afgeleid van de PDF (docpublish/pdf/styles/_base.css): dezelfde
+       huisstijl-kleuren en tabelstijl, zodat de ReSpec-pagina en de PDF op
+       elkaar aansluiten. Staat NA ReSpec's basis-stylesheet, dus dit wint. */
+    body {
+      font-family: 'Source Sans 3', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: #303c54;
+      line-height: 1.5;
+    }
+    h1, h2, h3, h4, h5, h6 { color: #1e40af; font-weight: 600; }
+    p.prose { text-align: justify; }
+    p.disclaimer {
+      background: rgba(30, 64, 175, 0.06);
+      border-left: 3px solid #1e40af;
+      padding: 6px 10px;
+      font-style: italic;
+      color: #636f83;
+      margin: 8px 0;
+    }
+    table.data-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 10px 0 18px;
+      font-size: 0.95rem;
+    }
+    table.data-table caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: 600;
+      color: #1e40af;
+      padding-bottom: 4px;
+    }
+    table.data-table th {
+      background: rgba(30, 64, 175, 0.08);
+      border-bottom: 1px solid #1e40af;
+      color: #1e40af;
+      font-weight: 600;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.data-table td {
+      border-bottom: 1px solid #dfe4ee;
+      padding: 6px 8px;
+      vertical-align: top;
+      overflow-wrap: break-word;
+    }
+    table.data-table tr:nth-child(even) td { background: rgba(30, 64, 175, 0.025); }
+
+    /* Modeloverzicht-diagram: de server-side force-directed layout geeft een
+       compacte, normaal-geproportioneerde SVG (net als de visuele editor). Schaal
+       hem responsive binnen de paginabreedte. Voor het zeldzame extreem brede
+       geval blijft het kader horizontaal scrollbaar. */
+    figure.model-figure { margin: 12px 0; width: 100%; }
+    figure.model-figure > div {
+      overflow-x: auto;
+      border: 1px solid #dfe4ee;
+      border-radius: 6px;
+      padding: 8px;
+      background: #fff;
+    }
+    figure.model-figure svg {
+      display: block;
+      /* Vaste breedte 100% van het kader; de hoogte volgt uit de viewBox-
+         verhouding. Alleen height:auto laten renderen faalt als de container
+         nog geen breedte heeft (chicken-egg): dan wordt de SVG 0×0. De inline
+         width/height-attributen op de root-<svg> worden hierdoor overruled. */
+      width: 100%;
+      height: auto;
+    }
+    figure.model-figure figcaption {
+      font-size: 0.85rem;
+      color: #636f83;
+      margin-top: 4px;
+    }
+  </style>
+  
+  
+  <style>
+    .status-banner {
+      border-left: 8px solid var(--status-color, #6b7280);
+      background: var(--status-bg, #f3f4f6);
+      padding: 0.6rem 1rem;
+      margin: 0 0 1.5rem;
+      font-family: sans-serif;
+    }
+    .status-banner .status-badge {
+      display: inline-block;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--status-color, #374151);
+    }
+    .status-banner .status-version { color: #4b5563; }
+    .status-draft       { --status-color: #d97706; --status-bg: #fffbeb; }
+    .status-under_review{ --status-color: #2563eb; --status-bg: #eff6ff; }
+    .status-published   { --status-color: #16a34a; --status-bg: #f0fdf4; }
+    .status-deprecated  { --status-color: #dc2626; --status-bg: #fef2f2; }
+    .status-withdrawn   { --status-color: #991b1b; --status-bg: #fef2f2; }
+  </style>
+  
+</head>
+<body>
+  
+  <h1 id="title">Naamloos model</h1>
+
+  
+  <section id="abstract">
+    <p>Visueel overzicht van de concepten en hun relaties. Hiërarchische relaties zijn getekend met doorgetrokken pijlen; associatieve relaties met stippellijnen.</p>
+  </section>
+
+  
+  
+  <div id="beschikbare-talen" class="language-switch">
+    <table class="data-table">
+      <caption>Beschikbare talen</caption>
+      <thead>
+        <tr><th>Taal</th><th>Document</th></tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>EN</td>
+          <td><a href="../index.html">TEL-TSI</a></td>
+        </tr>
+        
+        <tr>
+          <td><strong>NL</strong></td>
+          <td><strong>TEL-TSI</strong></td>
+        </tr>
+        
+        <tr>
+          <td>FR</td>
+          <td><a href="../fr/index.html">TEL-TSI</a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+
+  
+  <div class="status-banner status-under_review">
+    <span class="status-badge">In review</span><span class="status-version"> — versie 1.0.0</span>
+  </div>
+  
+
+  
+    
+<section>
+  <h2>Introductie op semantisch modelleren</h2>
+  
+    
+      <p class="prose"><p>Een <strong>begrippenkader</strong> (in SKOS: <em>ConceptScheme</em>) is een gestructureerde verzameling van begrippen die binnen een bepaald domein een vaste, gedeelde betekenis hebben. Het doel is dat iedereen die met het model werkt — mensen én systemen — dezelfde woorden gebruikt voor dezelfde dingen. Dat klinkt vanzelfsprekend, maar in de praktijk blijkt taal verrassend vaak voor verwarring te zorgen: wat de ene organisatie een <em>meetpunt</em> noemt, heet bij de ander een <em>sensor</em>, een <em>locatie</em>, of een <em>observatiepost</em>.</p>
+<p>Een begrippenkader lost dat op door per begrip vast te leggen:</p>
+<ul>
+<li>een <strong>voorkeursnaam</strong> (prefLabel) waaronder het begrip bekend is,</li>
+<li>een <strong>definitie</strong> die onomstotelijk beschrijft waar het begrip wel én niet op slaat,</li>
+<li>en eventueel een <strong>toelichting</strong> of <strong>voorbeeld</strong> om grensgevallen te verduidelijken.</li>
+</ul>
+<p>Begrippen staan zelden op zichzelf. Ze zijn <strong>hiërarchisch</strong> (een voertuig is breder dan een vrachtwagen) of <strong>associatief</strong> (een weggebruiker hangt samen met een wegsegment) aan elkaar gerelateerd. Die relaties maken het mogelijk om in queries en analyses te navigeren tussen algemene en specifieke concepten, en om verbanden tussen begrippen expliciet te maken. Binnen SKOS gebruiken we daarvoor <code>broader</code>, <code>narrower</code> en <code>related</code>.</p>
+<p>Wanneer een begrip ook ergens anders bestaat — bijvoorbeeld in een nationale of Europese standaard — leggen we dat vast als een <strong>mapping-relatie</strong>. Dat voorkomt dat iedereen het wiel opnieuw uitvindt: we linken naar de bron zodat interoperabiliteit met externe systemen mogelijk blijft.</p>
+<p>Dit document beschrijft het begrippenkader zoals het op dit moment is vastgelegd. De eerstvolgende secties geven de metadata, alle begrippen, hun relaties onderling en — als het model gekoppeld is aan een databron — hoe dat aan de brondata is gekoppeld.</p></p>
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Naamloos model</h2>
+  
+    
+      
+<table class="data-table">
+  <caption>Metadata</caption>
+  <thead>
+    <tr>
+      <th>Veld</th><th>Waarde</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>URI</td><td>https://github.com/NAPCORE/its-data-dictionary/tel-tsi</td>
+      </tr>
+    
+      <tr>
+        <td>Versie</td><td>1.0.0</td>
+      </tr>
+    
+      <tr>
+        <td>Publicatiestatus</td><td>In review</td>
+      </tr>
+    
+      <tr>
+        <td>Beheerstatus</td><td>Actief</td>
+      </tr>
+    
+      <tr>
+        <td>Organisatie</td><td>NAPCORE</td>
+      </tr>
+    
+      <tr>
+        <td>Aangemaakt op</td><td>2026-05-21</td>
+      </tr>
+    
+      <tr>
+        <td>Laatst gewijzigd op</td><td>2026-10-01</td>
+      </tr>
+    
+      <tr>
+        <td>Laatst gewijzigd door</td><td>Arthur Keesen</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Modeloverzicht</h2>
+  
+    
+      <p class="prose">Visueel overzicht van de concepten en hun relaties. Hiërarchische relaties zijn getekend met doorgetrokken pijlen; associatieve relaties met stippellijnen.</p>
+    
+  
+    
+      {# Een <figure> zonder <figcaption> laat de ReSpec core/figures-plugin een
+         waarschuwing tonen op de gepubliceerde pagina. Val daarom terug op de
+         sectie-kop als er geen expliciete caption is (anders dan de PDF, waar
+         een captionloze figuur op een eigen pagina bewust is). #}
+      <figure class="model-figure">
+        <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="-305.1 -287.8 1536.3 1230.0" width="1536" height="1230"><defs><marker id="arrow-hierarchy" viewBox="0 0 8 8" refX="8" refY="4.0" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 8 4.0 L 0 8 z" fill="#475569" /></marker><marker id="arrow-related" viewBox="0 0 8 8" refX="8" refY="4.0" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 8 4.0 L 0 8 z" fill="#8b5cf6" /></marker></defs><g class="edges"><line x1="1150.9" y1="78.0" x2="1150.2" y2="-8.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /></g><g class="nodes"><circle cx="418.3" cy="147.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="182.2" y="171.3" width="472.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="418.3" y="185.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">TrainRunningInformationMessage (treinloopinformatiebericht)</text><circle cx="394.0" cy="30.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="345.1" y="54.0" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="394.0" y="68.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Reisplanner</text><circle cx="335.5" cy="78.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="224.2" y="102.0" width="222.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="335.5" y="116.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagenvertrek vanaf herkomst</text><circle cx="619.0" cy="251.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="546.7" y="275.0" width="144.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="619.0" y="289.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Padaanvraagobject</text><circle cx="756.0" cy="325.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="605.7" y="349.0" width="300.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="756.0" y="363.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PathDetailsMessage (paddetailbericht)</text><circle cx="432.0" cy="223.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="390.9" y="247.0" width="82.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="432.0" y="261.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Padobject</text><circle cx="637.0" cy="82.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="553.0" y="106.0" width="168.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="637.0" y="120.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Openbare vertrektijd</text><circle cx="226.9" cy="347.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-52.1" y="371.3" width="558.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="226.9" y="385.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PassengerTrainCompositionMessage (reizigerstreinsamenstellingsbericht)</text><circle cx="578.2" cy="242.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="357.7" y="266.2" width="441.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="578.2" y="280.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">TrainDelayCauseMessage (treinvertragingsoorzaakbericht)</text><circle cx="238.4" cy="150.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-13.3" y="174.8" width="503.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="238.4" y="189.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">TrainRunningInterruptionMessage (treinlooponderbrekingsbericht)</text><circle cx="816.1" cy="465.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="755.5" y="489.9" width="121.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="816.1" y="504.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Dienstregeling</text><circle cx="493.1" cy="251.6" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="444.2" y="275.6" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="493.1" y="289.8" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Routeobject</text><circle cx="634.6" cy="330.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="585.7" y="354.3" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="634.6" y="368.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Treinobject</text><circle cx="362.9" cy="174.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="278.9" y="198.5" width="168.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="362.9" y="212.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Zaakreferentieobject</text><circle cx="714.5" cy="470.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="556.4" y="494.4" width="316.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="714.5" y="508.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PathRequestMessage (padaanvraagbericht)</text><circle cx="542.1" cy="316.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="360.6" y="340.9" width="363.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="542.1" y="355.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PathConfirmedMessage (padbevestigingsbericht)</text><circle cx="749.8" cy="602.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="576.1" y="626.3" width="347.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="749.8" y="640.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PathCanceledMessage (padannuleringsbericht)</text><circle cx="461.1" cy="319.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="244.5" y="343.7" width="433.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="461.1" y="357.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PathNotAvailableMessage (pad-niet-beschikbaar-bericht)</text><circle cx="595.3" cy="402.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="367.0" y="426.2" width="456.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="595.3" y="440.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">ReceiptConfirmationMessage (ontvangstbevestigingsbericht)</text><circle cx="309.2" cy="228.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="100.4" y="252.2" width="417.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="309.2" y="266.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">TrainCompositionMessage (treinsamenstellingsbericht)</text><circle cx="645.3" cy="587.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="428.7" y="611.5" width="433.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="645.3" y="625.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">TrainRunningForecastMessage (treinloopprognosebericht)</text><circle cx="624.8" cy="512.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="462.8" y="536.2" width="324.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="624.8" y="550.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">TrainReadyMessage (trein-gereed-bericht)</text><circle cx="608.2" cy="699.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="520.3" y="723.1" width="175.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="608.2" y="737.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagenonregelmatigheid</text><circle cx="515.1" cy="388.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="438.9" y="412.7" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="515.1" y="426.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagen overgedragen</text><circle cx="554.0" cy="479.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="481.7" y="503.7" width="144.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="554.0" y="517.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagen overgenomen</text><circle cx="440.8" cy="407.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="313.9" y="431.5" width="253.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="440.8" y="445.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagenonregelmatigheid verholpen</text><circle cx="526.4" cy="648.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="415.1" y="672.5" width="222.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="526.4" y="686.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagenaankomst op bestemming</text><circle cx="511.7" cy="561.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="443.3" y="585.5" width="136.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="511.7" y="599.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagen afgeleverd</text><circle cx="463.8" cy="765.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="290.1" y="789.2" width="347.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="463.8" y="803.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Referentiedatabanken voor rollend materieel</text><circle cx="374.2" cy="263.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="173.2" y="287.1" width="402.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="374.2" y="301.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Referentiedatabanken voor intermodale laadeenheden</text><circle cx="437.9" cy="633.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="155.0" y="657.5" width="565.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="437.9" y="671.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Operationele databanken voor goederenwagens en intermodale laadeenheden</text><circle cx="470.7" cy="477.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="351.6" y="501.2" width="238.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="470.7" y="515.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Belading van de goederenwagen</text><circle cx="323.9" cy="768.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="200.9" y="792.2" width="246.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="323.9" y="806.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Beladen goederenwagen onderweg</text><circle cx="152.2" cy="397.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="21.4" y="421.2" width="261.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="152.2" y="435.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagenvertrek vanaf tussenlocatie</text><circle cx="360.4" cy="664.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="245.2" y="688.1" width="230.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="360.4" y="702.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Lossing van de goederenwagen</text><circle cx="417.5" cy="532.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="239.9" y="556.5" width="355.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="417.5" y="570.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Lege goederenwagen onder vlootbeheercontrole</text><circle cx="188.1" cy="727.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="115.8" y="751.9" width="144.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="188.1" y="766.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Dossierreferentie</text><circle cx="390.3" cy="334.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="173.7" y="358.3" width="433.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="390.3" y="372.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Bericht voor beschikbaarheids- en reserveringsaanvraag</text><circle cx="248.6" cy="652.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="32.0" y="676.8" width="433.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="248.6" y="691.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Bericht voor beschikbaarheids- en reserveringsantwoord</text><circle cx="328.4" cy="582.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="127.4" y="606.9" width="402.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="328.4" y="621.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Beschikbaarheid en reservering van PRM-assistentie</text><circle cx="83.5" cy="660.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-101.9" y="684.0" width="370.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="83.5" y="698.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Beschikbaarheid en reservering van fietsplaats</text><circle cx="289.8" cy="498.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="131.7" y="522.5" width="316.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="289.8" y="536.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Verzoek om terugbetaling of compensatie</text><circle cx="238.9" cy="564.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="143.2" y="588.8" width="191.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="238.9" y="603.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Reizigersdienstregeling</text><circle cx="367.2" cy="483.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="279.3" y="507.7" width="175.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="367.2" y="521.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Minimale overstaptijd</text><circle cx="-30.6" cy="575.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-60.0" y="599.8" width="58.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-30.6" y="614.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Tarief</text><circle cx="128.5" cy="579.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="99.1" y="603.8" width="58.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="128.5" y="618.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Aanbod</text><circle cx="194.3" cy="447.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="149.3" y="471.8" width="90.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="194.3" y="486.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Yieldprijs</text><circle cx="156.9" cy="508.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-36.3" y="532.1" width="386.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="156.9" y="546.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">PathDetailsRefusedMessage (padweigeringsbericht)</text><circle cx="351.0" cy="407.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="185.1" y="431.5" width="331.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="351.0" y="445.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Historische registratie van treingegevens</text><circle cx="-92.1" cy="434.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-265.8" y="458.7" width="347.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-92.1" y="472.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">ConsignmentNoteMessage (vrachtbriefbericht)</text><circle cx="46.3" cy="502.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-189.8" y="526.8" width="472.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="46.3" y="541.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">WagonRunningInformationMessage (wagenloopinformatiebericht)</text><circle cx="223.6" cy="224.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="124.0" y="248.4" width="199.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="223.6" y="262.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagenprognose-informatie</text><circle cx="90.3" cy="351.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-44.4" y="375.4" width="269.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="90.3" y="389.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Geolokalisatie van goederenwagens</text><circle cx="264.5" cy="415.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="215.6" y="439.0" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="264.5" y="453.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagenstatus</text><circle cx="-123.6" cy="291.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-231.0" y="315.4" width="214.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-123.6" y="329.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagen gereed voor beweging</text><circle cx="-12.9" cy="339.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-77.4" y="363.5" width="129.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-12.9" y="377.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagen getrokken</text><circle cx="148.5" cy="293.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="25.5" y="317.9" width="246.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="148.5" y="332.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Wagenaankomst op tussenlocatie</text><circle cx="-5.8" cy="260.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-117.1" y="284.5" width="222.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-5.8" y="298.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Lege goederenwagen onderweg</text><circle cx="317.1" cy="335.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="225.3" y="359.4" width="183.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="317.1" y="373.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Vervoerbewijsannotatie</text><circle cx="-96.2" cy="142.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-301.1" y="166.9" width="409.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-96.2" y="181.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Beveiligingselementen voor elektronische aflevering</text><circle cx="95.3" cy="245.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-31.6" y="269.7" width="253.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="95.3" y="283.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Informatie over treinvertrekken</text><circle cx="1.8" cy="176.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-62.7" y="200.0" width="129.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1.8" y="214.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Detailhandelaar</text><circle cx="255.4" cy="284.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="179.2" y="308.4" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="255.4" y="322.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Toewijzingssysteem</text><circle cx="1006.0" cy="-41.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="949.3" y="-17.0" width="113.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1006.0" y="-2.8" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">ERA-ontologie</text><circle cx="-38.0" cy="8.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-90.8" y="32.1" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="-38.0" y="46.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Spoorproduct</text><circle cx="78.0" cy="141.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="40.8" y="165.5" width="74.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="78.0" y="179.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Gegevens</text><circle cx="41.9" cy="53.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-18.7" y="77.7" width="121.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="41.9" y="91.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Spoorticketing</text><circle cx="157.7" cy="185.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-58.9" y="209.5" width="433.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="157.7" y="223.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Regels voor de afgifte en controle van vervoerbewijzen</text><circle cx="61.0" cy="-101.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-46.4" y="-77.9" width="214.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="61.0" y="-63.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Informatie in het voertuig</text><circle cx="132.3" cy="75.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="9.3" y="99.7" width="246.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="132.3" y="113.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Intermodale vervoersexploitant</text><circle cx="121.4" cy="-34.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="56.9" y="-10.3" width="129.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="121.4" y="3.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Gegevenselement</text><circle cx="305.4" cy="124.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="159.0" y="148.2" width="292.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="305.4" y="162.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Informatie over onlineverkoopkanalen</text><circle cx="171.0" cy="-165.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="118.2" y="-141.0" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="171.0" y="-126.8" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Metagegevens</text><circle cx="206.2" cy="4.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="133.9" y="28.3" width="144.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="206.2" y="42.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Gegevenskwaliteit</text><circle cx="244.1" cy="-87.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="183.5" y="-63.8" width="121.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="244.1" y="-49.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Gegevenshouder</text><circle cx="277.6" cy="-209.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="197.5" y="-185.7" width="160.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="277.6" y="-171.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Vervoersvoorwaarden</text><circle cx="501.6" cy="93.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="343.5" y="117.8" width="316.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="501.6" y="132.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Soorten en formaten van vervoerbewijzen</text><circle cx="27.0" cy="427.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-158.4" y="451.0" width="370.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="27.0" y="465.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Beschikbaarheid en reservering van autovervoer</text><circle cx="698.0" cy="388.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="539.9" y="412.0" width="316.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="698.0" y="426.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Beweging van de intermodale laadeenheid</text><circle cx="1151.0" cy="98.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="1074.8" y="122.0" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1151.0" y="136.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Referentiegegevens</text><circle cx="344.7" cy="-112.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="116.4" y="-88.1" width="456.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="344.7" y="-73.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Gemeenschappelijke referentiegegevens voor spoorticketing</text><circle cx="401.1" cy="-226.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="274.2" y="-202.4" width="253.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="401.1" y="-188.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Informatie over treinaankomsten</text><circle cx="369.3" cy="-21.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="281.4" y="2.1" width="175.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="369.3" y="16.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Openbare aankomsttijd</text><circle cx="429.0" cy="-127.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="255.3" y="-103.7" width="347.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="429.0" y="-89.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Nauwkeurigheid (gegevenskwaliteitsdimensie)</text><circle cx="457.3" cy="52.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="385.0" y="76.4" width="144.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="457.3" y="90.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Gegevensontvanger</text><circle cx="537.8" cy="-227.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="422.6" y="-203.8" width="230.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="537.8" y="-189.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Referentietreinidentificatie</text><circle cx="471.5" cy="-28.9" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="387.5" y="-4.9" width="168.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="471.5" y="9.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Virtuele locatiecode</text><circle cx="522.3" cy="-102.6" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="496.3" y="-78.6" width="52.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="522.3" y="-64.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">EU-Id</text><circle cx="579.2" cy="146.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="542.0" y="170.1" width="74.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="579.2" y="184.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Uitgever</text><circle cx="610.8" cy="-142.6" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="480.0" y="-118.6" width="261.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="610.8" y="-104.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Vervoerbewijscontroleorganisatie</text><circle cx="551.5" cy="-13.1" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="502.6" y="10.9" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="551.5" y="25.1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Metastation</text><circle cx="710.1" cy="-129.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="563.7" y="-105.4" width="292.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="710.1" y="-91.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Applicatieprogrammeerinterface (API)</text><circle cx="610.2" cy="24.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="510.6" y="48.4" width="199.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="610.2" y="62.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Netoverschrijdend proces</text><circle cx="676.4" cy="-22.5" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="565.1" y="1.5" width="222.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="676.4" y="15.7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Directe spoorvervoersdienst</text><circle cx="653.8" cy="161.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="487.9" y="185.7" width="331.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="653.8" y="199.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Volledigheid (gegevenskwaliteitsdimensie)</text><circle cx="740.8" cy="39.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="574.9" y="63.8" width="331.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="740.8" y="78.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Consistentie (gegevenskwaliteitsdimensie)</text><circle cx="789.4" cy="197.8" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="631.3" y="221.8" width="316.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="789.4" y="236.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Tijdigheid (gegevenskwaliteitsdimensie)</text><circle cx="825.7" cy="-46.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="671.5" y="-22.2" width="308.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="825.7" y="-8.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Uniciteit (gegevenskwaliteitsdimensie)</text><circle cx="827.9" cy="86.4" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="763.4" y="110.4" width="129.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="827.9" y="124.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Organisatiecode</text><circle cx="735.0" cy="276.7" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="686.1" y="300.7" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="735.0" y="314.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Locatiecode</text><circle cx="897.4" cy="205.3" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="813.4" y="229.3" width="168.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="897.4" y="243.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Toegang tot gegevens</text><circle cx="869.3" cy="343.2" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="808.7" y="367.2" width="121.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="869.3" y="381.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Gegevensdeling</text><circle cx="279.0" cy="-35.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="226.2" y="-11.0" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="279.0" y="3.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Distributeur</text><circle cx="737.0" cy="166.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="711.0" y="190.0" width="52.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="737.0" y="204.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Reis</text><circle cx="510.0" cy="158.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="429.9" y="182.0" width="160.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="510.0" y="196.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Spoorvervoersdienst</text><circle cx="1150.0" cy="-37.0" r="20" fill="#2d7ec3" stroke="white" stroke-width="2" /><rect x="1093.3" y="-13.0" width="113.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1150.0" y="1.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Goederenklant</text><circle cx="207.0" cy="67.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="95.7" y="91.0" width="222.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="207.0" y="105.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Informatie over afwijkingen</text></g><g class="legend"><line x1="-305.1" y1="882.2" x2="-265.1" y2="882.2" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" /><text x="-255.1" y="886.0" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#475569">broader / narrower (hiërarchisch / Associatief)</text><line x1="-305.1" y1="906.2" x2="-265.1" y2="906.2" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" stroke-dasharray="6,4" /><text x="-255.1" y="910.0" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#475569">related (gerelateerd)</text></g><text x="-305.1" y="938.2" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#94a3b8">Bron: Ontologica — TEL-TSI</text></svg></div>
+        <figcaption>Modeloverzicht</figcaption>
+      </figure>
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Concepten</h2>
+  
+    
+      
+<table class="data-table">
+  <caption>Overzicht van concepten</caption>
+  <thead>
+    <tr>
+      <th>Concept</th><th>Definitie</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Referentietreinidentificatie</td><td>Object dat een gepland treinvervoer uniek identificeert (PlannedTransportIdentifier, type TR), vastgesteld door de hoofdspoorwegonderneming, gebruikt als referentie voor een trein over netwerken heen.</td>
+      </tr>
+    
+      <tr>
+        <td>Treinobject</td><td>Object (TrainID) dat een trein identificeert, vastgesteld door de hoofdspoorwegonderneming, waaraan de operationele treinloopgegevens worden gekoppeld.</td>
+      </tr>
+    
+      <tr>
+        <td>Padaanvraagobject</td><td>Object (PathRequestID) dat een aanvraag voor infrastructuurcapaciteit identificeert, vastgesteld door de hoofdspoorwegonderneming; bevat het operationele en het commerciële treinnummer als attributen.</td>
+      </tr>
+    
+      <tr>
+        <td>Padobject</td><td>Object (PlannedTransportIdentifier, type PA) dat een toegewezen treinpad identificeert, vastgesteld door de infrastructuurbeheerder.</td>
+      </tr>
+    
+      <tr>
+        <td>Routeobject</td><td>Object (PlannedTransportIdentifier, type RO) dat een route identificeert, vastgesteld door de hoofdspoorwegonderneming.</td>
+      </tr>
+    
+      <tr>
+        <td>Zaakreferentieobject</td><td>Object (PlannedTransportIdentifier, type CR) dat een zaakreferentie identificeert, vastgesteld door de houder van de gegevens.</td>
+      </tr>
+    
+      <tr>
+        <td>PathRequestMessage (padaanvraagbericht)</td><td>Bericht waarmee een aanvrager infrastructuurcapaciteit (een treinpad) aanvraagt bij de infrastructuurbeheerder, in overeenstemming met de ERA-ontologie.</td>
+      </tr>
+    
+      <tr>
+        <td>PathDetailsMessage (paddetailbericht)</td><td>Bericht waarmee de infrastructuurbeheerder de details van een pad verstrekt in antwoord op een padaanvraag, in overeenstemming met de ERA-ontologie.</td>
+      </tr>
+    
+      <tr>
+        <td>PathConfirmedMessage (padbevestigingsbericht)</td><td>Bericht waarmee de aanvrager de door de infrastructuurbeheerder voorgestelde paddetails bevestigt.</td>
+      </tr>
+    
+      <tr>
+        <td>PathDetailsRefusedMessage (padweigeringsbericht)</td><td>Bericht waarmee de aanvrager de door de infrastructuurbeheerder voorgestelde paddetails weigert.</td>
+      </tr>
+    
+      <tr>
+        <td>PathCanceledMessage (padannuleringsbericht)</td><td>Bericht waarmee een eerder bevestigd of aangevraagd pad wordt geannuleerd.</td>
+      </tr>
+    
+      <tr>
+        <td>PathNotAvailableMessage (pad-niet-beschikbaar-bericht)</td><td>Bericht waarmee de infrastructuurbeheerder meldt dat een aangevraagd pad niet beschikbaar is.</td>
+      </tr>
+    
+      <tr>
+        <td>ReceiptConfirmationMessage (ontvangstbevestigingsbericht)</td><td>Bericht ter bevestiging van de ontvangst van een bericht tussen telematicabelanghebbenden.</td>
+      </tr>
+    
+      <tr>
+        <td>TrainCompositionMessage (treinsamenstellingsbericht)</td><td>Bericht dat de samenstelling van een trein doorgeeft, met inbegrip van informatie op voertuigniveau, de totale treinmassa, het Europees voertuignummer van de tractievoertuigen en aanduidingen voor gevaarlijke goederen, intermodale laadeenheden, strijdkrachten en stillere routes.</td>
+      </tr>
+    
+      <tr>
+        <td>PassengerTrainCompositionMessage (reizigerstreinsamenstellingsbericht)</td><td>Bericht dat de samenstelling van een reizigerstrein doorgeeft, met inbegrip van stoelplattegronden, klassen, rijtuigen voor personen met beperkte mobiliteit en fietsplaatsen.</td>
+      </tr>
+    
+      <tr>
+        <td>TrainReadyMessage (trein-gereed-bericht)</td><td>Bericht waarmee de spoorwegonderneming meldt dat een trein vertrekklaar is; statuswaarden omvatten &#x27;NotReady&#x27; met subvelden voor treinvertraging, tijdstip van gereedheid en vertragingsoorzaak.</td>
+      </tr>
+    
+      <tr>
+        <td>TrainRunningInformationMessage (treinloopinformatiebericht)</td><td>Bericht dat de feitelijke treinloopinformatie op meldpunten doorgeeft.</td>
+      </tr>
+    
+      <tr>
+        <td>TrainRunningForecastMessage (treinloopprognosebericht)</td><td>Bericht dat de prognose van de treinloop doorgeeft, met de verwachte nauwkeurigheid zoals bepaald in de nauwkeurigheidsmethodiek van de verordening.</td>
+      </tr>
+    
+      <tr>
+        <td>TrainDelayCauseMessage (treinvertragingsoorzaakbericht)</td><td>Bericht dat de oorzaak van een treinvertraging doorgeeft.</td>
+      </tr>
+    
+      <tr>
+        <td>TrainRunningInterruptionMessage (treinlooponderbrekingsbericht)</td><td>Bericht dat een onderbreking van de treinloop meldt.</td>
+      </tr>
+    
+      <tr>
+        <td>Dienstregeling</td><td>Dienstregelingsgegevens in de zin van artikel 3, punt 28, van Richtlijn 2012/34/EU, gepubliceerd als open data onder een Creative Commons BY-ND 4.0-licentie.</td>
+      </tr>
+    
+      <tr>
+        <td>Historische registratie van treingegevens</td><td>Bewaarde registratie (ten minste 12 maanden) van treingegevens, met de dienstregeling, de referentietreinidentificatie, het commerciële treinnummer, de meldlocaties, de werkelijke tijden, de vertraging en de vertragingsoorzaak alsmede de treinsamenstelling.</td>
+      </tr>
+    
+      <tr>
+        <td>ConsignmentNoteMessage (vrachtbriefbericht)</td><td>Bericht dat de elektronische vrachtbrief (eCN) doorgeeft, d.w.z. het vervoersdocument bedoeld in artikel 6 van Verordening nr. 11/1960 van de Raad, voorzien van een gekwalificeerd elektronisch zegel overeenkomstig Verordening (EU) nr. 910/2014.</td>
+      </tr>
+    
+      <tr>
+        <td>WagonRunningInformationMessage (wagenloopinformatiebericht)</td><td>Bericht dat loopinformatie over een goederenwagen doorgeeft gedurende zijn bewegingslevenscyclus; uitgesplitst in de afzonderlijke in de bijlage vastgestelde wagengebeurtenissen.</td>
+      </tr>
+    
+      <tr>
+        <td>Beweging van de intermodale laadeenheid</td><td>Gegevens die de beweging van een intermodale laadeenheid doorgeven.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagenprognose-informatie</td><td>Prognose-informatie voor een goederenwagen, waarvan de nauwkeurigheid wordt bepaald door de nauwkeurigheidsmethodiek van de verordening.</td>
+      </tr>
+    
+      <tr>
+        <td>Geolokalisatie van goederenwagens</td><td>Wagengebeurtenis die de geografische positie van een goederenwagen doorgeeft.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagenstatus</td><td>Wagengebeurtenis die de actuele status van een goederenwagen doorgeeft.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagen gereed voor beweging</td><td>Wagengebeurtenis die aangeeft dat een goederenwagen klaar is om te worden bewogen.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagen getrokken</td><td>Wagengebeurtenis die aangeeft dat een goederenwagen is getrokken.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagenvertrek vanaf herkomst</td><td>Wagengebeurtenis die het vertrek van een goederenwagen vanaf zijn herkomst aangeeft.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagenaankomst op tussenlocatie</td><td>Wagengebeurtenis die de aankomst van een goederenwagen op een tussenlocatie aangeeft.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagenvertrek vanaf tussenlocatie</td><td>Wagengebeurtenis die het vertrek van een goederenwagen vanaf een tussenlocatie aangeeft.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagen overgedragen</td><td>Wagengebeurtenis die aangeeft dat een goederenwagen tussen verantwoordelijke partijen is overgedragen.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagen overgenomen</td><td>Wagengebeurtenis die aangeeft dat een goederenwagen door een verantwoordelijke partij is overgenomen.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagenonregelmatigheid</td><td>Wagengebeurtenis die een onregelmatigheid meldt die een goederenwagen treft.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagenonregelmatigheid verholpen</td><td>Wagengebeurtenis die aangeeft dat een eerder gemelde wagenonregelmatigheid is verholpen.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagenaankomst op bestemming</td><td>Wagengebeurtenis die de aankomst van een goederenwagen op zijn bestemming aangeeft.</td>
+      </tr>
+    
+      <tr>
+        <td>Wagen afgeleverd</td><td>Wagengebeurtenis die aangeeft dat een goederenwagen is afgeleverd.</td>
+      </tr>
+    
+      <tr>
+        <td>Referentiedatabanken voor rollend materieel</td><td>Referentiedatabanken voor rollend materieel, met inbegrip van het Europees voertuignummer, de houder, het type en de technische parameters; beheerd door de spoorsector en gekoppeld vanuit het gemeenschappelijk centraal register van het ERA.</td>
+      </tr>
+    
+      <tr>
+        <td>Referentiedatabanken voor intermodale laadeenheden</td><td>Referentiedatabanken voor intermodale laadeenheden, met inbegrip van de ILU-code, het type, de afmetingen en de eigenaar.</td>
+      </tr>
+    
+      <tr>
+        <td>Operationele databanken voor goederenwagens en intermodale laadeenheden</td><td>Operationele databanken die de operationele toestanden van goederenwagens en intermodale laadeenheden gedurende hun beweging registreren.</td>
+      </tr>
+    
+      <tr>
+        <td>Belading van de goederenwagen</td><td>Operationele toestand die aangeeft dat een goederenwagen wordt beladen.</td>
+      </tr>
+    
+      <tr>
+        <td>Beladen goederenwagen onderweg</td><td>Operationele toestand die aangeeft dat een beladen goederenwagen onderweg is.</td>
+      </tr>
+    
+      <tr>
+        <td>Lege goederenwagen onderweg</td><td>Operationele toestand die aangeeft dat een lege goederenwagen onderweg is.</td>
+      </tr>
+    
+      <tr>
+        <td>Lossing van de goederenwagen</td><td>Operationele toestand die aangeeft dat een goederenwagen wordt gelost.</td>
+      </tr>
+    
+      <tr>
+        <td>Lege goederenwagen onder vlootbeheercontrole</td><td>Operationele toestand die aangeeft dat een lege goederenwagen onder vlootbeheercontrole valt.</td>
+      </tr>
+    
+      <tr>
+        <td>Dossierreferentie</td><td>Referentie die een ticketingdossier identificeert, gebruikt om vervoerbewijzen, reserveringen en naverkoopprocessen te koppelen.</td>
+      </tr>
+    
+      <tr>
+        <td>Bericht voor beschikbaarheids- en reserveringsaanvraag</td><td>Bericht waarmee de beschikbaarheid wordt gecontroleerd en een reservering voor een spoorproduct wordt aangevraagd.</td>
+      </tr>
+    
+      <tr>
+        <td>Bericht voor beschikbaarheids- en reserveringsantwoord</td><td>Bericht dat het antwoord op een beschikbaarheids- en reserveringsaanvraag doorgeeft.</td>
+      </tr>
+    
+      <tr>
+        <td>Beschikbaarheid en reservering van PRM-assistentie</td><td>Bericht om de beschikbaarheid te controleren van en assistentie te reserveren voor personen met een handicap of beperkte mobiliteit.</td>
+      </tr>
+    
+      <tr>
+        <td>Beschikbaarheid en reservering van fietsplaats</td><td>Bericht om de beschikbaarheid te controleren van en een fietsplaats te reserveren.</td>
+      </tr>
+    
+      <tr>
+        <td>Beschikbaarheid en reservering van autovervoer</td><td>Bericht om de beschikbaarheid te controleren van en het vervoer van auto&#x27;s, motorfietsen of boten te reserveren.</td>
+      </tr>
+    
+      <tr>
+        <td>Vervoerbewijsannotatie</td><td>Naverkoopbericht dat een annotatie op een vervoerbewijs registreert.</td>
+      </tr>
+    
+      <tr>
+        <td>Verzoek om terugbetaling of compensatie</td><td>Naverkoopbericht waarmee terugbetaling of compensatie met betrekking tot een vervoerbewijs wordt verzocht.</td>
+      </tr>
+    
+      <tr>
+        <td>Reizigersdienstregeling</td><td>De datum en tijd van de door een spoorwegonderneming als commerciële dienst geëxploiteerde reizigersvervoersdiensten gedurende een bepaald tijdsinterval, gebruikt in het kader van spoorticketing en reisinformatie voor reizigers als bedoeld in afdeling 4 van de bijlage.</td>
+      </tr>
+    
+      <tr>
+        <td>Minimale overstaptijd</td><td>De minimale tijd die voldoende is voor een reiziger om over te stappen tussen de toegangsknooppunten van twee opeenvolgende, in een reis opgenomen reizigersvervoersdiensten.</td>
+      </tr>
+    
+      <tr>
+        <td>Tarief</td><td>Door een spoorwegonderneming (of houder van de gegevens) vastgestelde geaggregeerde gegevens die alle relevante tariefgegevens bevatten, met inbegrip van de door een distributeur aan de spoorwegonderneming verschuldigde prijs van de spoorvervoersdienst en de bijbehorende attributen en voorwaarden.</td>
+      </tr>
+    
+      <tr>
+        <td>Aanbod</td><td>Door een distributeur vastgestelde geaggregeerde gegevens die toepasselijke tarieven combineren, met de door de detailhandelaar aan de distributeur verschuldigde prijs van het spoorproduct.</td>
+      </tr>
+    
+      <tr>
+        <td>Yieldprijs</td><td>Prijs die met een tarief verbonden is en voortvloeit uit een op variabelen gebaseerd algoritme, de &#x27;yieldregel&#x27; genoemd.</td>
+      </tr>
+    
+      <tr>
+        <td>Regels voor de afgifte en controle van vervoerbewijzen</td><td>Gegevens die de regels vaststellen voor de afgifte van vervoerbewijzen en de controle van vervoerbewijzen.</td>
+      </tr>
+    
+      <tr>
+        <td>Informatie over onlineverkoopkanalen</td><td>Gegevens die de onlineverkoopkanalen beschrijven waarlangs spoorproducten worden aangeboden.</td>
+      </tr>
+    
+      <tr>
+        <td>Vervoersvoorwaarden</td><td>Gegevens die de vervoersvoorwaarden vaststellen, uitgesplitst voor reizigers, personen met beperkte mobiliteit (met toegankelijkheid van rollend materieel en stations), bagage, fietsen en auto&#x27;s/motorfietsen/boten.</td>
+      </tr>
+    
+      <tr>
+        <td>Soorten en formaten van vervoerbewijzen</td><td>De catalogus van soorten en formaten van vervoerbewijzen, met inbegrip van de lay-outs voor beveiligd papier, blanco papier en mobiele/flexibel geformatteerde vervoerbewijzen met de bijbehorende beveiligingsmodellen.</td>
+      </tr>
+    
+      <tr>
+        <td>Gemeenschappelijke referentiegegevens voor spoorticketing</td><td>Codelijsten voor ticketing die door het Agentschap worden beheerd en toegewezen, gebruikt als basis voor gegevensdeling op het gebied van spoorticketing.</td>
+      </tr>
+    
+      <tr>
+        <td>Beveiligingselementen voor elektronische aflevering</td><td>Beveiligingselementen die worden gebruikt voor de elektronische aflevering van vervoerbewijzen.</td>
+      </tr>
+    
+      <tr>
+        <td>Informatie over treinvertrekken</td><td>Gegevens over treinvertrekken voor weergave op stations.</td>
+      </tr>
+    
+      <tr>
+        <td>Informatie over treinaankomsten</td><td>Gegevens over treinaankomsten voor weergave op stations.</td>
+      </tr>
+    
+      <tr>
+        <td>Informatie over afwijkingen</td><td>Gegevens over afwijkingen van de geplande dienst voor weergave op stations.</td>
+      </tr>
+    
+      <tr>
+        <td>Informatie in het voertuig</td><td>Reisinformatie voor reizigers die in het voertuig wordt verstrekt.</td>
+      </tr>
+    
+      <tr>
+        <td>Distributeur</td><td>Entiteit met de technische capaciteit om spoorproducten van een of meer spoorwegondernemingen te combineren teneinde een uitgever of detailhandelaar te bevoorraden, met het recht om zonder initiële bevraging van toewijzingssystemen te opereren en met autonome rechten om de beschikbaarheid van de prijs te controleren.</td>
+      </tr>
+    
+      <tr>
+        <td>Uitgever</td><td>Entiteit met de juridische en technische capaciteit om voor een detailhandelaar een vervoerbewijs uit te geven waarop de partijen bij de vervoersovereenkomst worden vermeld.</td>
+      </tr>
+    
+      <tr>
+        <td>Detailhandelaar</td><td>Entiteit die spoorproducten van een of meer distributeurs combineert en/of verkoopt en via een initieel verzoek toegang verkrijgt; zij kan vergoedingen of kortingen toepassen maar mag de inhoud van het spoorproduct niet wijzigen.</td>
+      </tr>
+    
+      <tr>
+        <td>Toewijzingssysteem</td><td>Het digitale systeem van de spoorwegonderneming dat de onlinecatalogus van de afzonderlijke spoorvervoersdiensten bevat en distributeurs in staat stelt de beschikbaarheid te controleren en reserveringen te maken.</td>
+      </tr>
+    
+      <tr>
+        <td>Reisplanner</td><td>Een zoekmachine die wordt gebruikt om een optimale reis te vinden op basis van door de gebruiker vastgestelde criteria.</td>
+      </tr>
+    
+      <tr>
+        <td>Vervoerbewijscontroleorganisatie</td><td>Een organisatie die gemachtigd is de vervoerbewijzen van reizigers te controleren, ook bij de toegangsdeuren tot het perron.</td>
+      </tr>
+    
+      <tr>
+        <td>Spoorproduct</td><td>Een op maat gemaakte dienst met betrekking tot een spoorvervoersdienst voor reizigers, gekoppeld aan een tarief.</td>
+      </tr>
+    
+      <tr>
+        <td>Metastation</td><td>Een groep stations binnen een functioneel stedelijk gebied, met inbegrip van een of meer in bijlage II bij Verordening (EU) 2024/1679 vermelde stedelijke knooppunten, die zich over meerdere lidstaten kan uitstrekken en waar afzonderlijke stations bereikbaar zijn via aansluitende stedelijke vervoerswijzen en stedelijke vervoersdiensten, al dan niet volgens dienstregeling.</td>
+      </tr>
+    
+      <tr>
+        <td>Gegevens</td><td>Een machineleesbare weergave van handelingen, feiten of informatie en elke samenstelling van dergelijke handelingen, feiten of informatie die bestemd is om in een geharmoniseerd en gestructureerd formaat te worden gedeeld.</td>
+      </tr>
+    
+      <tr>
+        <td>Gegevensdeling</td><td>Het verstrekken van gegevens door een gegevenshouder aan een gegevensontvanger met het oog op het gezamenlijke of individuele gebruik van die gegevens, rechtstreeks of via een tussenpersoon, bijvoorbeeld in het kader van open of commerciële licenties tegen vergoeding of kosteloos.</td>
+      </tr>
+    
+      <tr>
+        <td>Spoorticketing</td><td>Het proces dat ten minste een van de volgende elementen omvat voor spoorvervoersdiensten voor reizigers: de digitale presentatie van de diensten ten behoeve van reisplanning; de digitale controle van de beschikbaarheid of de digitale reservering van overeenkomstige spoorproducten met het oog op de verkoop; de digitale afgifte en controle van vervoerbewijzen; de digitale afhandeling van naverkoopprocessen.</td>
+      </tr>
+    
+      <tr>
+        <td>Spoorvervoersdienst</td><td>Een dienst volgens dienstregeling voor vervoer per spoor tussen een vertrekpunt en een aankomstpunt, die vervoersdiensten voor goederen, reizigers, bagage, fietsen of auto&#x27;s alsmede op maat gemaakte vervoersregelingen en reizigersassistentie, met inbegrip van diensten voor omleiding en voortzetting van de reis, omvat.</td>
+      </tr>
+    
+      <tr>
+        <td>Toegang tot gegevens</td><td>Het recht om gegevens te raadplegen met of zonder controle daarover, onderscheiden van andere rechten en verplichtingen in verband met het gebruik ervan voor niet-commerciële of commerciële doeleinden.</td>
+      </tr>
+    
+      <tr>
+        <td>Netoverschrijdend proces</td><td>Een proces dat wordt beïnvloed door de exploitatie van een spoorvervoersdienst over twee of meer netten die door verschillende infrastructuurbeheerders of exploitanten van spoorgoederenvervoersfaciliteiten worden beheerd.</td>
+      </tr>
+    
+      <tr>
+        <td>Directe spoorvervoersdienst</td><td>Een spoorvervoersdienst die tussen herkomst en bestemming commerciële tussenstops kan omvatten, maar geen overstap van reizigers of overslag van goederen tussen treinen inhoudt.</td>
+      </tr>
+    
+      <tr>
+        <td>Applicatieprogrammeerinterface (API)</td><td>Een geheel van functies, procedures, definities en protocollen voor interoperabele gegevensdeling tussen telematicatoepassingen.</td>
+      </tr>
+    
+      <tr>
+        <td>Reis</td><td>Een doorgaande verplaatsing van een reiziger of een lading die meerdere deeltrajecten kan omvatten.</td>
+      </tr>
+    
+      <tr>
+        <td>Openbare vertrektijd</td><td>De instaplimiet voor reizigers, d.w.z. het tijdstip waarop de toegang tot de trein, het perron of het station wordt gesloten ter voorbereiding van het vertrek.</td>
+      </tr>
+    
+      <tr>
+        <td>Openbare aankomsttijd</td><td>De uitstaptijd voor reizigers, d.w.z. het tijdstip waarop de deuren van de trein op het bestemmingsperron of de eindterminal worden geopend.</td>
+      </tr>
+    
+      <tr>
+        <td>Gegevenshouder</td><td>Een natuurlijke of rechtspersoon die het recht heeft gegevens te gebruiken of de verplichting heeft gegevens te produceren en beschikbaar te stellen.</td>
+      </tr>
+    
+      <tr>
+        <td>Gegevensontvanger</td><td>Een natuurlijke of rechtspersoon die het recht heeft toegang te krijgen tot de door de gegevenshouder geproduceerde en beschikbaar gestelde gegevens onder gespecificeerde toegangsvoorwaarden voor gebruik.</td>
+      </tr>
+    
+      <tr>
+        <td>Intermodale vervoersexploitant</td><td>Een entiteit die goederenvervoersdiensten organiseert die twee of meer goederenterminals met meer dan één vervoerswijze verbinden.</td>
+      </tr>
+    
+      <tr>
+        <td>Goederenklant</td><td>De entiteit die zendingsinformatie aan de goederenspoorwegonderneming heeft verstrekt en een vervoersovereenkomst heeft gesloten; kan een logistiekedienstverlener, een intermodale vervoersexploitant, een expediteur, een vlootbeheerder van lege wagens of de gegevenshouder zijn.</td>
+      </tr>
+    
+      <tr>
+        <td>ERA-ontologie</td><td>Een door het Agentschap overeenkomstig artikel 4, lid 8, van Richtlijn (EU) 2016/797 uitgegeven technisch document waarin voor het spoorwegsysteem van de Unie de mens- en machineleesbare gegevensdefinities en -presentaties en de bijbehorende kwaliteits- en nauwkeurigheidsvereisten voor gegevenselementen worden vastgesteld.</td>
+      </tr>
+    
+      <tr>
+        <td>Gegevenselement</td><td>Een veld, waarde of attribuut van de gedeelde gegevens, gestructureerd op een wijze die consistent is met het algemene protocol voor gegevensdeling en dat essentiële informatie bevat die bijdraagt aan de betekenis en het doel van de gedeelde gegevens, waardoor gegevensdeling tussen systemen, toepassingen of organisaties mogelijk wordt.</td>
+      </tr>
+    
+      <tr>
+        <td>Referentiegegevens</td><td>Een gegevensverzameling van gestandaardiseerde en interoperabele unieke identificatoren die als basis dient voor gegevensdeling in een specifiek domein.</td>
+      </tr>
+    
+      <tr>
+        <td>Metagegevens</td><td>Metagegevens in de zin van artikel 2, punt 2, van Verordening (EU) 2023/2854 (Datawet).</td>
+      </tr>
+    
+      <tr>
+        <td>Gegevenskwaliteit</td><td>De mate van geschiktheid voor gebruik waarin de kenmerken van de gegevens voldoen aan het aangegeven en impliciete niveau van nauwkeurigheid, volledigheid, consistentie, tijdigheid en uniciteit van gegevensverzamelingen, en onder gespecificeerde voorwaarden bruikbare inzichten voor andere gebruikers opleveren.</td>
+      </tr>
+    
+      <tr>
+        <td>Nauwkeurigheid (gegevenskwaliteitsdimensie)</td><td>Gegevenskwaliteitsdimensie die de mate uitdrukt waarin de gegevens de reële waarde die zij moeten weergeven, correct weergeven.</td>
+      </tr>
+    
+      <tr>
+        <td>Volledigheid (gegevenskwaliteitsdimensie)</td><td>Gegevenskwaliteitsdimensie die de mate uitdrukt waarin alle vereiste gegevens aanwezig zijn.</td>
+      </tr>
+    
+      <tr>
+        <td>Consistentie (gegevenskwaliteitsdimensie)</td><td>Gegevenskwaliteitsdimensie die de mate uitdrukt waarin de gegevens vrij zijn van tegenstrijdigheid tussen gegevensverzamelingen en in de tijd.</td>
+      </tr>
+    
+      <tr>
+        <td>Tijdigheid (gegevenskwaliteitsdimensie)</td><td>Gegevenskwaliteitsdimensie die de mate uitdrukt waarin de gegevens binnen de vereiste tijd beschikbaar zijn.</td>
+      </tr>
+    
+      <tr>
+        <td>Uniciteit (gegevenskwaliteitsdimensie)</td><td>Gegevenskwaliteitsdimensie die de mate uitdrukt waarin er geen ongewenste duplicatie van gegevens is.</td>
+      </tr>
+    
+      <tr>
+        <td>Organisatiecode</td><td>Unieke identificatie van elke bij de spoorgegevensdeling betrokken organisatie of rol, toegewezen door het Agentschap.</td>
+      </tr>
+    
+      <tr>
+        <td>Locatiecode</td><td>Unieke identificatie van elk voor de spoorgegevensdeling relevant geografisch punt, toegewezen door het Agentschap.</td>
+      </tr>
+    
+      <tr>
+        <td>Virtuele locatiecode</td><td>Code die wordt toegewezen aan locaties buiten het spoornet die worden gebruikt door vervangende spoorvervoersdiensten, als spoor verkochte maar niet op het spoor geëxploiteerde diensten en metastations.</td>
+      </tr>
+    
+      <tr>
+        <td>EU-Id</td><td>De canonieke Europese identificatie die door gegevenshouders wordt gebruikt bij het aanleveren aan de nationale toegangspunten.</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+  
+</body>
+</html>
