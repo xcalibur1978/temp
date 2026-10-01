@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8" />
+  <title>NAPCORE pagrindinės sąvokos</title>
+  
+  <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
+  <script class="remove">
+    var respecConfig = {"specStatus": "unofficial", "title": "NAPCORE pagrindinės sąvokos", "shortName": "NAPCORE pagrindinės sąvokos", "editors": [{"name": "NAPCORE"}], "lint": false};
+  </script>
+  
+  
+  <script src="https://xcalibur1978.github.io/temp/review.js" defer
+          data-repo="xcalibur1978/temp"
+          data-model="NAPCORE Core Concepts"
+          data-version="0.0.0"></script>
+  
+  <style>
+    /* Opmaak afgeleid van de PDF (docpublish/pdf/styles/_base.css): dezelfde
+       huisstijl-kleuren en tabelstijl, zodat de ReSpec-pagina en de PDF op
+       elkaar aansluiten. Staat NA ReSpec's basis-stylesheet, dus dit wint. */
+    body {
+      font-family: 'Source Sans 3', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: #303c54;
+      line-height: 1.5;
+    }
+    h1, h2, h3, h4, h5, h6 { color: #1e40af; font-weight: 600; }
+    p.prose { text-align: justify; }
+    p.disclaimer {
+      background: rgba(30, 64, 175, 0.06);
+      border-left: 3px solid #1e40af;
+      padding: 6px 10px;
+      font-style: italic;
+      color: #636f83;
+      margin: 8px 0;
+    }
+    table.data-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 10px 0 18px;
+      font-size: 0.95rem;
+    }
+    table.data-table caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: 600;
+      color: #1e40af;
+      padding-bottom: 4px;
+    }
+    table.data-table th {
+      background: rgba(30, 64, 175, 0.08);
+      border-bottom: 1px solid #1e40af;
+      color: #1e40af;
+      font-weight: 600;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.data-table td {
+      border-bottom: 1px solid #dfe4ee;
+      padding: 6px 8px;
+      vertical-align: top;
+      overflow-wrap: break-word;
+    }
+    table.data-table tr:nth-child(even) td { background: rgba(30, 64, 175, 0.025); }
+
+    /* Modeloverzicht-diagram: de server-side force-directed layout geeft een
+       compacte, normaal-geproportioneerde SVG (net als de visuele editor). Schaal
+       hem responsive binnen de paginabreedte. Voor het zeldzame extreem brede
+       geval blijft het kader horizontaal scrollbaar. */
+    figure.model-figure { margin: 12px 0; width: 100%; }
+    figure.model-figure > div {
+      overflow-x: auto;
+      border: 1px solid #dfe4ee;
+      border-radius: 6px;
+      padding: 8px;
+      background: #fff;
+    }
+    figure.model-figure svg {
+      display: block;
+      /* Vaste breedte 100% van het kader; de hoogte volgt uit de viewBox-
+         verhouding. Alleen height:auto laten renderen faalt als de container
+         nog geen breedte heeft (chicken-egg): dan wordt de SVG 0×0. De inline
+         width/height-attributen op de root-<svg> worden hierdoor overruled. */
+      width: 100%;
+      height: auto;
+    }
+    figure.model-figure figcaption {
+      font-size: 0.85rem;
+      color: #636f83;
+      margin-top: 4px;
+    }
+  </style>
+  
+  
+  <style>
+    .status-banner {
+      border-left: 8px solid var(--status-color, #6b7280);
+      background: var(--status-bg, #f3f4f6);
+      padding: 0.6rem 1rem;
+      margin: 0 0 1.5rem;
+      font-family: sans-serif;
+    }
+    .status-banner .status-badge {
+      display: inline-block;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--status-color, #374151);
+    }
+    .status-banner .status-version { color: #4b5563; }
+    .status-draft       { --status-color: #d97706; --status-bg: #fffbeb; }
+    .status-under_review{ --status-color: #2563eb; --status-bg: #eff6ff; }
+    .status-published   { --status-color: #16a34a; --status-bg: #f0fdf4; }
+    .status-deprecated  { --status-color: #dc2626; --status-bg: #fef2f2; }
+    .status-withdrawn   { --status-color: #991b1b; --status-bg: #fef2f2; }
+  </style>
+  
+</head>
+<body>
+  
+  <h1 id="title">NAPCORE pagrindinės sąvokos</h1>
+
+  
+  <section id="abstract">
+    <p>This introduction has not been translated to &#x27;lt&#x27; yet; showing the English version.</p>
+  </section>
+
+  
+  
+  <div id="beschikbare-talen" class="language-switch">
+    <table class="data-table">
+      <caption>Beschikbare talen</caption>
+      <thead>
+        <tr><th>Taal</th><th>Document</th></tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>EN</td>
+          <td><a href="../en/index.html">NAPCORE Core Concepts</a></td>
+        </tr>
+        
+        <tr>
+          <td>BG</td>
+          <td><a href="../bg/index.html">NAPCORE основни концепции</a></td>
+        </tr>
+        
+        <tr>
+          <td>CS</td>
+          <td><a href="../cs/index.html">NAPCORE základní pojmy</a></td>
+        </tr>
+        
+        <tr>
+          <td>DA</td>
+          <td><a href="../da/index.html">NAPCORE kernebegreber</a></td>
+        </tr>
+        
+        <tr>
+          <td>DE</td>
+          <td><a href="../de/index.html">NAPCORE Kernkonzepte</a></td>
+        </tr>
+        
+        <tr>
+          <td>EL</td>
+          <td><a href="../el/index.html">Βασικές έννοιες NAPCORE</a></td>
+        </tr>
+        
+        <tr>
+          <td>ES</td>
+          <td><a href="../es/index.html">Conceptos centrales de NAPCORE</a></td>
+        </tr>
+        
+        <tr>
+          <td>ET</td>
+          <td><a href="../et/index.html">NAPCORE põhimõisted</a></td>
+        </tr>
+        
+        <tr>
+          <td>FI</td>
+          <td><a href="../fi/index.html">NAPCORE-ydinkäsitteet</a></td>
+        </tr>
+        
+        <tr>
+          <td>FR</td>
+          <td><a href="../fr/index.html">Concepts fondamentaux NAPCORE</a></td>
+        </tr>
+        
+        <tr>
+          <td>GA</td>
+          <td><a href="../ga/index.html">Croíchoincheapa NAPCORE</a></td>
+        </tr>
+        
+        <tr>
+          <td>HR</td>
+          <td><a href="../hr/index.html">NAPCORE temeljni pojmovi</a></td>
+        </tr>
+        
+        <tr>
+          <td>HU</td>
+          <td><a href="../hu/index.html">NAPCORE alapfogalmak</a></td>
+        </tr>
+        
+        <tr>
+          <td>IT</td>
+          <td><a href="../it/index.html">Concetti fondamentali NAPCORE</a></td>
+        </tr>
+        
+        <tr>
+          <td><strong>LT</strong></td>
+          <td><strong>NAPCORE pagrindinės sąvokos</strong></td>
+        </tr>
+        
+        <tr>
+          <td>LV</td>
+          <td><a href="../lv/index.html">NAPCORE pamatjēdzieni</a></td>
+        </tr>
+        
+        <tr>
+          <td>MT</td>
+          <td><a href="../mt/index.html">Kunċetti ewlenin ta&#x27; NAPCORE</a></td>
+        </tr>
+        
+        <tr>
+          <td>NL</td>
+          <td><a href="../nl/index.html">NAPCORE kernconcepten</a></td>
+        </tr>
+        
+        <tr>
+          <td>PL</td>
+          <td><a href="../pl/index.html">Podstawowe pojęcia NAPCORE</a></td>
+        </tr>
+        
+        <tr>
+          <td>PT</td>
+          <td><a href="../pt/index.html">Conceitos centrais NAPCORE</a></td>
+        </tr>
+        
+        <tr>
+          <td>RO</td>
+          <td><a href="../ro/index.html">Concepte fundamentale NAPCORE</a></td>
+        </tr>
+        
+        <tr>
+          <td>SK</td>
+          <td><a href="../sk/index.html">NAPCORE základné pojmy</a></td>
+        </tr>
+        
+        <tr>
+          <td>SL</td>
+          <td><a href="../sl/index.html">NAPCORE temeljni pojmi</a></td>
+        </tr>
+        
+        <tr>
+          <td>SV</td>
+          <td><a href="../sv/index.html">NAPCORE-kärnbegrepp</a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+
+  
+  <div class="status-banner status-draft">
+    <span class="status-badge">Concept</span>
+  </div>
+  
+
+  
+    
+<section>
+  <h2>Introductie op semantisch modelleren</h2>
+  
+    
+      <p class="disclaimer">This introduction has not been translated to &#x27;lt&#x27; yet; showing the English version.</p>
+    
+  
+    
+      <p class="prose"><p>A <strong>concept scheme</strong> (in SKOS: <em>ConceptScheme</em>) is a structured collection of concepts that carry a fixed, shared meaning within a particular domain. The goal is for everyone working with the model — people and systems alike — to use the same words for the same things. That sounds obvious, but in practice language causes a surprising amount of confusion: what one organisation calls a <em>measurement point</em>, another calls a <em>sensor</em>, a <em>location</em>, or an <em>observation station</em>.</p>
+<p>A concept scheme solves this by recording, for each concept:</p>
+<ul>
+<li>a <strong>preferred label</strong> (prefLabel) it is known by,</li>
+<li>a <strong>definition</strong> that unambiguously describes what the concept does and does not cover,</li>
+<li>and optionally a <strong>scope note</strong> or <strong>example</strong> to clarify borderline cases.</li>
+</ul>
+<p>Concepts rarely stand on their own. They are related <strong>hierarchically</strong> (a vehicle is broader than a truck) or <strong>associatively</strong> (a road user relates to a road segment). These relationships make it possible for queries and analyses to navigate between general and specific concepts, and to make connections between concepts explicit. Within SKOS we use <code>broader</code>, <code>narrower</code>, and <code>related</code> for that.</p>
+<p>When a concept also exists elsewhere — in a national or European standard, for instance — we record that as a <strong>mapping relation</strong>. This prevents reinventing the wheel: we link to the source so interoperability with external systems remains possible.</p>
+<p>This document describes the concept scheme as it is currently recorded. The following sections list the metadata, every concept, the relationships between them, and — where the model is connected to a data source — how it is linked to that source data.</p></p>
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>NAPCORE pagrindinės sąvokos</h2>
+  
+    
+      <h3>Beschrijving</h3>
+    
+  
+    
+      <p class="prose">Pagrindinė NAPCORE atskaitos architektūros terminologija nacionaliniams prieigos taškams, apimanti NPT tipus, ekosistemos vaidmenis ir pagrindines judumo paslaugų sąvokas.</p>
+    
+  
+    
+      
+<table class="data-table">
+  <caption>Metadata</caption>
+  <thead>
+    <tr>
+      <th>Veld</th><th>Waarde</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>URI</td><td>https://napcore.ontologica.nl/schemes/napcore-core-concepts</td>
+      </tr>
+    
+      <tr>
+        <td>Versie</td><td>niet ingevuld</td>
+      </tr>
+    
+      <tr>
+        <td>Publicatiestatus</td><td>Concept</td>
+      </tr>
+    
+      <tr>
+        <td>Beheerstatus</td><td>Actief</td>
+      </tr>
+    
+      <tr>
+        <td>Organisatie</td><td>NAPCORE</td>
+      </tr>
+    
+      <tr>
+        <td>Aangemaakt op</td><td>2026-05-18</td>
+      </tr>
+    
+      <tr>
+        <td>Laatst gewijzigd op</td><td>2026-07-02</td>
+      </tr>
+    
+      <tr>
+        <td>Laatst gewijzigd door</td><td>Arthur Keesen</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Modeloverzicht</h2>
+  
+    
+      <p class="prose">Visueel overzicht van de concepten en hun relaties. Hiërarchische relaties zijn getekend met doorgetrokken pijlen; associatieve relaties met stippellijnen.</p>
+    
+  
+    
+      {# Een <figure> zonder <figcaption> laat de ReSpec core/figures-plugin een
+         waarschuwing tonen op de gepubliceerde pagina. Val daarom terug op de
+         sectie-kop als er geen expliciete caption is (anders dan de PDF, waar
+         een captionloze figuur op een eigen pagina bewust is). #}
+      <figure class="model-figure">
+        <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="-83.9 -188.0 1635.7 658.0" width="1636" height="658"><defs><marker id="arrow-hierarchy" viewBox="0 0 8 8" refX="8" refY="4.0" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 8 4.0 L 0 8 z" fill="#475569" /></marker><marker id="arrow-related" viewBox="0 0 8 8" refX="8" refY="4.0" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 8 4.0 L 0 8 z" fill="#8b5cf6" /></marker></defs><g class="edges"><line x1="1248.5" y1="190.7" x2="1261.9" y2="265.5" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1229.4" y1="183.5" x2="1117.6" y2="272.9" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="415.6" y1="-113.1" x2="142.8" y2="151.8" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="449.4" y1="-122.2" x2="885.9" y2="-14.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="425.0" y1="-107.6" x2="361.2" y2="141.9" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="374.0" y1="170.0" x2="461.0" y2="170.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="446.4" y1="-115.6" x2="829.2" y2="149.5" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="444.6" y1="-113.4" x2="723.8" y2="147.2" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="419.8" y1="-109.8" x2="268.8" y2="145.1" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="413.7" y1="-115.4" x2="31.7" y2="155.2" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="434.0" y1="-107.4" x2="484.3" y2="141.6" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="440.7" y1="-110.1" x2="601.5" y2="143.5" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1225.0" y1="170.6" x2="1052.0" y2="167.5" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1263.1" y1="179.6" x2="1401.8" y2="245.5" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1265.0" y1="171.2" x2="1466.0" y2="173.7" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1440.5" y1="242.4" x2="1476.9" y2="196.7" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1263.7" y1="-108.0" x2="1246.9" y2="142.1" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1245.0" y1="-128.0" x2="459.0" y2="-127.0" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1246.1" y1="-121.5" x2="941.4" y2="-16.5" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /></g><g class="nodes"><circle cx="1095.0" cy="291.0" r="20" fill="#2d7ec3" stroke="white" stroke-width="2" /><rect x="1007.1" y="315.0" width="175.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1095.0" y="329.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Metaduomenų katalogas</text><circle cx="914.0" cy="-7.0" r="20" fill="#2d7ec3" stroke="white" stroke-width="2" /><rect x="849.5" y="17.0" width="129.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="914.0" y="31.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">NPT operatorius</text><circle cx="1265.0" cy="-128.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="1126.4" y="-104.0" width="277.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1265.0" y="-89.8" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Nacionalinis prieigos taškas (NPT)</text><circle cx="430.0" cy="-127.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="346.0" y="-103.0" width="168.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="430.0" y="-88.8" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Galutinis naudotojas</text><circle cx="1023.0" cy="167.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="950.7" y="191.0" width="144.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1023.0" y="205.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Aptikimo paslauga</text><circle cx="490.0" cy="170.0" r="20" fill="#2d7ec3" stroke="white" stroke-width="2" /><rect x="425.5" y="194.0" width="129.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="490.0" y="208.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Duomenų gavėjas</text><circle cx="1267.0" cy="294.0" r="20" fill="#2d7ec3" stroke="white" stroke-width="2" /><rect x="1194.7" y="318.0" width="144.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1267.0" y="332.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Duomenų platforma</text><circle cx="122.0" cy="172.0" r="20" fill="#2d7ec3" stroke="white" stroke-width="2" /><rect x="49.7" y="196.0" width="144.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="122.0" y="210.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Paslaugų teikėjas</text><circle cx="617.0" cy="168.0" r="20" fill="#2d7ec3" stroke="white" stroke-width="2" /><rect x="540.8" y="192.0" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="617.0" y="206.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Turinio vartotojas</text><circle cx="227.0" cy="295.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="68.9" y="319.0" width="316.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="227.0" y="333.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Kelionių informacijos paslaugų teikėjas</text><circle cx="8.0" cy="172.0" r="20" fill="#2d7ec3" stroke="white" stroke-width="2" /><rect x="-68.2" y="196.0" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="8.0" y="210.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Duomenų valdytojas</text><circle cx="745.0" cy="167.0" r="20" fill="#2d7ec3" stroke="white" stroke-width="2" /><rect x="676.6" y="191.0" width="136.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="745.0" y="205.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Turinio teikėjas</text><circle cx="495.0" cy="296.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="301.8" y="320.0" width="386.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="495.0" y="334.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Transporto pagal pareikalavimą paslaugų teikėjas</text><circle cx="8.0" cy="295.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="-79.9" y="319.0" width="175.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="8.0" y="333.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">ITS paslaugų teikėjas</text><circle cx="853.0" cy="166.0" r="20" fill="#2d7ec3" stroke="white" stroke-width="2" /><rect x="815.8" y="190.0" width="74.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="853.0" y="204.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Leidėjas</text><circle cx="254.0" cy="170.0" r="20" fill="#2d7ec3" stroke="white" stroke-width="2" /><rect x="177.8" y="194.0" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="254.0" y="208.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Duomenų vartotojas</text><circle cx="730.0" cy="295.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="630.4" y="319.0" width="199.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="730.0" y="333.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Judumo paslaugų teikėjas</text><circle cx="1245.0" cy="171.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="1176.6" y="195.0" width="136.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1245.0" y="209.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Duomenų portalas</text><circle cx="1495.0" cy="174.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="1442.2" y="198.0" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1495.0" y="212.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Metaduomenys</text><circle cx="922.0" cy="288.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="818.5" y="312.0" width="207.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="922.0" y="326.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Kompetentinga institucija</text><circle cx="1428.0" cy="258.0" r="20" fill="#1a5f98" stroke="white" stroke-width="2" /><rect x="1386.9" y="282.0" width="82.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1428.0" y="296.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Katalogas</text><circle cx="354.0" cy="170.0" r="20" fill="#2d7ec3" stroke="white" stroke-width="2" /><rect x="277.8" y="194.0" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="354.0" y="208.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Duomenų naudotojas</text></g><g class="legend"><line x1="-83.9" y1="410.0" x2="-43.9" y2="410.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" /><text x="-33.9" y="413.9" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#475569">broader / narrower (hiërarchisch / Associatief)</text><line x1="-83.9" y1="434.0" x2="-43.9" y2="434.0" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" stroke-dasharray="6,4" /><text x="-33.9" y="437.9" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#475569">related (gerelateerd)</text></g><text x="-83.9" y="466.0" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#94a3b8">Bron: Ontologica — NAPCORE Core Concepts</text></svg></div>
+        <figcaption>Modeloverzicht</figcaption>
+      </figure>
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Concepten</h2>
+  
+    
+      
+<table class="data-table">
+  <caption>Overzicht van concepten</caption>
+  <thead>
+    <tr>
+      <th>Concept</th><th>Definitie</th><th>Alternatieve labels</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Nacionalinis prieigos taškas (NPT)</td><td>Nacionalinis prieigos taškas yra skaitmeninė sąsaja, kurią įsteigė valstybė narė, siekdama suteikti vieno langelio prieigą prie duomenų pagal Europos Komisijos deleguotuosius reglamentus, kuriais nustatomos funkcinės, techninės, organizacinės ir su paslaugomis susijusios nuostatos, užtikrinančios suderinamumą, sąveikumą ir tęstinumą diegiant ir operatyviai naudojant intelektines transporto sistemas. NPT organizuoja prieigą prie su transportu susijusių duomenų ir jų pakartotinį naudojimą, kad padėtų teikti ES masto sąveikias kelionių ir eismo ITS paslaugas galutiniams naudotojams.</td><td>Duomenų portalas</td>
+      </tr>
+    
+      <tr>
+        <td>Duomenų portalas</td><td>Žiniatinklio sistema, kurioje yra duomenų katalogas su duomenų rinkinių aprašymais ir kuri teikia paslaugas, leidžiančias rasti ir pakartotinai naudoti duomenų rinkinius. Judumo kontekste duomenų portalo sinonimas yra Nacionalinis prieigos taškas (NPT), kuris yra mazgas, kuriame su ITS susiję duomenys yra sutelkti ir skelbiami duomenų rinkinių pavidalu. Jis sukurtas siekiant palengvinti prieigą prie su transportu susijusių duomenų, jų lengvą mainus ir pakartotinį naudojimą Europoje, kad būtų remiamas ES masto sąveikių kelionių ir eismo paslaugų teikimas galutiniams naudotojams.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Katalogas</td><td>Konkretus judumo duomenų portalas, t. y. žiniatinklio portalas, kuriame su judumu susijusių duomenų rinkinių ir jų platinimo aprašymai pateikiami per metaduomenis ir yra randami duomenų naudotojams, pvz., Nacionalinio prieigos taško žiniatinklio portalas.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Metaduomenų katalogas</td><td>Metaduomenų katalogas yra Nacionalinis prieigos taškas, kuriame yra duomenų ir paslaugų aprašymai, būtini jų identifikavimui, vertinimui ir prenumeratai, t. y. metaduomenys. Jis suteikia priemones duomenų teikėjų autentifikavimui ir funkcionalumą metaduomenų įrašams įterpti. Metaduomenų katalogas siūlo talpintų įrašų paieškos ir atradimo paslaugas galutiniams naudotojams ir per mašininiu būdu skaitomą turinį kitiems portalams. Metaduomenų katalogas tiesiogiai nedalyvauja duomenų mainuose tarp duomenų teikėjų ir duomenų vartotojų.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Duomenų platforma</td><td>Duomenų platforma yra Nacionalinis prieigos taškas, kuriame yra duomenų ir paslaugų aprašymai, svarbūs jų identifikavimui, vertinimui ir prenumeratai, t. y. metaduomenys, kartu su pačiais duomenimis ir (arba) paslaugomis. Ji suteikia priemones duomenų teikėjų ir pasirinktinai duomenų vartotojų autentifikavimui bei leidžia įterpti duomenis ir metaduomenų įrašus į NPT vidinę duomenų bazę. Duomenų platforma siūlo talpintų įrašų paieškos ir atradimo paslaugas galutiniams naudotojams ir per mašininiu būdu skaitomą turinį kitiems portalams bei platinimo sąsajoms. Duomenų platforma yra tarpininkas tarp duomenų teikėjo ir duomenų vartotojo, tačiau duomenys lieka duomenų teikėjo nuosavybe.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Kompetentinga institucija</td><td>Kompetentinga institucija / Nacionalinė institucija yra organizacija, kurią valstybė narė paskyrė stebėti Nacionalinio prieigos taško veikimą ir tikrinti atitiktį ITS direktyvos ir jos deleguotųjų reglamentų nustatytiems reikalavimams, įskaitant nustatytus duomenų ir paslaugų, prieinamų per Nacionalinį prieigos tašką, prieinamumo, formato ir kokybės reikalavimus. Pastaba: Terminas Nacionalinė institucija gali būti vartojamas pakaitomis su Kompetentinga institucija, tačiau jis turi papildomą reikalavimą dėl organizacijos nešališkumo ir nepriklausomumo nuo paslaugų teikėjų, viešųjų ir privačių kelių operatorių, automobilių stovėjimo aikštelių operatorių ir transliuotojų. Terminas lieka galiojantis dabartiniuose teisės aktuose.</td><td>Nacionalinė įstaiga</td>
+      </tr>
+    
+      <tr>
+        <td>NPT operatorius</td><td>Viešoji ar privačioji organizacija, paskirta valdyti, prižiūrėti ir eksploatuoti Nacionalinį prieigos tašką, užtikrinant duomenų prieinamumą ir NPT veikimą pagal ITS direktyvos ir jos deleguotųjų reglamentų reikalavimus, detaliau apibrėžtus nacionaliniuose teisės aktuose ar valdymo dokumentuose. Pastaba: Paprastai valstybės narės transporto ministerijos padalinys, valstybinė organizacija arba mokslinių tyrimų institucija veikia kaip NPT operatorius. Šį vaidmenį atliekanti organizacija paprastai aiškiai nurodoma nacionaliniuose teisės aktuose ar susijusiuose valdymo dokumentuose.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Leidėjas</td><td>Subjektas (organizacija), atsakingas už Katalogo prieinamumą. Ši organizacija yra tiesioginis kontaktas platformos naudotojams, turintiems klausimų ar problemų dėl platformos ir jos sistemos.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Turinio teikėjas</td><td>Organizacija ar subjektas, tiekiantis turinį (pvz., duomenis, metaduomenis, dokumentus) Nacionaliniam prieigos taškui, padarydamas jį prieinamą pakartotiniam naudojimui pagal ITS direktyvos ir jos deleguotųjų reglamentų reikalavimus. Pastaba: Priklausomai nuo konteksto, gali būti naudojami panašūs, tikslesni ar konkretesni terminai: Duomenų turėtojas, Duomenų teikėjas, Paslaugų teikėjas, apibūdinant tą pačią turinio tiekimo Nacionaliniam prieigos taškui funkciją. Keletas turinio teikėjų pavyzdžių: viešieji ir privatieji kelių operatoriai, eismo informacijai skirti transliuotojai, automobilių stovėjimo aikštelių operatoriai, kelių institucijos, skaitmeninių žemėlapių gamintojai, transporto institucijos, keleivinio transporto operatoriai, infrastruktūros valdytojai, transporto pagal pareikalavimą teikėjai, kelionių informacinių paslaugų teikėjai.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Duomenų valdytojas</td><td>Bet kuris juridinis asmuo, viešasis ar privatus, pvz., transporto institucijos, transporto operatoriai, infrastruktūros valdytojai ar transporto pagal pareikalavimą paslaugų teikėjai, turintis teisę suteikti prieigą prie jo kontroliuojamų duomenų arba juos dalytis.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Paslaugų teikėjas</td><td>Viešasis arba privatus paslaugos teikėjas. Konkrečios termino interpretacijos skiriasi ES teisės aktuose, o specializuotos apibrėžtys nustatytos deleguotuosiuose reglamentuose, priimtuose pagal ITS direktyvą, ir Reglamente dėl alternatyviųjų degalų infrastruktūros diegimo.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>ITS paslaugų teikėjas</td><td>ITS paslaugos teikėjas, viešasis ar privatus.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Kelionių informacijos paslaugų teikėjas</td><td>Bet kuris viešasis ar privatus bent vienos kelionių ir eismo informacijos paslaugų teikėjas duomenų naudotojams ir galutiniams naudotojams, išskyrus paprastą informacijos keitiklį.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Transporto pagal pareikalavimą paslaugų teikėjas</td><td>Bet kuris viešasis ar privatus realaus laiko eismo informacijos paslaugos teikėjas, išskyrus paprastą duomenų perdavėją duomenų naudotojams.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Judumo paslaugų teikėjas</td><td>Juridinis asmuo, teikiantis paslaugas už atlygį galutiniam naudotojui, įskaitant įkrovimo ar degalų papildymo paslaugų pardavimą.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Turinio vartotojas</td><td>Organizacija ar subjektas, kuris prieina, gauna ar naudoja duomenis ar informaciją, prieinamą per Nacionalinį prieigos tašką, paslaugų, programų ar analizių kūrimo tikslais.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Duomenų vartotojas</td><td>Subjektas, sistema ar programa, vartojanti tik duomenis, prieinamus per Nacionalinį prieigos tašką, pvz., duomenų rinkinius, API ar kitus mašininiu būdu skaitomus duomenis, paprastai techniniam, analitiniam ar operaciniam apdorojimui.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Duomenų naudotojas</td><td>Bet kuris viešasis ar privatus subjektas, pvz., transporto institucijos, transporto operatoriai, paslaugų teikėjai ir infrastruktūros valdytojai, mokslinių tyrimų ar nevyriausybinės organizacijos, kuriantis daugiarūšę kelionių informaciją, paslaugas ar atliekantis tyrimus ar analizes, arba kai duomenų turėtojo nustatytos sąlygos tai numato, naudojantis duomenis kitais tikslais.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Duomenų gavėjas</td><td>Fizinis ar juridinis asmuo, turintis teisę gauti prieigą prie duomenų turėtojo pagamintų ir pateiktų duomenų pagal nustatytas prieigos sąlygas naudojimui.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Galutinis naudotojas</td><td>Bet kuris fizinis ar juridinis asmuo, kuris gauna, naudojasi ar naudojasi su transportu susijusiomis paslaugomis, pvz., kelionių informacijos paslaugomis, su kelių eismo saugumu susijusiomis eismo informacijos paslaugomis ar alternatyviųjų degalų infrastruktūros paslaugomis.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Metaduomenys</td><td>Struktūruotas duomenų turinio aprašymas, palengvinantis duomenų atradimą ir naudojimą.</td><td></td>
+      </tr>
+    
+      <tr>
+        <td>Aptikimo paslauga</td><td>Paslauga, leidžianti ieškoti prašomų duomenų naudojant atitinkamų metaduomenų turinį ir rodanti tokį turinį.</td><td></td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+  
+</body>
+</html>
