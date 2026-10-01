@@ -1,0 +1,74 @@
+name: Reviewcommentaar
+description: Commentaar op een gepubliceerd model of specificatie
+title: "[Review] "
+labels: ["review", "status: nieuw"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bedankt voor je review. De velden hieronder zijn grotendeels vooraf ingevuld vanuit de specificatie.
+        Vul je commentaar aan en klik op **Submit new issue**.
+
+  - type: input
+    id: model
+    attributes:
+      label: Model
+    validations:
+      required: true
+
+  - type: input
+    id: versie
+    attributes:
+      label: Versie
+      description: Versie van het model waarop het commentaar betrekking heeft.
+    validations:
+      required: true
+
+  - type: input
+    id: sectie
+    attributes:
+      label: Sectie / concept
+
+  - type: textarea
+    id: citaat
+    attributes:
+      label: Geciteerde tekst
+      render: text
+
+  - type: input
+    id: locatie
+    attributes:
+      label: Directe link naar de passage
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Soort commentaar
+      options:
+        - Redactioneel (spelling, formulering)
+        - Inhoudelijk (definitie, betekenis)
+        - Structureel (relaties, hiërarchie, ontbrekend concept)
+        - Breaking change (heeft impact op implementaties)
+        - Vraag / verduidelijking
+    validations:
+      required: true
+
+  - type: textarea
+    id: commentaar
+    attributes:
+      label: Commentaar
+      description: Wat is het probleem?
+    validations:
+      required: true
+
+  - type: textarea
+    id: voorstel
+    attributes:
+      label: Voorstel
+      description: Optioneel — hoe zou het volgens jou moeten luiden?
+
+  - type: input
+    id: organisatie
+    attributes:
+      label: Organisatie
+      description: Optioneel

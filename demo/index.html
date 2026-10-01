@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <title>Demo-model voor reviewcommentaar</title>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+  <script class="remove">
+    var respecConfig = {
+      specStatus: "unofficial",
+      editors: [{ name: "Arthur Keesen" }],
+      github: "xcalibur1978/temp",
+      shortName: "demo-model",
+    };
+  </script>
+  <!-- De enige regel die nodig is voor reviewcommentaar: -->
+  <script src="../review.js" defer data-repo="xcalibur1978/temp" data-model="demo-model" data-version="0.1.0"></script>
+</head>
+<body>
+  <section id="abstract">
+    <p>Dit is een demodocument om reviewcommentaar via GitHub-issues te testen.
+    Selecteer een stuk tekst en klik op de knop die verschijnt.</p>
+  </section>
+  <section id="sotd"></section>
+
+  <section id="inleiding">
+    <h2>Inleiding</h2>
+    <p>Het model beschrijft verkeersgebeurtenissen op het Nederlandse hoofdwegennet,
+    zoals ongevallen, wegwerkzaamheden en afsluitingen.</p>
+  </section>
+
+  <section id="concepten">
+    <h2>Concepten</h2>
+    <section id="concept-verkeersgebeurtenis">
+      <h3>Verkeersgebeurtenis</h3>
+      <p>Een <dfn>verkeersgebeurtenis</dfn> is een voorval dat de doorstroming of
+      veiligheid van het verkeer op een weg beïnvloedt.</p>
+    </section>
+    <section id="concept-afsluiting">
+      <h3>Afsluiting</h3>
+      <p>Een <dfn>afsluiting</dfn> is een verkeersgebeurtenis waarbij één of meer
+      rijstroken tijdelijk niet beschikbaar zijn voor het verkeer.</p>
+    </section>
+  </section>
+</body>
+</html>
