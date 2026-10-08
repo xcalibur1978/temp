@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Untitled model</title>
+  
+  <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
+  <script class="remove">
+    var respecConfig = {"specStatus": "unofficial", "title": "Untitled model", "shortName": "Untitled model", "editors": [{"name": "Nationaal Data Portaal Wegverkeer"}], "lint": false, "edDraftURI": "", "additionalCopyrightHolders": "Nationaal Data Portaal Wegverkeer"};
+  </script>
+  
+  
+  <script src="https://xcalibur1978.github.io/temp/_assets/review.js" defer
+          data-repo="xcalibur1978/temp"
+          data-model="RTTI - Snelheidsbeperkingen (concept)"
+          data-version="0.0.1"></script>
+  
+  <style>
+    /* Opmaak afgeleid van de PDF (docpublish/pdf/styles/_base.css): dezelfde
+       huisstijl-kleuren en tabelstijl, zodat de ReSpec-pagina en de PDF op
+       elkaar aansluiten. Staat NA ReSpec's basis-stylesheet, dus dit wint. */
+    body {
+      font-family: 'Source Sans 3', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: #303c54;
+      line-height: 1.5;
+    }
+    h1, h2, h3, h4, h5, h6 { color: #1e40af; font-weight: 600; }
+    p.prose { text-align: justify; }
+    p.disclaimer {
+      background: rgba(30, 64, 175, 0.06);
+      border-left: 3px solid #1e40af;
+      padding: 6px 10px;
+      font-style: italic;
+      color: #636f83;
+      margin: 8px 0;
+    }
+    table.data-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 10px 0 18px;
+      font-size: 0.95rem;
+    }
+    table.data-table caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: 600;
+      color: #1e40af;
+      padding-bottom: 4px;
+    }
+    table.data-table th {
+      background: rgba(30, 64, 175, 0.08);
+      border-bottom: 1px solid #1e40af;
+      color: #1e40af;
+      font-weight: 600;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.data-table td {
+      border-bottom: 1px solid #dfe4ee;
+      padding: 6px 8px;
+      vertical-align: top;
+      overflow-wrap: break-word;
+    }
+    table.data-table tr:nth-child(even) td { background: rgba(30, 64, 175, 0.025); }
+
+    /* Modeloverzicht-diagram: de server-side force-directed layout geeft een
+       compacte, normaal-geproportioneerde SVG (net als de visuele editor). Schaal
+       hem responsive binnen de paginabreedte. Voor het zeldzame extreem brede
+       geval blijft het kader horizontaal scrollbaar. */
+    figure.model-figure { margin: 12px 0; width: 100%; }
+    figure.model-figure .model-figure__frame {
+      display: block;
+      overflow-x: auto;
+      border: 1px solid #dfe4ee;
+      border-radius: 6px;
+      padding: 8px;
+      background: #fff;
+      cursor: zoom-in;
+    }
+    figure.model-figure .model-figure__frame > div { width: 100%; }
+    figure.model-figure svg {
+      display: block;
+      /* Vaste breedte 100% van het kader; de hoogte volgt uit de viewBox-
+         verhouding. Alleen height:auto laten renderen faalt als de container
+         nog geen breedte heeft (chicken-egg): dan wordt de SVG 0×0. De inline
+         width/height-attributen op de root-<svg> worden hierdoor overruled. */
+      width: 100%;
+      height: auto;
+    }
+    figure.model-figure figcaption {
+      font-size: 0.85rem;
+      color: #636f83;
+      margin-top: 4px;
+    }
+
+    /* Full-size weergave zonder JS: het sluit-anker ligt normaal onzichtbaar
+       achter de figuur; pas in de vergrote (:target) staat wordt het de
+       schermvullende, klikbare achtergrond die de hash wist. */
+    figure.model-figure .model-figure__zoom-close { display: none; }
+
+    /* Visueel verborgen tekst in het sluit-anker (zie _section.html): maakt
+       textContent niet-leeg zodat ReSpec's anchor-expander het anker overslaat,
+       zonder iets zichtbaars toe te voegen. */
+    .model-figure__zoom-close .visually-hidden {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0);
+      white-space: nowrap; border: 0;
+    }
+
+    /* Vergrote staat: de figuur gaat schermvullend bovenop de pagina staan. De
+       SVG krijgt nu zijn NATUURLIJKE grootte (geen width:100% meer) en het kader
+       scrollt in beide richtingen, zodat het diagram leesbaar is. */
+    figure.model-figure:target {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      margin: 0;
+      padding: 2.5rem 1rem 1rem;
+      background: rgba(15, 23, 42, 0.75);
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+    figure.model-figure:target .model-figure__zoom-close {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: -1;            /* achter de figuurinhoud, vóór de pagina */
+      cursor: zoom-out;
+    }
+    figure.model-figure:target .model-figure__frame {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: auto;        /* scroll in beide richtingen */
+      cursor: default;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    }
+    figure.model-figure:target .model-figure__frame > div {
+      width: max-content;    /* laat de SVG groeien tot zijn natuurlijke breedte */
+      min-width: 100%;
+    }
+    figure.model-figure:target svg {
+      /* Natuurlijke afmetingen uit de viewBox i.p.v. 100% van de smalle kolom,
+         met een leesbare bodembreedte en ruimte om te groeien. */
+      width: auto;
+      min-width: min(1400px, 90vw);
+      height: auto;
+      max-height: none;
+    }
+    figure.model-figure:target figcaption {
+      flex: 0 0 auto;
+      color: #e5e9f0;
+      text-align: center;
+      padding-top: 0.5rem;
+    }
+    /* Een '× sluiten'-knop rechtsboven in de vergrote staat. */
+    figure.model-figure:target::after {
+      content: "× sluiten";
+      position: fixed;
+      top: 0.6rem;
+      right: 1rem;
+      color: #fff;
+      font-size: 0.95rem;
+      pointer-events: none;  /* klikken vangt het achterliggende sluit-anker op */
+    }
+  </style>
+  
+  
+  <style>
+    .status-banner {
+      border-left: 8px solid var(--status-color, #6b7280);
+      background: var(--status-bg, #f3f4f6);
+      padding: 0.6rem 1rem;
+      margin: 0 0 1.5rem;
+      font-family: sans-serif;
+    }
+    .status-banner .status-badge {
+      display: inline-block;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--status-color, #374151);
+    }
+    .status-banner .status-version { color: #4b5563; }
+    /* Review-/consultatie-toelichting: een geaccentueerd blok binnen de banner.
+       Eigen witte kaart met een accent-rand in de statuskleur, zodat het
+       duidelijk leesbaar is én opvalt zonder de banner te overschreeuwen. */
+    .status-banner .status-note {
+      margin-top: 0.7rem;
+      background: #fff;
+      border: 1px solid var(--status-color, #2563eb);
+      border-left: 4px solid var(--status-color, #2563eb);
+      border-radius: 6px;
+      padding: 0.7rem 0.9rem;
+      max-width: 60ch;
+    }
+    .status-banner .status-note__title {
+      margin: 0 0 0.25rem;
+      font-weight: 700;
+      color: var(--status-color, #2563eb);
+    }
+    .status-banner .status-note__body {
+      margin: 0;
+      color: #303c54;
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+    .status-draft       { --status-color: #d97706; --status-bg: #fffbeb; }
+    .status-under_review{ --status-color: #2563eb; --status-bg: #eff6ff; }
+    .status-published   { --status-color: #16a34a; --status-bg: #f0fdf4; }
+    .status-deprecated  { --status-color: #dc2626; --status-bg: #fef2f2; }
+    .status-withdrawn   { --status-color: #991b1b; --status-bg: #fef2f2; }
+  </style>
+  
+</head>
+<body>
+  
+  <h1 id="title">Untitled model</h1>
+
+  
+  <section id="abstract">
+    <p>Visual overview of the concepts and their relations. Hierarchical relations are drawn with solid arrows; associative relations are drawn with dashed arrows.</p>
+  </section>
+
+  
+  
+  <div id="beschikbare-talen" class="language-switch">
+    <table class="data-table">
+      <caption>Available languages</caption>
+      <thead>
+        <tr><th>Language</th><th>Document</th></tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><strong>EN</strong></td>
+          <td><strong>RTTI - Snelheidsbeperkingen (concept)</strong></td>
+        </tr>
+        
+        <tr>
+          <td>NL</td>
+          <td><a href="../nl/index.html">RTTI - Snelheidsbeperkingen (concept)</a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+
+  
+  <div class="status-banner status-draft">
+    <span class="status-badge">Draft</span><span class="status-version"> — Version 0.0.1</span>
+    
+    
+  </div>
+  
+
+  
+    
+<section>
+  <h2>Introduction to semantic modelling</h2>
+  
+    
+      <p class="prose"><p>A <strong>concept scheme</strong> (in SKOS: <em>ConceptScheme</em>) is a structured collection of concepts that carry a fixed, shared meaning within a particular domain. The goal is for everyone working with the model — people and systems alike — to use the same words for the same things. That sounds obvious, but in practice language causes a surprising amount of confusion: what one organisation calls a <em>measurement point</em>, another calls a <em>sensor</em>, a <em>location</em>, or an <em>observation station</em>.</p>
+<p>A concept scheme solves this by recording, for each concept:</p>
+<ul>
+<li>a <strong>preferred label</strong> (prefLabel) it is known by,</li>
+<li>a <strong>definition</strong> that unambiguously describes what the concept does and does not cover,</li>
+<li>and optionally a <strong>scope note</strong> or <strong>example</strong> to clarify borderline cases.</li>
+</ul>
+<p>Concepts rarely stand on their own. They are related <strong>hierarchically</strong> (a vehicle is broader than a truck) or <strong>associatively</strong> (a road user relates to a road segment). These relationships make it possible for queries and analyses to navigate between general and specific concepts, and to make connections between concepts explicit. Within SKOS we use <code>broader</code>, <code>narrower</code>, and <code>related</code> for that.</p>
+<p>When a concept also exists elsewhere — in a national or European standard, for instance — we record that as a <strong>mapping relation</strong>. This prevents reinventing the wheel: we link to the source so interoperability with external systems remains possible.</p>
+<p>This document describes the concept scheme as it is currently recorded. The following sections list the metadata, every concept, the relationships between them, and — where the model is connected to a data source — how it is linked to that source data.</p></p>
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Naamloos model</h2>
+  
+    
+      
+<table class="data-table">
+  <caption>Metadata</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>URI</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen</td>
+      </tr>
+    
+      <tr>
+        <td>Version</td><td>0.0.1</td>
+      </tr>
+    
+      <tr>
+        <td>Publication status</td><td>Draft</td>
+      </tr>
+    
+      <tr>
+        <td>Management status</td><td>Active</td>
+      </tr>
+    
+      <tr>
+        <td>Organization</td><td>Nationaal Data Portaal Wegverkeer</td>
+      </tr>
+    
+      <tr>
+        <td>Created on</td><td>2026-07-17</td>
+      </tr>
+    
+      <tr>
+        <td>Last modified on</td><td>2026-07-17</td>
+      </tr>
+    
+      <tr>
+        <td>Last modified by</td><td>Arthur Keesen</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Model overview</h2>
+  
+    
+      <p class="prose">Visual overview of the concepts and their relations. Hierarchical relations are drawn with solid arrows; associative relations are drawn with dashed arrows.</p>
+    
+  
+    
+      
+      
+      <figure class="model-figure" id="model-overview-figure">
+        
+        <a class="model-figure__zoom-close" href="#" aria-label="Sluit vergroting"><span class="visually-hidden">Sluit vergroting</span></a>
+        <a class="model-figure__frame" href="#model-overview-figure" title="Klik om op volledig formaat te bekijken">
+          <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="179.0 -10.0 2221.4 1114.0" width="2221" height="1114"><defs><marker id="arrow-hierarchy" viewBox="0 0 8 8" refX="8" refY="4.0" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 8 4.0 L 0 8 z" fill="#475569" /></marker><marker id="arrow-related" viewBox="0 0 8 8" refX="8" refY="4.0" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 8 4.0 L 0 8 z" fill="#8b5cf6" /></marker></defs><g class="edges"><line x1="2022.2" y1="67.5" x2="1817.2" y2="433.7" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1545.2" y1="542.2" x2="1502.0" y2="231.7" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1528.1" y1="564.3" x2="1054.6" y2="618.8" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1530.1" y1="553.1" x2="1417.0" y2="496.9" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1398.1" y1="465.3" x2="1487.7" y2="230.1" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="2013.3" y1="57.2" x2="1423.6" y2="284.3" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="2019.0" y1="65.2" x2="1776.8" y2="348.9" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1015.4" y1="639.2" x2="855.0" y2="905.2" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1009.0" y1="611.1" x2="852.3" y2="508.9" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1009.5" y1="633.8" x2="866.5" y2="737.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="561.1" y1="723.9" x2="806.1" y2="512.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="566.0" y1="738.1" x2="814.0" y2="752.3" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="562.7" y1="748.0" x2="815.8" y2="914.1" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="2044.1" y1="65.9" x2="2310.4" y2="414.9" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1299.7" y1="822.4" x2="741.6" y2="425.8" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1382.1" y1="308.6" x2="1187.9" y2="495.9" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1376.6" y1="294.0" x2="1138.0" y2="286.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1296.0" y1="834.5" x2="1087.0" y2="839.3" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1535.0" y1="577.2" x2="1334.8" y2="811.9" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="961.5" y1="252.9" x2="1260.1" y2="167.0" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1566.5" y1="554.5" x2="1776.1" y2="469.9" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1567.8" y1="558.9" x2="2299.4" y2="442.6" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="882.2" y1="153.1" x2="1259.0" y2="158.6" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="871.9" y1="374.3" x2="683.9" y2="487.1" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="869.6" y1="359.0" x2="641.1" y2="300.0" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="2014.5" y1="59.7" x2="1563.3" y2="310.9" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="2012.8" y1="55.5" x2="1525.9" y2="195.0" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="444.5" y1="516.1" x2="430.1" y2="321.9" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="432.5" y1="521.2" x2="238.5" y2="308.4" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1298.8" y1="175.8" x2="1532.3" y2="537.6" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1307.8" y1="156.1" x2="2003.3" y2="54.2" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="537.1" y1="719.1" x2="458.9" y2="562.0" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1006.7" y1="142.3" x2="1259.1" y2="157.3" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1518.0" y1="326.2" x2="917.9" y2="362.3" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1377.6" y1="301.1" x2="1142.5" y2="379.8" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="1416.1" y1="298.8" x2="1729.6" y2="365.0" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="239.0" y1="287.6" x2="399.0" y2="292.2" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /><line x1="235.3" y1="275.4" x2="360.3" y2="186.8" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /></g><g class="nodes"><circle cx="1396.5" cy="294.7" r="20" fill="#0a87e6" stroke="white" stroke-width="2" /><rect x="1343.7" y="318.7" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1396.5" y="332.9" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Traffic sign</text><circle cx="1115.0" cy="389.0" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="1073.9" y="413.0" width="82.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1115.0" y="427.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">L401 Sign</text><circle cx="986.7" cy="141.2" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="918.3" y="165.2" width="136.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="986.7" y="179.4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Traffic decision</text><circle cx="1167.0" cy="516.0" r="20" fill="#3fa3ee" stroke="white" stroke-width="2" /><rect x="1137.6" y="540.0" width="58.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1167.0" y="554.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">G Sign</text><circle cx="942.3" cy="258.4" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="889.5" y="282.4" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="942.3" y="296.6" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Vehicle Type</text><circle cx="1109.0" cy="285.0" r="20" fill="#3fa3ee" stroke="white" stroke-width="2" /><rect x="1079.6" y="309.0" width="58.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1109.0" y="323.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">A Sign</text><circle cx="613.0" cy="292.8" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="564.1" y="316.8" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="613.0" y="331.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Time window</text><circle cx="1025.8" cy="622.1" r="20" fill="#0a87e6" stroke="white" stroke-width="2" /><rect x="969.1" y="646.1" width="113.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1025.8" y="660.3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Line geometry</text><circle cx="843.0" cy="754.0" r="20" fill="#0a87e6" stroke="white" stroke-width="2" /><rect x="805.8" y="778.0" width="74.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="843.0" y="792.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Motorway</text><circle cx="718.0" cy="409.0" r="20" fill="#3fa3ee" stroke="white" stroke-width="2" /><rect x="649.6" y="433.0" width="136.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="718.0" y="447.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Residential Area</text><circle cx="2328.0" cy="438.0" r="20" fill="#0a87e6" stroke="white" stroke-width="2" /><rect x="2259.6" y="462.0" width="136.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="2328.0" y="476.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Start Indication</text><circle cx="840.0" cy="930.0" r="20" fill="#0a87e6" stroke="white" stroke-width="2" /><rect x="814.0" y="954.0" width="52.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="840.0" y="968.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">N-weg</text><circle cx="889.0" cy="364.0" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="847.9" y="388.0" width="82.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="889.0" y="402.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Condition</text><circle cx="659.0" cy="502.0" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="582.8" y="526.0" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="659.0" y="540.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Weather Conditions</text><circle cx="546.0" cy="737.0" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="520.0" y="761.0" width="52.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="546.0" y="775.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Weg</text><circle cx="446.0" cy="536.0" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="397.1" y="560.0" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="446.0" y="574.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Carriageway</text><circle cx="428.0" cy="293.0" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="379.1" y="317.0" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="428.0" y="331.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Rijrichting</text><circle cx="219.0" cy="287.0" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="193.0" y="311.0" width="52.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="219.0" y="325.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Lane</text><circle cx="1538.0" cy="325.0" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="1461.8" y="349.0" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1538.0" y="363.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Supplementary Sign</text><circle cx="1058.0" cy="840.0" r="20" fill="#3fa3ee" stroke="white" stroke-width="2" /><rect x="1001.3" y="864.0" width="113.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1058.0" y="878.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Built-Up Area</text><circle cx="1391.0" cy="484.0" r="20" fill="#0a87e6" stroke="white" stroke-width="2" /><rect x="1338.2" y="508.0" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1391.0" y="522.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Outer regime</text><circle cx="1803.0" cy="459.0" r="20" fill="#0a87e6" stroke="white" stroke-width="2" /><rect x="1742.4" y="483.0" width="121.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1803.0" y="497.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">End Indication</text><circle cx="862.2" cy="152.8" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="774.3" y="176.8" width="175.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="862.2" y="191.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Speed Limit Data Type</text><circle cx="1498.0" cy="203.0" r="20" fill="#0a87e6" stroke="white" stroke-width="2" /><rect x="1445.2" y="227.0" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1498.0" y="241.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Inner regime</text><circle cx="828.0" cy="493.0" r="20" fill="#0a87e6" stroke="white" stroke-width="2" /><rect x="783.0" y="517.0" width="90.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="828.0" y="531.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Expressway</text><circle cx="1288.0" cy="159.0" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="1243.0" y="183.0" width="90.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1288.0" y="197.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Speedlimit</text><circle cx="1548.0" cy="562.0" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="1510.8" y="586.0" width="74.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1548.0" y="600.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Geometry</text><circle cx="1316.0" cy="834.0" r="20" fill="#0a87e6" stroke="white" stroke-width="2" /><rect x="1259.3" y="858.0" width="113.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1316.0" y="872.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Area geometry</text><circle cx="384.0" cy="170.0" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="331.2" y="194.0" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="384.0" y="208.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Road section</text><circle cx="2032.0" cy="50.0" r="20" fill="#0066b2" stroke="white" stroke-width="2" /><rect x="1987.0" y="74.0" width="90.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="2032.0" y="88.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Indication</text><circle cx="1758.0" cy="371.0" r="20" fill="#0a87e6" stroke="white" stroke-width="2" /><rect x="1705.2" y="395.0" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1758.0" y="409.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Digital Sign</text></g><g class="legend"><line x1="179.0" y1="1044.0" x2="219.0" y2="1044.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" /><text x="229.0" y="1047.8" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#475569">broader / narrower (hiërarchisch / Associatief)</text><line x1="179.0" y1="1068.0" x2="219.0" y2="1068.0" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" stroke-dasharray="6,4" /><text x="229.0" y="1071.8" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#475569">related (gerelateerd)</text></g><text x="179.0" y="1100.0" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#94a3b8">Bron: Ontologica — RTTI - Snelheidsbeperkingen (concept)</text></svg></div>
+        </a>
+        <figcaption>Model overview</figcaption>
+      </figure>
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Concepts</h2>
+  
+    
+      
+<section id="concept-1771235022627">
+  <h3>Outer regime</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>Nog bepalen</td>
+      </tr>
+    
+      <tr>
+        <td>Example</td><td>A road user enters a built-up area (50 km/h). Subsequently, they enter a residential area (15 km/h). The active speed restriction is now 15 km/h. Upon leaving the residential area, 50 km/h applies again, because the built-up area as enclosing zone is still in effect.</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771235085917">
+  <h3>Road section</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>Nog bepalen</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771235164125">
+  <h3>Residential Area</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>Nog bepalen</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771235237134">
+  <h3>Speedlimit</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>Nog te bepalen</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771235313383">
+  <h3>Expressway</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771235331951">
+  <h3>Motorway</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771235385932">
+  <h3>G Sign</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771235620358">
+  <h3>Carriageway</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771235638908">
+  <h3>Lane</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771235874098">
+  <h3>Vehicle Type</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771236028582">
+  <h3>Weather Conditions</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771236090614">
+  <h3>Start Indication</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771236142216">
+  <h3>End Indication</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771236172013">
+  <h3>Indication</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771236355335">
+  <h3>Digital Sign</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771236446358">
+  <h3>Condition</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771236462476">
+  <h3>Supplementary Sign</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771236944308">
+  <h3>Built-Up Area</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771237259923">
+  <h3>Inner regime</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Scope</td><td>The inner zone concept describes the cascading effect of nested zones. When entering an inner zone, the speed restriction of the enclosing zone is temporarily suspended. When exiting, the speed restriction of the enclosing zone becomes active again. This mechanism works recursively: multiple levels of nesting are possible.</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771237797860">
+  <h3>Geometry</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771238610163">
+  <h3>A Sign</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771238916868">
+  <h3>Speed Limit Data Type</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1771857141294">
+  <h3>L401 Sign</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1772185159176">
+  <h3>Traffic sign</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>The physical object — a panel (the &#x27;plate&#x27;), normally mounted on a post or other support — bearing a traffic sign symbol, whose physical execution is legally prescribed.</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1772186160984">
+  <h3>Time window</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>The days and/or hours indicated on a supplementary sign that imply a limitation of the temporal scope of application of the indication on the overlying traffic sign; in particular, for speed limits, the period during which the maximum speed indicated on the traffic sign applies.</td>
+      </tr>
+    
+      <tr>
+        <td>Scope</td><td>The term &#x27;time window&#x27; does not appear as such in the legislation; the legal basis lies in the limitation of the scope and is referred to as a &#x27;time window&#x27; by Rijkswaterstaat and CROW. The concept has a dual realization: as a physical supplementary sign beneath a metal sign, or as a time condition within a digital/electronic sign. Not to be confused with &#x27;window times&#x27; (loading and unloading times for urban logistics), which are incorporated into the Goods Delivery model.</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1772186214125">
+  <h3>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186214125</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1772186485225">
+  <h3>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186485225</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1772186695677">
+  <h3>Line geometry</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>A one-dimensional geometric primitive representing a line: a continuous curve, measurable in length within a coordinate system, composed of one or more connected line segments in which the end point of each segment — except the last — coincides with the start point of the next. Line geometry is used to spatially represent linear features such as a road; designated GM_Curve in ISO 19107 and Curve/LineString in OGC Simple Features</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1772186704395">
+  <h3>Area geometry</h3>
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1772187355998">
+  <h3>Traffic decision</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>Written decision by the competent authority deciding on the placement, modification, or removal of traffic signs and supplementary signs designated by Order in Council insofar as this creates or modifies a command or prohibition, or on measures on or along the road that lead to a restriction or expansion of the number of categories of road users.</td>
+      </tr>
+    
+      <tr>
+        <td>Scope</td><td>Publication takes place pursuant to Article 26 of the BABW via the KOOP Traffic Decisions application in the Government Gazette (National Government) or the local publication journal (municipality, province, water board) since the entry into force of the Electronic Publications Act on 1 July 2021. Requirements for justification follow from Article 21 of the BABW; consultation with the Chief of Police follows from Article 24 of the BABW.</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1772187859423">
+  <h3>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772187859423</h3>
+  
+</section>
+
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Relations per concept</h2>
+  
+    
+      <p class="prose">Outgoing semantic relations only — these stay inside the model.</p>
+    
+  
+    
+      
+<section>
+  <h3>Outer regime</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>broader</td><td>Geometry</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860</td>
+      </tr>
+    
+      <tr>
+        <td>narrower</td><td>Inner regime</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237259923</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Residential Area</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>broader</td><td>Area geometry</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186704395</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Speedlimit</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>related</td><td>Geometry</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860</td>
+      </tr>
+    
+      <tr>
+        <td>related</td><td>Indication</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Expressway</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>broader</td><td>Line geometry</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186695677</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Motorway</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>broader</td><td>Line geometry</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186695677</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Carriageway</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>related</td><td>Rijrichting</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186214125</td>
+      </tr>
+    
+      <tr>
+        <td>related</td><td>Lane</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235638908</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Lane</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>related</td><td>Rijrichting</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186214125</td>
+      </tr>
+    
+      <tr>
+        <td>related</td><td>Road section</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235085917</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Vehicle Type</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>related</td><td>Speedlimit</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Start Indication</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>broader</td><td>Indication</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>End Indication</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>broader</td><td>Indication</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Indication</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>narrower</td><td>Traffic sign</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772185159176</td>
+      </tr>
+    
+      <tr>
+        <td>narrower</td><td>Digital Sign</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236355335</td>
+      </tr>
+    
+      <tr>
+        <td>related</td><td>Inner regime</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237259923</td>
+      </tr>
+    
+      <tr>
+        <td>related</td><td>Supplementary Sign</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236462476</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Condition</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>related</td><td>Weather Conditions</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236028582</td>
+      </tr>
+    
+      <tr>
+        <td>related</td><td>Time window</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186160984</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Supplementary Sign</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>related</td><td>Condition</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236446358</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Built-Up Area</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>broader</td><td>Area geometry</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186704395</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Inner regime</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>broader</td><td>Geometry</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Geometry</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>related</td><td>End Indication</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236142216</td>
+      </tr>
+    
+      <tr>
+        <td>related</td><td>Start Indication</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236090614</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Speed Limit Data Type</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>related</td><td>Speedlimit</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Traffic sign</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>narrower</td><td>A Sign</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238610163</td>
+      </tr>
+    
+      <tr>
+        <td>narrower</td><td>G Sign</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235385932</td>
+      </tr>
+    
+      <tr>
+        <td>related</td><td>Digital Sign</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236355335</td>
+      </tr>
+    
+      <tr>
+        <td>related</td><td>L401 Sign</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771857141294</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186485225</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>narrower</td><td>N-weg</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772187859423</td>
+      </tr>
+    
+      <tr>
+        <td>narrower</td><td>Expressway</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235313383</td>
+      </tr>
+    
+      <tr>
+        <td>narrower</td><td>Motorway</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235331951</td>
+      </tr>
+    
+      <tr>
+        <td>related</td><td>Carriageway</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235620358</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Line geometry</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>broader</td><td>Geometry</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Area geometry</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>broader</td><td>Geometry</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>Traffic decision</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>related</td><td>Speedlimit</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section>
+  <h3>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772187859423</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Semantic relations</caption>
+  <thead>
+    <tr>
+      <th>Type</th><th>Target label</th><th>Target concept</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>broader</td><td>Line geometry</td><td>https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186695677</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+</section>
+
+  
+</body>
+</html>

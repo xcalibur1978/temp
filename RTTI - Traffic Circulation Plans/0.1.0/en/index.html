@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>RTTI — Traffic Circulation Plans</title>
+  
+  <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
+  <script class="remove">
+    var respecConfig = {"specStatus": "unofficial", "title": "RTTI — Traffic Circulation Plans", "shortName": "RTTI - Traffic Circulation Plans", "editors": [{"name": "Gegevenscatalogus"}], "lint": false, "edDraftURI": "", "additionalCopyrightHolders": "Gegevenscatalogus"};
+  </script>
+  
+  
+  <script src="https://xcalibur1978.github.io/temp/_assets/review.js" defer
+          data-repo="xcalibur1978/temp"
+          data-model="RTTI - Traffic Circulation Plans"
+          data-version="0.1.0"></script>
+  
+  <style>
+    /* Opmaak afgeleid van de PDF (docpublish/pdf/styles/_base.css): dezelfde
+       huisstijl-kleuren en tabelstijl, zodat de ReSpec-pagina en de PDF op
+       elkaar aansluiten. Staat NA ReSpec's basis-stylesheet, dus dit wint. */
+    body {
+      font-family: 'Source Sans 3', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: #303c54;
+      line-height: 1.5;
+    }
+    h1, h2, h3, h4, h5, h6 { color: #1e40af; font-weight: 600; }
+    p.prose { text-align: justify; }
+    p.disclaimer {
+      background: rgba(30, 64, 175, 0.06);
+      border-left: 3px solid #1e40af;
+      padding: 6px 10px;
+      font-style: italic;
+      color: #636f83;
+      margin: 8px 0;
+    }
+    table.data-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 10px 0 18px;
+      font-size: 0.95rem;
+    }
+    table.data-table caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: 600;
+      color: #1e40af;
+      padding-bottom: 4px;
+    }
+    table.data-table th {
+      background: rgba(30, 64, 175, 0.08);
+      border-bottom: 1px solid #1e40af;
+      color: #1e40af;
+      font-weight: 600;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.data-table td {
+      border-bottom: 1px solid #dfe4ee;
+      padding: 6px 8px;
+      vertical-align: top;
+      overflow-wrap: break-word;
+    }
+    table.data-table tr:nth-child(even) td { background: rgba(30, 64, 175, 0.025); }
+
+    /* Modeloverzicht-diagram: de server-side force-directed layout geeft een
+       compacte, normaal-geproportioneerde SVG (net als de visuele editor). Schaal
+       hem responsive binnen de paginabreedte. Voor het zeldzame extreem brede
+       geval blijft het kader horizontaal scrollbaar. */
+    figure.model-figure { margin: 12px 0; width: 100%; }
+    figure.model-figure .model-figure__frame {
+      display: block;
+      overflow-x: auto;
+      border: 1px solid #dfe4ee;
+      border-radius: 6px;
+      padding: 8px;
+      background: #fff;
+      cursor: zoom-in;
+    }
+    figure.model-figure .model-figure__frame > div { width: 100%; }
+    figure.model-figure svg {
+      display: block;
+      /* Vaste breedte 100% van het kader; de hoogte volgt uit de viewBox-
+         verhouding. Alleen height:auto laten renderen faalt als de container
+         nog geen breedte heeft (chicken-egg): dan wordt de SVG 0×0. De inline
+         width/height-attributen op de root-<svg> worden hierdoor overruled. */
+      width: 100%;
+      height: auto;
+    }
+    figure.model-figure figcaption {
+      font-size: 0.85rem;
+      color: #636f83;
+      margin-top: 4px;
+    }
+
+    /* Full-size weergave zonder JS: het sluit-anker ligt normaal onzichtbaar
+       achter de figuur; pas in de vergrote (:target) staat wordt het de
+       schermvullende, klikbare achtergrond die de hash wist. */
+    figure.model-figure .model-figure__zoom-close { display: none; }
+
+    /* Visueel verborgen tekst in het sluit-anker (zie _section.html): maakt
+       textContent niet-leeg zodat ReSpec's anchor-expander het anker overslaat,
+       zonder iets zichtbaars toe te voegen. */
+    .model-figure__zoom-close .visually-hidden {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0);
+      white-space: nowrap; border: 0;
+    }
+
+    /* Vergrote staat: de figuur gaat schermvullend bovenop de pagina staan. De
+       SVG krijgt nu zijn NATUURLIJKE grootte (geen width:100% meer) en het kader
+       scrollt in beide richtingen, zodat het diagram leesbaar is. */
+    figure.model-figure:target {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      margin: 0;
+      padding: 2.5rem 1rem 1rem;
+      background: rgba(15, 23, 42, 0.75);
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+    figure.model-figure:target .model-figure__zoom-close {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: -1;            /* achter de figuurinhoud, vóór de pagina */
+      cursor: zoom-out;
+    }
+    figure.model-figure:target .model-figure__frame {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: auto;        /* scroll in beide richtingen */
+      cursor: default;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    }
+    figure.model-figure:target .model-figure__frame > div {
+      width: max-content;    /* laat de SVG groeien tot zijn natuurlijke breedte */
+      min-width: 100%;
+    }
+    figure.model-figure:target svg {
+      /* Natuurlijke afmetingen uit de viewBox i.p.v. 100% van de smalle kolom,
+         met een leesbare bodembreedte en ruimte om te groeien. */
+      width: auto;
+      min-width: min(1400px, 90vw);
+      height: auto;
+      max-height: none;
+    }
+    figure.model-figure:target figcaption {
+      flex: 0 0 auto;
+      color: #e5e9f0;
+      text-align: center;
+      padding-top: 0.5rem;
+    }
+    /* Een '× sluiten'-knop rechtsboven in de vergrote staat. */
+    figure.model-figure:target::after {
+      content: "× sluiten";
+      position: fixed;
+      top: 0.6rem;
+      right: 1rem;
+      color: #fff;
+      font-size: 0.95rem;
+      pointer-events: none;  /* klikken vangt het achterliggende sluit-anker op */
+    }
+  </style>
+  
+  
+  <style>
+    .status-banner {
+      border-left: 8px solid var(--status-color, #6b7280);
+      background: var(--status-bg, #f3f4f6);
+      padding: 0.6rem 1rem;
+      margin: 0 0 1.5rem;
+      font-family: sans-serif;
+    }
+    .status-banner .status-badge {
+      display: inline-block;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--status-color, #374151);
+    }
+    .status-banner .status-version { color: #4b5563; }
+    /* Review-/consultatie-toelichting: een geaccentueerd blok binnen de banner.
+       Eigen witte kaart met een accent-rand in de statuskleur, zodat het
+       duidelijk leesbaar is én opvalt zonder de banner te overschreeuwen. */
+    .status-banner .status-note {
+      margin-top: 0.7rem;
+      background: #fff;
+      border: 1px solid var(--status-color, #2563eb);
+      border-left: 4px solid var(--status-color, #2563eb);
+      border-radius: 6px;
+      padding: 0.7rem 0.9rem;
+      max-width: 60ch;
+    }
+    .status-banner .status-note__title {
+      margin: 0 0 0.25rem;
+      font-weight: 700;
+      color: var(--status-color, #2563eb);
+    }
+    .status-banner .status-note__body {
+      margin: 0;
+      color: #303c54;
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+    .status-draft       { --status-color: #d97706; --status-bg: #fffbeb; }
+    .status-under_review{ --status-color: #2563eb; --status-bg: #eff6ff; }
+    .status-published   { --status-color: #16a34a; --status-bg: #f0fdf4; }
+    .status-deprecated  { --status-color: #dc2626; --status-bg: #fef2f2; }
+    .status-withdrawn   { --status-color: #991b1b; --status-bg: #fef2f2; }
+  </style>
+  
+</head>
+<body>
+  
+  <h1 id="title">RTTI — Traffic Circulation Plans</h1>
+
+  
+  <section id="abstract">
+    <p>SKOS concept scheme for the priority data type &#x27;traffic circulation plan&#x27; under Delegated Regulation (EU) 2022/670 (RTTI), supplementing ITS Directive 2010/40/EU as amended by Directive (EU) 2023/2661. The plan-level concept is the single top concept; constituent regulation and zone concepts are arranged beneath it. Definitions follow the authoritative source wording (legally enumerated data types are normative per the Annex of (EU) 2022/670; prose definitions from the NAPCORE ITS Data Dictionary are indicative). Concepts that have a canonical home in a sibling RTTI scheme are referenced via rdfs:seeAlso rather than duplicated.</p>
+  </section>
+
+  
+  
+  <div id="beschikbare-talen" class="language-switch">
+    <table class="data-table">
+      <caption>Available languages</caption>
+      <thead>
+        <tr><th>Language</th><th>Document</th></tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><strong>EN</strong></td>
+          <td><strong>RTTI — Traffic Circulation Plans</strong></td>
+        </tr>
+        
+        <tr>
+          <td>NL</td>
+          <td><a href="../nl/index.html">RTTI — Verkeerscirculatieplannen</a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+
+  
+  <div class="status-banner status-draft">
+    <span class="status-badge">Draft</span><span class="status-version"> — Version 0.1.0</span>
+    
+    
+  </div>
+  
+
+  
+    
+<section>
+  <h2>Introduction to semantic modelling</h2>
+  
+    
+      <p class="prose"><p>A <strong>concept scheme</strong> (in SKOS: <em>ConceptScheme</em>) is a structured collection of concepts that carry a fixed, shared meaning within a particular domain. The goal is for everyone working with the model — people and systems alike — to use the same words for the same things. That sounds obvious, but in practice language causes a surprising amount of confusion: what one organisation calls a <em>measurement point</em>, another calls a <em>sensor</em>, a <em>location</em>, or an <em>observation station</em>.</p>
+<p>A concept scheme solves this by recording, for each concept:</p>
+<ul>
+<li>a <strong>preferred label</strong> (prefLabel) it is known by,</li>
+<li>a <strong>definition</strong> that unambiguously describes what the concept does and does not cover,</li>
+<li>and optionally a <strong>scope note</strong> or <strong>example</strong> to clarify borderline cases.</li>
+</ul>
+<p>Concepts rarely stand on their own. They are related <strong>hierarchically</strong> (a vehicle is broader than a truck) or <strong>associatively</strong> (a road user relates to a road segment). These relationships make it possible for queries and analyses to navigate between general and specific concepts, and to make connections between concepts explicit. Within SKOS we use <code>broader</code>, <code>narrower</code>, and <code>related</code> for that.</p>
+<p>When a concept also exists elsewhere — in a national or European standard, for instance — we record that as a <strong>mapping relation</strong>. This prevents reinventing the wheel: we link to the source so interoperability with external systems remains possible.</p>
+<p>This document describes the concept scheme as it is currently recorded. The following sections list the metadata, every concept, the relationships between them, and — where the model is connected to a data source — how it is linked to that source data.</p></p>
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>RTTI — Traffic Circulation Plans</h2>
+  
+    
+      <h3>Description</h3>
+    
+  
+    
+      <p class="prose">SKOS concept scheme for the priority data type &#x27;traffic circulation plan&#x27; under Delegated Regulation (EU) 2022/670 (RTTI), supplementing ITS Directive 2010/40/EU as amended by Directive (EU) 2023/2661. The plan-level concept is the single top concept; constituent regulation and zone concepts are arranged beneath it. Definitions follow the authoritative source wording (legally enumerated data types are normative per the Annex of (EU) 2022/670; prose definitions from the NAPCORE ITS Data Dictionary are indicative). Concepts that have a canonical home in a sibling RTTI scheme are referenced via rdfs:seeAlso rather than duplicated.</p>
+    
+  
+    
+      
+<table class="data-table">
+  <caption>Metadata</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>URI</td><td>https://gegevenscatalogus.gov/rtti-verkeerscirculatieplannen</td>
+      </tr>
+    
+      <tr>
+        <td>Version</td><td>0.1.0</td>
+      </tr>
+    
+      <tr>
+        <td>Publication status</td><td>Draft</td>
+      </tr>
+    
+      <tr>
+        <td>Management status</td><td>Active</td>
+      </tr>
+    
+      <tr>
+        <td>Organization</td><td>Gegevenscatalogus</td>
+      </tr>
+    
+      <tr>
+        <td>Created on</td><td>2026-06-04</td>
+      </tr>
+    
+      <tr>
+        <td>Last modified on</td><td>2026-06-11</td>
+      </tr>
+    
+      <tr>
+        <td>Last modified by</td><td>Arthur Keesen</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Model overview</h2>
+  
+    
+      <p class="prose">Visual overview of the concepts and their relations. Hierarchical relations are drawn with solid arrows; associative relations are drawn with dashed arrows.</p>
+    
+  
+    
+      
+      
+      <figure class="model-figure" id="model-overview-figure">
+        
+        <a class="model-figure__zoom-close" href="#" aria-label="Sluit vergroting"><span class="visually-hidden">Sluit vergroting</span></a>
+        <a class="model-figure__frame" href="#model-overview-figure" title="Klik om op volledig formaat te bekijken">
+          <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="357.1 -173.0 1974.1 911.0" width="1974" height="911"><defs><marker id="arrow-hierarchy" viewBox="0 0 8 8" refX="8" refY="4.0" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 8 4.0 L 0 8 z" fill="#475569" /></marker><marker id="arrow-related" viewBox="0 0 8 8" refX="8" refY="4.0" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 8 4.0 L 0 8 z" fill="#8b5cf6" /></marker></defs><g class="edges"><line x1="1408.1" y1="-97.2" x2="1557.6" y2="12.8" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1583.8" y1="49.8" x2="1627.0" y2="361.3" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1591.4" y1="47.1" x2="1778.0" y2="355.2" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1599.7" y1="37.1" x2="2184.9" y2="260.7" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1598.1" y1="40.4" x2="2088.2" y2="338.9" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1563.5" y1="39.8" x2="1311.3" y2="180.8" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1595.5" y1="43.8" x2="1930.0" y2="364.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1574.4" y1="48.9" x2="1474.6" y2="334.6" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1271.4" y1="208.6" x2="1008.2" y2="454.2" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1376.5" y1="-96.4" x2="1177.5" y2="64.7" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1268.2" y1="204.2" x2="964.8" y2="360.7" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1276.0" y1="212.3" x2="1108.6" y2="500.9" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1266.2" y1="197.8" x2="971.7" y2="239.9" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1281.8" y1="214.5" x2="1212.1" y2="535.7" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" fill="none" /><line x1="1644.0" y1="-112.7" x2="1421.0" y2="-109.4" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" fill="none" stroke-dasharray="6,4" /></g><g class="nodes"><circle cx="410.0" cy="191.0" r="20" fill="#308234" stroke="white" stroke-width="2" /><rect x="361.1" y="215.0" width="97.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="410.0" y="229.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Reliability</text><circle cx="1155.0" cy="83.0" r="20" fill="#48a84d" stroke="white" stroke-width="2" /><rect x="1032.0" y="107.0" width="246.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1155.0" y="121.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Functional road classification</text><circle cx="1951.0" cy="384.0" r="20" fill="#6dc071" stroke="white" stroke-width="2" /><rect x="1890.4" y="408.0" width="121.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1951.0" y="422.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">One-way street</text><circle cx="2113.0" cy="354.0" r="20" fill="#6dc071" stroke="white" stroke-width="2" /><rect x="1954.9" y="378.0" width="316.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="2113.0" y="392.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Direction of travel on reversible lanes</text><circle cx="2212.0" cy="271.0" r="20" fill="#6dc071" stroke="white" stroke-width="2" /><rect x="2096.8" y="295.0" width="230.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="2212.0" y="309.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Permanent access restriction</text><circle cx="1793.0" cy="380.0" r="20" fill="#6dc071" stroke="white" stroke-width="2" /><rect x="1681.7" y="404.0" width="222.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1793.0" y="418.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Freight delivery regulation</text><circle cx="1631.0" cy="390.0" r="20" fill="#6dc071" stroke="white" stroke-width="2" /><rect x="1484.6" y="414.0" width="292.8" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1631.0" y="428.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">School zone / time-based restriction</text><circle cx="1465.0" cy="362.0" r="20" fill="#6dc071" stroke="white" stroke-width="2" /><rect x="1412.2" y="386.0" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1465.0" y="400.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Modal filter</text><circle cx="987.0" cy="474.0" r="20" fill="#97d39a" stroke="white" stroke-width="2" /><rect x="914.7" y="498.0" width="144.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="987.0" y="512.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Low-emission zone</text><circle cx="1094.0" cy="526.0" r="20" fill="#97d39a" stroke="white" stroke-width="2" /><rect x="1010.0" y="550.0" width="168.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1094.0" y="564.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Limited traffic zone</text><circle cx="939.0" cy="374.0" r="20" fill="#97d39a" stroke="white" stroke-width="2" /><rect x="874.5" y="398.0" width="129.0" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="939.0" y="412.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Pedestrian zone</text><circle cx="943.0" cy="244.0" r="20" fill="#97d39a" stroke="white" stroke-width="2" /><rect x="843.4" y="268.0" width="199.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="943.0" y="282.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Congestion charging zone</text><circle cx="1206.0" cy="564.0" r="20" fill="#97d39a" stroke="white" stroke-width="2" /><rect x="1153.2" y="588.0" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1206.0" y="602.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Parking zone</text><circle cx="1664.0" cy="-113.0" r="20" fill="#308234" stroke="white" stroke-width="2" /><rect x="1611.2" y="-89.0" width="105.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1664.0" y="-74.8" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Road closure</text><circle cx="1392.0" cy="-109.0" r="20" fill="#308234" stroke="white" stroke-width="2" /><rect x="1292.4" y="-85.0" width="199.2" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1392.0" y="-70.8" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Traffic circulation plan</text><circle cx="1286.0" cy="195.0" r="20" fill="#6dc071" stroke="white" stroke-width="2" /><rect x="1194.2" y="219.0" width="183.6" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1286.0" y="233.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Regulated traffic zone</text><circle cx="1581.0" cy="30.0" r="20" fill="#48a84d" stroke="white" stroke-width="2" /><rect x="1504.8" y="54.0" width="152.4" height="20" rx="4" ry="4" fill="white" stroke="#e2e8f0" stroke-width="1" /><text x="1581.0" y="68.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#334155">Traffic regulation</text></g><g class="legend"><line x1="357.1" y1="678.0" x2="397.1" y2="678.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow-hierarchy)" /><text x="407.1" y="681.9" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#475569">broader / narrower (hiërarchisch / Associatief)</text><line x1="357.1" y1="702.0" x2="397.1" y2="702.0" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow-related)" stroke-dasharray="6,4" /><text x="407.1" y="705.9" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#475569">related (gerelateerd)</text></g><text x="357.1" y="734.0" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#94a3b8">Bron: Ontologica — RTTI — Traffic Circulation Plans</text></svg></div>
+        </a>
+        <figcaption>Model overview</figcaption>
+      </figure>
+    
+  
+</section>
+
+  
+    
+<section>
+  <h2>Concepts</h2>
+  
+    
+      
+<section id="concept-01">
+  <h3>Traffic circulation plan</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>The minimum information required for disseminating and describing the content of plans that are developed by local authorities to control and guide traffic flows in response to known and recurring traffic conditions as well as in consideration of seasonality effects and existing limitation and constraints (e.g. existence of school zones).</td>
+      </tr>
+    
+      <tr>
+        <td>Alternative labels</td><td>TCP</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>http://data.europa.eu/eli/dir/2023/2661/oj, https://eur-lex.europa.eu/eli/reg_del/2022/670/oj, https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-02">
+  <h3>Traffic regulation</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>Machine-interpretable rules and restrictions that control vehicle or pedestrian movement on the road network to ensure safety and traffic efficiency.</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://docs.datex2.eu/v3.6/trafficregulation/index.html, https://eur-lex.europa.eu/eli/reg_del/2022/670/oj, https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-03">
+  <h3>Functional road classification</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>Classification of road links according to the importance of each road link within the road network (its functional role), as distinct from the physical form of way.</td>
+      </tr>
+    
+      <tr>
+        <td>Alternative labels</td><td>FRC</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://github.com/NAPCORE/its-data-dictionary, https://inspire.ec.europa.eu/theme/tn</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-04">
+  <h3>One-way street</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>Road segments where traffic is allowed to move in only one direction.</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://docs.datex2.eu/v3.6/trafficregulation/index.html, https://eur-lex.europa.eu/eli/reg_del/2022/670/oj, https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-05">
+  <h3>Regulated traffic zone</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>Defined areas with specific traffic rules, including restricted access zones, their boundaries, and the current rules or conditions for vehicles entering these zones.</td>
+      </tr>
+    
+      <tr>
+        <td>Alternative labels</td><td>UVAR zone</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://docs.datex2.eu/v3.6/controlledzone/index.html, https://eur-lex.europa.eu/eli/reg_del/2022/670/oj, https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-06">
+  <h3>Direction of travel on reversible lanes</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>Regulations indicating the direction that vehicles should travel on lanes where the direction is changeable based on traffic needs or time of day.</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://docs.datex2.eu/v3.6/trafficregulation/index.html, https://eur-lex.europa.eu/eli/reg_del/2022/670/oj, https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-07">
+  <h3>Permanent access restriction</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>Permanent legal or physical restrictions or limitations on vehicles to access a specific road link of any type.</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://eur-lex.europa.eu/eli/reg_del/2022/670/oj, https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-08">
+  <h3>Freight delivery regulation</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>Regulations for delivering freight, such as the designation of certain road links or areas, loading or unloading permissions or prohibitions, and time-related restrictions.</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://eur-lex.europa.eu/eli/reg_del/2022/670/oj, https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-09">
+  <h3>School zone / time-based restriction</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>A location- and time-conditioned traffic restriction applied within a traffic circulation plan, such as restricting through traffic during school hours.</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://docs.datex2.eu/v3.6/trafficregulation/index.html, https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-10">
+  <h3>Modal filter</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>A point on a road that prevents through motor traffic while allowing cyclists and pedestrians to pass, used as a measure within a traffic circulation plan.</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-11">
+  <h3>Low-emission zone</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>An area where access by the most polluting vehicles is restricted or deterred to improve air quality; one of the urban vehicle access regulation (UVAR) types.</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://docs.datex2.eu/v3.6/controlledzone/index.html, https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-12">
+  <h3>Limited traffic zone</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>An area where vehicle access is restricted to authorised users or to specific conditions; one of the urban vehicle access regulation (UVAR) types.</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://docs.datex2.eu/v3.6/controlledzone/index.html, https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-13">
+  <h3>Pedestrian zone</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>An area reserved primarily for pedestrians where general motor traffic is prohibited or restricted; one of the urban vehicle access regulation (UVAR) types.</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://docs.datex2.eu/v3.6/controlledzone/index.html, https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-14">
+  <h3>Congestion charging zone</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>An area where a charge is levied on vehicles in order to manage congestion; one of the urban vehicle access regulation (UVAR) types.</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://docs.datex2.eu/v3.6/controlledzone/index.html, https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-15">
+  <h3>Parking zone</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>An area subject to specific parking regulations or charges; one of the urban vehicle access regulation (UVAR) types.</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://docs.datex2.eu/v3.6/controlledzone/index.html, https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-16">
+  <h3>Road closure</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>Dynamic information disseminating the closure of road links of any type, which may be directional and either planned or unplanned.</td>
+      </tr>
+    
+      <tr>
+        <td>Source</td><td>https://github.com/NAPCORE/its-data-dictionary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+    
+      
+<section id="concept-1781184487446">
+  <h3>Reliability</h3>
+  
+    
+      
+<table class="data-table">
+  <caption>Concept details</caption>
+  <thead>
+    <tr>
+      <th>Field</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Definition</td><td>The reliability for datasets or data items</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    
+  
+</section>
+
+    
+  
+</section>
+
+  
+</body>
+</html>
