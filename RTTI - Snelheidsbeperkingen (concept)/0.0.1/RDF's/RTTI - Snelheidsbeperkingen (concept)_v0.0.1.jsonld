@@ -1,322 +1,38 @@
 [
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772187859423",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186704395",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186695677"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "nl",
-        "@value": "Het gebied buiten de door de gemeenteraad vastgestelde bebouwde kom. Buiten de bebouwde kom gelden de maximumsnelheden  130 km/h op autosnelwegen, 100 km/h op autowegen en 80 km/h op overige wegen, tenzij door verkeersborden anders is aangegeven."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
-      {
-        "@language": "nl",
-        "@value": "Is dit een goede toevoeging voor 'rest categorie'? RobS: RVV noemt dit \"andere wegen\" https://wetten.overheid.nl/jci1.3:c:BWBR0004825&hoofdstuk=II&paragraaf=8&artikel=21&z=2026-01-01&g=2026-01-01"
+        "@value": "nader te bepalen"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "nl",
-        "@value": "N-weg"
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771857141294",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "Informatie bord om mensen te informeren over de verkeersregels."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "L401 Sign"
+        "@value": "Area geometry"
       },
       {
         "@language": "nl",
-        "@value": "L401 bord"
+        "@value": "Vlak geometrie"
       }
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/collections/dynamische-snelheidsbeperking",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#OrderedCollection"
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#memberList": [
-      {
-        "@list": [
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238916868"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236355335"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Dynamische snelheidsbeperking"
-      },
-      {
-        "@language": "nl",
-        "@value": "Dynamische snelheidsbeperking"
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236028582",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "Meteorologische condities (zoals regen, mist, sneeuw, ijzel of storm) die aanleiding geven tot een aangepaste snelheidsbeperking. \nIn Nederland worden weersafhankelijke snelheidsbeperkingen met name dynamisch ingesteld via matrixsignalering op autosnelwegen (RWS – Praktijkrichtlijn Dynamisch Verkeersmanagement) of statisch aangegeven via onderborden (bijv. 'bij nat wegdek')."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Weather Conditions"
-      },
-      {
-        "@language": "nl",
-        "@value": "Weersomstandigheden"
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/collections/snelheidsbeperking-borden",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#OrderedCollection"
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#memberList": [
-      {
-        "@list": [
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238916868"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236355335"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772185159176"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238610163"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771857141294"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235385932"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236462476"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236446358"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186160984"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236028582"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236142216"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236090614"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237259923"
-          },
-          {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235022627"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Snelheidsbeperking borden"
-      },
-      {
-        "@language": "nl",
-        "@value": "Snelheidsbeperking borden"
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235638908",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "Door doorgetrokken of onderbroken strepen gemarkeerd gedeelte van de rijbaan van zodanige breedte dat bestuurders van motorvoertuigen op meer dan twee wielen daarvan gebruik kunnen maken. \n\nBij toepassing van een verkeersbord op specifieke rijstroken kan een snelheidsbeperking beperkt worden tot één of meer rijstroken.\nBijvoorbeeld bij spitsstroken of matrixborden."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Lane"
-      },
-      {
-        "@language": "nl",
-        "@value": "Rijstrook"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#related": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186214125"
-      },
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235085917"
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236142216",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "Het verkeersteken dat het eindpunt aangeeft van de geldigheid van een snelheidsbeperking."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#example": [
-      {
-        "@language": "nl",
-        "@value": "Dit kan zijn: een bord A2 (einde maximumsnelheid), een zonebord (bijv. A01-30-ZE voor einde 30 km/h-zone), een bord G2/G4/G6 (einde autosnelweg/autoweg/erf), het deactiveren van een elektronisch signaleringsbord, of het bereiken van een kruispunt waarachter een ander regime geldt."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "End Indication"
-      },
-      {
-        "@language": "nl",
-        "@value": "Aanduiding einde"
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235620358",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "Elk voor rijdend verkeer bestemd weggedeelte, met uitzondering van de fietspaden en de fiets/bromfietspaden."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Carriageway"
-      },
-      {
-        "@language": "nl",
-        "@value": "Rijbaan"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#related": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186214125"
-      },
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235638908"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "nl",
-        "@value": "In het kader van snelheidsbeperkingen kan een aanduiding specifiek betrekking hebben op één rijbaan van een weg."
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235085917",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235085917",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -332,7 +48,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -347,235 +63,89 @@
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236462476",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186160984",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "https://kennisbank.crow.nl/public/gastgebruiker/FVV/Verkeerstekens_(toepassing,_plaatsing_en_uitvoering)/Hoofdstuk_C._Geslotenverklaring/29510"
+      },
+      {
+        "@value": "https://wetten.overheid.nl/BWBR0004826/"
+      },
+      {
+        "@value": "https://www.rijkswaterstaat.nl/wegen/wetten-regels-en-vergunningen/verkeerswetten/maximumsnelheid"
+      },
+      {
+        "@value": "https://wetten.overheid.nl/BWBR0004825/"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@language": "nl",
-        "@value": "Bord dat onder een verkeersbord wordt aangebracht ter nadere aanduiding van de werking van dat verkeersbord. Vanuit wetgeving is bepaald welke typen onderborden zijn toegestaan, waaronder: een aanduiding van het soort weggebruiker waarvoor het bord geldt, een tijdsaanduiding, of een afstandsaanduiding."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+        "@language": "en",
+        "@value": "The days and/or hours indicated on a supplementary sign that imply a limitation of the temporal scope of application of the indication on the overlying traffic sign; in particular, for speed limits, the period during which the maximum speed indicated on the traffic sign applies."
+      },
       {
         "@language": "nl",
-        "@value": "Bevat een onderbord altijd een conditie?"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#example": [
-      {
-        "@language": "nl",
-        "@value": "Bij snelheidsbeperkingen kan een onderbord bijv. de geldigheid beperken tot bepaalde voertuigtypen, tijdvensters of weersomstandigheden."
+        "@value": "De op een onderbord vermelde dagen en/of uren die een beperking van de werkingssfeer in de tijd inhouden van de aanduiding op het bovenliggende verkeersbord; in het bijzonder, voor snelheidsbeperkingen, het tijdvak waarbinnen de op het verkeersbord aangeduide maximumsnelheid geldt."
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Supplementary Sign"
+        "@value": "Time window"
       },
       {
         "@language": "nl",
-        "@value": "Onderbord"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#related": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236446358"
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235313383",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186695677"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "Weg, aangeduid door bord G3. Buiten de bebouwde kom geldt op autowegen een wettelijke maximumsnelheid van 100 km/h voor motorvoertuigen tenzij anders aangegeven.\n\nOp autowegen mogen uitsluitend motorvoertuigen rijden die minimaal 50 km/h kunnen en mogen rijden."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Expressway"
-      },
-      {
-        "@language": "nl",
-        "@value": "Autoweg"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "nl",
-        "@value": "Langs autowegen gelegen parkeerplaatsen, tankstations en bushalteplaatsen maken geen deel van de autoweg uit."
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237259923",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "Een zone die genest is binnen een omsluitende zone en waarvan de snelheidsbeperking voorrang heeft boven die van de omsluitende zone zolang de weggebruiker zich binnen de inliggende zone bevindt."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Inner regime"
-      },
-      {
-        "@language": "nl",
-        "@value": "Inliggend regime"
+        "@value": "Tijdvenster"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "The inner zone concept describes the cascading effect of nested zones. When entering an inner zone, the speed restriction of the enclosing zone is temporarily suspended. When exiting, the speed restriction of the enclosing zone becomes active again. This mechanism works recursively: multiple levels of nesting are possible."
+        "@value": "The term 'time window' does not appear as such in the legislation; the legal basis lies in the limitation of the scope and is referred to as a 'time window' by Rijkswaterstaat and CROW. The concept has a dual realization: as a physical supplementary sign beneath a metal sign, or as a time condition within a digital/electronic sign. Not to be confused with 'window times' (loading and unloading times for urban logistics), which are incorporated into the Goods Delivery model."
       },
       {
         "@language": "nl",
-        "@value": "Het concept inliggende zone beschrijft het cascaderend effect van geneste zones. Bij het inrijden van een inliggende zone wordt de snelheidsbeperking van de omsluitende zone tijdelijk opgeschort. Bij het uitrijden wordt de snelheidsbeperking van de omsluitende zone weer actief. Dit mechanisme werkt recursief: meerdere niveaus van nesting zijn mogelijk."
+        "@value": "De term 'tijdvenster' komt niet als zodanig voor in de wetgeving; de juridische grondslag ligt in de beperking van de werkingssfeer en wordt door Rijkswaterstaat en CROW als 'tijdvenster' aangeduid. Het concept kent een dubbele realisatie: als fysiek onderbord onder een blikken bord, of als tijdsconditie binnen een digitaal/elektronisch bord. Niet te verwarren met 'venstertijden' (laad- en lostijden voor stadslogistiek), dat in het model Goederenlevering is ondergebracht."
       }
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186214125",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236028582",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "nl",
-        "@value": "De richting waarin het verkeer zich op een rijbaan of rijstrook voortbeweegt. Relevant voor snelheidsbeperkingen waar een beperking slechts geldt voor één rijrichting, bijv. bij gescheiden rijbanen of bij borden die aan één zijde van de weg zijn geplaatst."
+        "@value": "Meteorologische condities (zoals regen, mist, sneeuw, ijzel of storm) die aanleiding geven tot een aangepaste snelheidsbeperking. \nIn Nederland worden weersafhankelijke snelheidsbeperkingen met name dynamisch ingesteld via matrixsignalering op autosnelwegen (RWS – Praktijkrichtlijn Dynamisch Verkeersmanagement) of statisch aangegeven via onderborden (bijv. 'bij nat wegdek')."
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "nl",
-        "@value": "Rijrichting"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "nl",
-        "@value": "Er is bepaalt dat de toepassing van verkeersborden kan worden beperkt tot rijstroken, wat impliceert dat richting van belang is."
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235164125",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186704395"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Nog bepalen"
-      },
-      {
-        "@language": "nl",
-        "@value": "Een als erf aangeduid deel van de openbare weg, begrensd door bord G5 (begin erf) en bord G6 (einde erf). Op een erf geldt een maximumsnelheid van 15 km/h."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Residential Area"
+        "@value": "Weather Conditions"
       },
       {
         "@language": "nl",
-        "@value": "Woonerf"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "nl",
-        "@value": "HR 1 november 2011, ECLI:NL:HR:2011:BR5927; voorheen 'stapvoets'"
+        "@value": "Weersomstandigheden"
       }
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236355335",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "Elektronisch signaleringsbord waarop verkeersborden dynamisch kunnen worden weergegeven. Een digitaal bord kan een lagere snelheid aangeven dan het statische ('blikken') bord; in dat geval geldt de lagere snelheid van het digitale bord. Pas wanneer het digitale bord een einde-aanduiding toont of blanco is, herleeft de snelheidsbeperking van het statische bord. Digitale borden worden met name ingezet op autosnelwegen via matrixsignalering (RWS)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Digital Sign"
-      },
-      {
-        "@language": "nl",
-        "@value": "Digitaal bord"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "nl",
-        "@value": "Het digitale bord heeft een hogere geldigheid indien een digitaal bord een lagere snelheid aan dan de blikken borden.\n\nPas als als het digitale bord een einde aanduiding aangeeft, dan geld het blikken bord in. \n\n\"Zie het als een digitale zone\""
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772185159176",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772185159176",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -605,15 +175,15 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235385932"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235385932"
       },
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238610163"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238610163"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -628,15 +198,15 @@
     ],
     "http://www.w3.org/2004/02/skos/core#related": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771857141294"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236355335"
       },
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236355335"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771857141294"
       }
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238916868",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238916868",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -648,7 +218,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -663,7 +233,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#related": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
@@ -674,7 +244,84 @@
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772187355998",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/dynamische-snelheidsbeperking",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#OrderedCollection"
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#memberList": [
+      {
+        "@list": [
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238916868"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236172013"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236355335"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Dynamische snelheidsbeperking"
+      },
+      {
+        "@language": "nl",
+        "@value": "Dynamische snelheidsbeperking"
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235313383",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186695677"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "Weg, aangeduid door bord G3. Buiten de bebouwde kom geldt op autowegen een wettelijke maximumsnelheid van 100 km/h voor motorvoertuigen tenzij anders aangegeven.\n\nOp autowegen mogen uitsluitend motorvoertuigen rijden die minimaal 50 km/h kunnen en mogen rijden."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Expressway"
+      },
+      {
+        "@language": "nl",
+        "@value": "Autoweg"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "nl",
+        "@value": "Langs autowegen gelegen parkeerplaatsen, tankstations en bushalteplaatsen maken geen deel van de autoweg uit."
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772187355998",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -710,7 +357,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -725,7 +372,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#related": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
@@ -740,42 +387,7 @@
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236446358",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "Een conditie waardoor de standaard snelheidsbeperking op een wegvak wordt gemodificeerd. Uitzonderingen worden in de Nederlandse praktijk kenbaar gemaakt via onderborden en kunnen betrekking hebben op voertuigtype, tijdvenster, weersomstandigheden of andere voorwaarden."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Condition"
-      },
-      {
-        "@language": "nl",
-        "@value": "Conditie"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#related": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236028582"
-      },
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186160984"
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -787,7 +399,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -802,10 +414,10 @@
     ],
     "http://www.w3.org/2004/02/skos/core#related": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236142216"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236090614"
       },
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236090614"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236142216"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
@@ -816,90 +428,13 @@
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186485225",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "nader te bepalen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235313383"
-      },
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235331951"
-      },
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772187859423"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "nl",
-        "@value": "Weg"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#related": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235620358"
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235331951",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235022627",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186695677"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "Weg, aangeduid door bord G1. Buiten de bebouwde kom geldt op autosnelwegen een wettelijke maximumsnelheid van 130 km/h voor motorvoertuigen tenzij anders aangegeven.\n\nOp autosnelwegen mogen uitsluitend motorvoertuigen rijden die minimaal 60 km/h kunnen en mogen rijden."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Motorway"
-      },
-      {
-        "@language": "nl",
-        "@value": "Autosnelweg"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "nl",
-        "@value": "Langs autosnelwegen gelegen parkeerplaatsen, tankstations en bushalteplaatsen maken geen deel van de autosnelweg uit."
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235022627",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -924,12 +459,12 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237259923"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237259923"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -944,79 +479,390 @@
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186695677",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236172013",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
-    "http://purl.org/dc/terms/source": [
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
       {
-        "@value": "https://docs.geostandaarden.nl/nen3610/gimeg/"
-      },
-      {
-        "@value": "https://modellen.geostandaarden.nl/def/nen3610-2022/"
-      },
-      {
-        "@value": "http://www.opengis.net/ont/sf"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860"
+        "@language": "nl",
+        "@value": "Verkeersbord"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@language": "en",
-        "@value": "A one-dimensional geometric primitive representing a line: a continuous curve, measurable in length within a coordinate system, composed of one or more connected line segments in which the end point of each segment — except the last — coincides with the start point of the next. Line geometry is used to spatially represent linear features such as a road; designated GM_Curve in ISO 19107 and Curve/LineString in OGC Simple Features"
-      },
+        "@language": "nl",
+        "@value": "Het blikken- of digitale bord waarmee een snelheidsbeperking aan de weggebruiker kenbaar wordt gemaakt."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
       {
         "@language": "nl",
-        "@value": "Een ééndimensionale geometrische primitief die een lijn representeert: een continue, in een coördinatensysteem meetbare lijn die bestaat uit één of meer onderling verbonden lijnsegmenten, waarbij het eindpunt van elk segment — op het laatste na — verbonden is met het beginpunt van het volgende. Lijngeometrie wordt gebruikt om lijnvormige objecten, zoals een weg, ruimtelijk vast te leggen; in ISO 19107 aangeduid als GM_Curve en Curve/LineString in OGC simple features."
+        "@value": "altLabel \"Verkeersbord\" toegevoegd"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772185159176"
+      },
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236355335"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Line geometry"
+        "@value": "Indication"
       },
       {
         "@language": "nl",
-        "@value": "Lijngeometrie"
+        "@value": "Aanduiding"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#related": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237259923"
+      },
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236462476"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "nl",
+        "@value": "Dit omvat verkeersborden (zowel statische 'blikken borden' als dynamische elektronische signaleringsborden), matrixborden boven rijstroken en in-car systemen."
       }
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/collections/geometrisch",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235638908",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "Door doorgetrokken of onderbroken strepen gemarkeerd gedeelte van de rijbaan van zodanige breedte dat bestuurders van motorvoertuigen op meer dan twee wielen daarvan gebruik kunnen maken. \n\nBij toepassing van een verkeersbord op specifieke rijstroken kan een snelheidsbeperking beperkt worden tot één of meer rijstroken.\nBijvoorbeeld bij spitsstroken of matrixborden."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Lane"
+      },
+      {
+        "@language": "nl",
+        "@value": "Rijstrook"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#related": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235085917"
+      },
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186214125"
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236142216",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236172013"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "Het verkeersteken dat het eindpunt aangeeft van de geldigheid van een snelheidsbeperking."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@language": "nl",
+        "@value": "Dit kan zijn: een bord A2 (einde maximumsnelheid), een zonebord (bijv. A01-30-ZE voor einde 30 km/h-zone), een bord G2/G4/G6 (einde autosnelweg/autoweg/erf), het deactiveren van een elektronisch signaleringsbord, of het bereiken van een kruispunt waarachter een ander regime geldt."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "End Indication"
+      },
+      {
+        "@language": "nl",
+        "@value": "Aanduiding einde"
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771857141294",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "Informatie bord om mensen te informeren over de verkeersregels."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "L401 Sign"
+      },
+      {
+        "@language": "nl",
+        "@value": "L401 bord"
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235874098",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "Classificatie van een voertuig op basis van de wettelijke indeling in het RVV 1990 en het Voertuigreglement. \n\nRelevant voor snelheidsbeperkingen omdat de wet bijzondere maximumsnelheden per voertuigcategorie vaststelt."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@language": "nl",
+        "@value": "T-100 bus mag maximaal 100 km/h"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Vehicle Type"
+      },
+      {
+        "@language": "nl",
+        "@value": "Voertuigtype"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#related": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186485225",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "nader te bepalen"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235313383"
+      },
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772187859423"
+      },
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235331951"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "nl",
+        "@value": "Weg"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#related": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235620358"
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/snelheidsbeperking-borden",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#OrderedCollection"
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#memberList": [
       {
         "@list": [
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236944308"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238916868"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235164125"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235313383"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236172013"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772187859423"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236355335"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235331951"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772185159176"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238610163"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771857141294"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235385932"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236462476"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236446358"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186160984"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236028582"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236142216"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236090614"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237259923"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235022627"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Snelheidsbeperking borden"
+      },
+      {
+        "@language": "nl",
+        "@value": "Snelheidsbeperking borden"
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Nog te bepalen"
+      },
+      {
+        "@language": "nl",
+        "@value": "De toegestane snelheid op een weg of weggedeelte, uitgedrukt in kilometers per uur (km/h). In Nederland wordt de maximumsnelheid bepaald door: \n\n(1) de wettelijke standaardlimieten \n(2) door middel van verkeersborden \n(3) dynamisch ingestelde limieten via digitale borden."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Speedlimit"
+      },
+      {
+        "@language": "nl",
+        "@value": "Snelheidsbeperking"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#related": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236172013"
+      },
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "nl",
+        "@value": "In Nederland gaat het voornamelijk over maximum snelheden. Minimum snelheden zijn afhankelijk van het voertuigtype."
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/geometrisch",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#OrderedCollection"
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#memberList": [
+      {
+        "@list": [
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236944308"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235164125"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235313383"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772187859423"
+          },
+          {
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235331951"
           }
         ]
       }
@@ -1033,66 +879,7 @@
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186704395",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "nader te bepalen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Area geometry"
-      },
-      {
-        "@language": "nl",
-        "@value": "Vlak geometrie"
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238610163",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "Het verkeersbord A1 geeft een maximumsnelheid aan; bord A2 duidt het einde van een maximumsnelheid aan. De plaatsing van A-borden voor snelheidslimieten geschiedt krachtens een verkeersbesluit. Op A-borden kan de snelheid zonaal worden toegepast met zone-indicatie (bijv. A01-30-ZB)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "A Sign"
-      },
-      {
-        "@language": "nl",
-        "@value": "A bord"
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235385932",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235385932",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -1110,7 +897,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -1131,13 +918,305 @@
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236944308",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238610163",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "Het verkeersbord A1 geeft een maximumsnelheid aan; bord A2 duidt het einde van een maximumsnelheid aan. De plaatsing van A-borden voor snelheidslimieten geschiedt krachtens een verkeersbesluit. Op A-borden kan de snelheid zonaal worden toegepast met zone-indicatie (bijv. A01-30-ZB)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "A Sign"
+      },
+      {
+        "@language": "nl",
+        "@value": "A bord"
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236090614",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186704395"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236172013"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "Het verkeersteken dat het beginpunt aangeeft van de geldigheid van een snelheidsbeperking."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Start Indication"
+      },
+      {
+        "@language": "nl",
+        "@value": "Aanduiding begin"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "nl",
+        "@value": "Dit kan zijn: een bord A1 (maximumsnelheid) of een zonebord (bijv. A01-30-ZB voor begin 30 km/h-zone), een bord G1/G3/G5 (begin autosnelweg/autoweg/erf), of de activering van een elektronisch signaleringsbord."
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236446358",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "Een conditie waardoor de standaard snelheidsbeperking op een wegvak wordt gemodificeerd. Uitzonderingen worden in de Nederlandse praktijk kenbaar gemaakt via onderborden en kunnen betrekking hebben op voertuigtype, tijdvenster, weersomstandigheden of andere voorwaarden."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Condition"
+      },
+      {
+        "@language": "nl",
+        "@value": "Conditie"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#related": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236028582"
+      },
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186160984"
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235331951",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186695677"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "Weg, aangeduid door bord G1. Buiten de bebouwde kom geldt op autosnelwegen een wettelijke maximumsnelheid van 130 km/h voor motorvoertuigen tenzij anders aangegeven.\n\nOp autosnelwegen mogen uitsluitend motorvoertuigen rijden die minimaal 60 km/h kunnen en mogen rijden."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Motorway"
+      },
+      {
+        "@language": "nl",
+        "@value": "Autosnelweg"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "nl",
+        "@value": "Langs autosnelwegen gelegen parkeerplaatsen, tankstations en bushalteplaatsen maken geen deel van de autosnelweg uit."
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186214125",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "De richting waarin het verkeer zich op een rijbaan of rijstrook voortbeweegt. Relevant voor snelheidsbeperkingen waar een beperking slechts geldt voor één rijrichting, bijv. bij gescheiden rijbanen of bij borden die aan één zijde van de weg zijn geplaatst."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "nl",
+        "@value": "Rijrichting"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "nl",
+        "@value": "Er is bepaalt dat de toepassing van verkeersborden kan worden beperkt tot rijstroken, wat impliceert dat richting van belang is."
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235620358",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "Elk voor rijdend verkeer bestemd weggedeelte, met uitzondering van de fietspaden en de fiets/bromfietspaden."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Carriageway"
+      },
+      {
+        "@language": "nl",
+        "@value": "Rijbaan"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#related": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186214125"
+      },
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235638908"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "nl",
+        "@value": "In het kader van snelheidsbeperkingen kan een aanduiding specifiek betrekking hebben op één rijbaan van een weg."
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237259923",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "Een zone die genest is binnen een omsluitende zone en waarvan de snelheidsbeperking voorrang heeft boven die van de omsluitende zone zolang de weggebruiker zich binnen de inliggende zone bevindt."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Inner regime"
+      },
+      {
+        "@language": "nl",
+        "@value": "Inliggend regime"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The inner zone concept describes the cascading effect of nested zones. When entering an inner zone, the speed restriction of the enclosing zone is temporarily suspended. When exiting, the speed restriction of the enclosing zone becomes active again. This mechanism works recursively: multiple levels of nesting are possible."
+      },
+      {
+        "@language": "nl",
+        "@value": "Het concept inliggende zone beschrijft het cascaderend effect van geneste zones. Bij het inrijden van een inliggende zone wordt de snelheidsbeperking van de omsluitende zone tijdelijk opgeschort. Bij het uitrijden wordt de snelheidsbeperking van de omsluitende zone weer actief. Dit mechanisme werkt recursief: meerdere niveaus van nesting zijn mogelijk."
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235164125",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186704395"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Nog bepalen"
+      },
+      {
+        "@language": "nl",
+        "@value": "Een als erf aangeduid deel van de openbare weg, begrensd door bord G5 (begin erf) en bord G6 (einde erf). Op een erf geldt een maximumsnelheid van 15 km/h."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Residential Area"
+      },
+      {
+        "@language": "nl",
+        "@value": "Woonerf"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "nl",
+        "@value": "HR 1 november 2011, ECLI:NL:HR:2011:BR5927; voorheen 'stapvoets'"
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236944308",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186704395"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1148,7 +1227,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -1163,107 +1242,7 @@
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186160984",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@value": "https://kennisbank.crow.nl/public/gastgebruiker/FVV/Verkeerstekens_(toepassing,_plaatsing_en_uitvoering)/Hoofdstuk_C._Geslotenverklaring/29510"
-      },
-      {
-        "@value": "https://wetten.overheid.nl/BWBR0004826/"
-      },
-      {
-        "@value": "https://www.rijkswaterstaat.nl/wegen/wetten-regels-en-vergunningen/verkeerswetten/maximumsnelheid"
-      },
-      {
-        "@value": "https://wetten.overheid.nl/BWBR0004825/"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The days and/or hours indicated on a supplementary sign that imply a limitation of the temporal scope of application of the indication on the overlying traffic sign; in particular, for speed limits, the period during which the maximum speed indicated on the traffic sign applies."
-      },
-      {
-        "@language": "nl",
-        "@value": "De op een onderbord vermelde dagen en/of uren die een beperking van de werkingssfeer in de tijd inhouden van de aanduiding op het bovenliggende verkeersbord; in het bijzonder, voor snelheidsbeperkingen, het tijdvak waarbinnen de op het verkeersbord aangeduide maximumsnelheid geldt."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Time window"
-      },
-      {
-        "@language": "nl",
-        "@value": "Tijdvenster"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The term 'time window' does not appear as such in the legislation; the legal basis lies in the limitation of the scope and is referred to as a 'time window' by Rijkswaterstaat and CROW. The concept has a dual realization: as a physical supplementary sign beneath a metal sign, or as a time condition within a digital/electronic sign. Not to be confused with 'window times' (loading and unloading times for urban logistics), which are incorporated into the Goods Delivery model."
-      },
-      {
-        "@language": "nl",
-        "@value": "De term 'tijdvenster' komt niet als zodanig voor in de wetgeving; de juridische grondslag ligt in de beperking van de werkingssfeer en wordt door Rijkswaterstaat en CROW als 'tijdvenster' aangeduid. Het concept kent een dubbele realisatie: als fysiek onderbord onder een blikken bord, of als tijdsconditie binnen een digitaal/elektronisch bord. Niet te verwarren met 'venstertijden' (laad- en lostijden voor stadslogistiek), dat in het model Goederenlevering is ondergebracht."
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Nog te bepalen"
-      },
-      {
-        "@language": "nl",
-        "@value": "De toegestane snelheid op een weg of weggedeelte, uitgedrukt in kilometers per uur (km/h). In Nederland wordt de maximumsnelheid bepaald door: \n\n(1) de wettelijke standaardlimieten \n(2) door middel van verkeersborden \n(3) dynamisch ingestelde limieten via digitale borden."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Speedlimit"
-      },
-      {
-        "@language": "nl",
-        "@value": "Snelheidsbeperking"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#related": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860"
-      },
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "nl",
-        "@value": "In Nederland gaat het voornamelijk over maximum snelheden. Minimum snelheden zijn afhankelijk van het voertuigtype."
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ],
@@ -1298,163 +1277,184 @@
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235874098",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "Classificatie van een voertuig op basis van de wettelijke indeling in het RVV 1990 en het Voertuigreglement. \n\nRelevant voor snelheidsbeperkingen omdat de wet bijzondere maximumsnelheden per voertuigcategorie vaststelt."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#example": [
-      {
-        "@language": "nl",
-        "@value": "T-100 bus mag maximaal 100 km/h"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Vehicle Type"
-      },
-      {
-        "@language": "nl",
-        "@value": "Voertuigtype"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#related": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#altLabel": [
-      {
-        "@language": "nl",
-        "@value": "Verkeersbord"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "nl",
-        "@value": "Het blikken- of digitale bord waarmee een snelheidsbeperking aan de weggebruiker kenbaar wordt gemaakt."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
-      {
-        "@language": "nl",
-        "@value": "altLabel \"Verkeersbord\" toegevoegd"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772185159176"
-      },
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236355335"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Indication"
-      },
-      {
-        "@language": "nl",
-        "@value": "Aanduiding"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#related": [
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236462476"
-      },
-      {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237259923"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "nl",
-        "@value": "Dit omvat verkeersborden (zowel statische 'blikken borden' als dynamische elektronische signaleringsborden), matrixborden boven rijstroken en in-car systemen."
-      }
-    ]
-  },
-  {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236090614",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772187859423",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186695677"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "nl",
-        "@value": "Het verkeersteken dat het beginpunt aangeeft van de geldigheid van een snelheidsbeperking."
+        "@value": "Het gebied buiten de door de gemeenteraad vastgestelde bebouwde kom. Buiten de bebouwde kom gelden de maximumsnelheden  130 km/h op autosnelwegen, 100 km/h op autowegen en 80 km/h op overige wegen, tenzij door verkeersborden anders is aangegeven."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "nl",
+        "@value": "Is dit een goede toevoeging voor 'rest categorie'? RobS: RVV noemt dit \"andere wegen\" https://wetten.overheid.nl/jci1.3:c:BWBR0004825&hoofdstuk=II&paragraaf=8&artikel=21&z=2026-01-01&g=2026-01-01"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "nl",
+        "@value": "N-weg"
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236355335",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "Elektronisch signaleringsbord waarop verkeersborden dynamisch kunnen worden weergegeven. Een digitaal bord kan een lagere snelheid aangeven dan het statische ('blikken') bord; in dat geval geldt de lagere snelheid van het digitale bord. Pas wanneer het digitale bord een einde-aanduiding toont of blanco is, herleeft de snelheidsbeperking van het statische bord. Digitale borden worden met name ingezet op autosnelwegen via matrixsignalering (RWS)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Start Indication"
+        "@value": "Digital Sign"
       },
       {
         "@language": "nl",
-        "@value": "Aanduiding begin"
+        "@value": "Digitaal bord"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "nl",
-        "@value": "Dit kan zijn: een bord A1 (maximumsnelheid) of een zonebord (bijv. A01-30-ZB voor begin 30 km/h-zone), een bord G1/G3/G5 (begin autosnelweg/autoweg/erf), of de activering van een elektronisch signaleringsbord."
+        "@value": "Het digitale bord heeft een hogere geldigheid indien een digitaal bord een lagere snelheid aan dan de blikken borden.\n\nPas als als het digitale bord een einde aanduiding aangeeft, dan geld het blikken bord in. \n\n\"Zie het als een digitale zone\""
       }
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/collections/snelheidsbeperking-o-b-v-voertuigtype",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236462476",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "nl",
+        "@value": "Bord dat onder een verkeersbord wordt aangebracht ter nadere aanduiding van de werking van dat verkeersbord. Vanuit wetgeving is bepaald welke typen onderborden zijn toegestaan, waaronder: een aanduiding van het soort weggebruiker waarvoor het bord geldt, een tijdsaanduiding, of een afstandsaanduiding."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "nl",
+        "@value": "Bevat een onderbord altijd een conditie?"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@language": "nl",
+        "@value": "Bij snelheidsbeperkingen kan een onderbord bijv. de geldigheid beperken tot bepaalde voertuigtypen, tijdvensters of weersomstandigheden."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Supplementary Sign"
+      },
+      {
+        "@language": "nl",
+        "@value": "Onderbord"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#related": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236446358"
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186695677",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "https://docs.geostandaarden.nl/nen3610/gimeg/"
+      },
+      {
+        "@value": "https://modellen.geostandaarden.nl/def/nen3610-2022/"
+      },
+      {
+        "@value": "http://www.opengis.net/ont/sf"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A one-dimensional geometric primitive representing a line: a continuous curve, measurable in length within a coordinate system, composed of one or more connected line segments in which the end point of each segment — except the last — coincides with the start point of the next. Line geometry is used to spatially represent linear features such as a road; designated GM_Curve in ISO 19107 and Curve/LineString in OGC Simple Features"
+      },
+      {
+        "@language": "nl",
+        "@value": "Een ééndimensionale geometrische primitief die een lijn representeert: een continue, in een coördinatensysteem meetbare lijn die bestaat uit één of meer onderling verbonden lijnsegmenten, waarbij het eindpunt van elk segment — op het laatste na — verbonden is met het beginpunt van het volgende. Lijngeometrie wordt gebruikt om lijnvormige objecten, zoals een weg, ruimtelijk vast te leggen; in ISO 19107 aangeduid als GM_Curve en Curve/LineString in OGC simple features."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Line geometry"
+      },
+      {
+        "@language": "nl",
+        "@value": "Lijngeometrie"
+      }
+    ]
+  },
+  {
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/snelheidsbeperking-o-b-v-voertuigtype",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#OrderedCollection"
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#memberList": [
       {
         "@list": [
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238916868"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238916868"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235874098"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235874098"
           }
         ]
       }
@@ -1471,47 +1471,47 @@
     ]
   },
   {
-    "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/collections/zonale-snelheidsbeperking",
+    "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/zonale-snelheidsbeperking",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#OrderedCollection"
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"
+        "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#memberList": [
       {
         "@list": [
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186704395"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186704395"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236944308"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236944308"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235164125"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235164125"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236142216"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236142216"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236090614"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236090614"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237259923"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237259923"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235022627"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235022627"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"
           },
           {
-            "@id": "https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238916868"
+            "@id": "https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238916868"
           }
         ]
       }

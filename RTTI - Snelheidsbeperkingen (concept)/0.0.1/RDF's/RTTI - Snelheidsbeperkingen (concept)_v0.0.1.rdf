@@ -5,123 +5,9 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236142216">
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772187355998">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">End Indication</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Aanduiding einde</skos:prefLabel>
-    <skos:definition xml:lang="nl">Het verkeersteken dat het eindpunt aangeeft van de geldigheid van een snelheidsbeperking.</skos:definition>
-    <skos:example xml:lang="nl">Dit kan zijn: een bord A2 (einde maximumsnelheid), een zonebord (bijv. A01-30-ZE voor einde 30 km/h-zone), een bord G2/G4/G6 (einde autosnelweg/autoweg/erf), het deactiveren van een elektronisch signaleringsbord, of het bereiken van een kruispunt waarachter een ander regime geldt.</skos:example>
-    <skos:broader rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186160984">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Time window</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Tijdvenster</skos:prefLabel>
-    <skos:definition xml:lang="en">The days and/or hours indicated on a supplementary sign that imply a limitation of the temporal scope of application of the indication on the overlying traffic sign; in particular, for speed limits, the period during which the maximum speed indicated on the traffic sign applies.</skos:definition>
-    <skos:definition xml:lang="nl">De op een onderbord vermelde dagen en/of uren die een beperking van de werkingssfeer in de tijd inhouden van de aanduiding op het bovenliggende verkeersbord; in het bijzonder, voor snelheidsbeperkingen, het tijdvak waarbinnen de op het verkeersbord aangeduide maximumsnelheid geldt.</skos:definition>
-    <skos:scopeNote xml:lang="en">The term 'time window' does not appear as such in the legislation; the legal basis lies in the limitation of the scope and is referred to as a 'time window' by Rijkswaterstaat and CROW. The concept has a dual realization: as a physical supplementary sign beneath a metal sign, or as a time condition within a digital/electronic sign. Not to be confused with 'window times' (loading and unloading times for urban logistics), which are incorporated into the Goods Delivery model.</skos:scopeNote>
-    <skos:scopeNote xml:lang="nl">De term 'tijdvenster' komt niet als zodanig voor in de wetgeving; de juridische grondslag ligt in de beperking van de werkingssfeer en wordt door Rijkswaterstaat en CROW als 'tijdvenster' aangeduid. Het concept kent een dubbele realisatie: als fysiek onderbord onder een blikken bord, of als tijdsconditie binnen een digitaal/elektronisch bord. Niet te verwarren met 'venstertijden' (laad- en lostijden voor stadslogistiek), dat in het model Goederenlevering is ondergebracht.</skos:scopeNote>
-    <dct:source>https://kennisbank.crow.nl/public/gastgebruiker/FVV/Verkeerstekens_(toepassing,_plaatsing_en_uitvoering)/Hoofdstuk_C._Geslotenverklaring/29510</dct:source>
-    <dct:source>https://wetten.overheid.nl/BWBR0004826/</dct:source>
-    <dct:source>https://www.rijkswaterstaat.nl/wegen/wetten-regels-en-vergunningen/verkeerswetten/maximumsnelheid</dct:source>
-    <dct:source>https://wetten.overheid.nl/BWBR0004825/</dct:source>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186704395">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Area geometry</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Vlak geometrie</skos:prefLabel>
-    <skos:definition xml:lang="nl">nader te bepalen</skos:definition>
-    <skos:broader rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235022627">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Outer regime</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Omsluitend regime</skos:prefLabel>
-    <skos:definition xml:lang="en">Nog bepalen</skos:definition>
-    <skos:definition xml:lang="nl">Een afgebakend gebied waarbinnen een specifieke snelheidsbeperking van kracht is. Zones kunnen genest zijn: een zone kan zich binnen een omsluitende zone bevinden, waardoor meerdere snelheidsbeperkingen gelijktijdig van toepassing zijn in een cascaderende structuur. Bij het verlaten van een binnenste zone vervalt de daar geldende snelheidsbeperking en valt de geldende snelheid terug op die van de omsluitende zone.</skos:definition>
-    <skos:example xml:lang="en">A road user enters a built-up area (50 km/h). Subsequently, they enter a residential area (15 km/h). The active speed restriction is now 15 km/h. Upon leaving the residential area, 50 km/h applies again, because the built-up area as enclosing zone is still in effect.</skos:example>
-    <skos:example xml:lang="nl">Een weggebruiker rijdt een bebouwde kom in (50 km/h). Vervolgens rijdt deze een woonerf in (15 km/h). De actieve snelheidsbeperking is nu 15 km/h. Bij het verlaten van het woonerf geldt weer 50 km/h, omdat de bebouwde kom als omsluitende zone nog steeds van kracht is.</skos:example>
-    <skos:broader rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860"/>
-    <skos:narrower rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237259923"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772185159176">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Traffic sign</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Verkeersbord</skos:prefLabel>
-    <skos:altLabel xml:lang="nl">Verkeersplaat</skos:altLabel>
-    <skos:definition xml:lang="en">The physical object — a panel (the 'plate'), normally mounted on a post or other support — bearing a traffic sign symbol, whose physical execution is legally prescribed.</skos:definition>
-    <skos:definition xml:lang="nl">Het fysieke object — een paneel (de 'plaat'), doorgaans bevestigd op een paal of andere drager — waarop een verkeersteken als is aangebracht, en waarvan de uitvoering wettelijk is voorgeschreven.</skos:definition>
-    <dct:source>https://wetten.overheid.nl/jci1.3:c:BWBR0009104&amp;hoofdstuk=2</dct:source>
-    <dct:source>https://wetten.overheid.nl/jci1.3:c:BWBR0004825&amp;bijlage=1</dct:source>
-    <skos:narrower rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235385932"/>
-    <skos:narrower rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238610163"/>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771857141294"/>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236355335"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235385932">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">G Sign</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">G-bord</skos:prefLabel>
-    <skos:definition xml:lang="nl">Verkeersbord zoals beschreven in de verkeersregels.</skos:definition>
-    <skos:scopeNote xml:lang="nl">Binnen de context van snelheidsbeperkingen zijn relevant: G1/G2 (begin/einde autosnelweg), G3/G4 (begin/einde autoweg), G5/G6 (begin/einde erf), G7/G8 (begin/einde voetgangersgebied), G11/G12 (begin/einde fietspad).</skos:scopeNote>
-    <skos:editorialNote xml:lang="nl">Voorstel: " Bord uit het Hoofdstuk G. 'Verkeersregels' van het RVV-1990 (link: https://wetten.overheid.nl/BWBR0004825/2026-01-01#Bijlage1)" oid
-Het A bord en L401 bord hebben geen koppelstreepje.</skos:editorialNote>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-    <dct:title xml:lang="nl">RTTI - Snelheidsbeperkingen (concept)</dct:title>
-    <dct:description xml:lang="nl">RTTI - Snelheidsbeperkingen</dct:description>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-07-17T08:06:42.571793+00:00</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-07-17T08:06:42.572020+00:00</dct:modified>
-    <owl:versionInfo>0.0.1</owl:versionInfo>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Indication</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Aanduiding</skos:prefLabel>
-    <skos:altLabel xml:lang="nl">Verkeersbord</skos:altLabel>
-    <skos:definition xml:lang="nl">Het blikken- of digitale bord waarmee een snelheidsbeperking aan de weggebruiker kenbaar wordt gemaakt.</skos:definition>
-    <skos:scopeNote xml:lang="nl">Dit omvat verkeersborden (zowel statische 'blikken borden' als dynamische elektronische signaleringsborden), matrixborden boven rijstroken en in-car systemen.</skos:scopeNote>
-    <skos:editorialNote xml:lang="nl">altLabel "Verkeersbord" toegevoegd</skos:editorialNote>
-    <skos:narrower rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772185159176"/>
-    <skos:narrower rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236355335"/>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236462476"/>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237259923"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186485225">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="nl">Weg</skos:prefLabel>
-    <skos:definition xml:lang="nl">nader te bepalen</skos:definition>
-    <skos:narrower rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235313383"/>
-    <skos:narrower rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235331951"/>
-    <skos:narrower rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772187859423"/>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235620358"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na39e55706fdf4222bf289b66bd62d7d6">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013"/>
-    <rdf:rest rdf:nodeID="Nb40c4e1fa41444a991a60ac9a07c2f67"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236462476">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Supplementary Sign</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Onderbord</skos:prefLabel>
-    <skos:definition xml:lang="nl">Bord dat onder een verkeersbord wordt aangebracht ter nadere aanduiding van de werking van dat verkeersbord. Vanuit wetgeving is bepaald welke typen onderborden zijn toegestaan, waaronder: een aanduiding van het soort weggebruiker waarvoor het bord geldt, een tijdsaanduiding, of een afstandsaanduiding.</skos:definition>
-    <skos:example xml:lang="nl">Bij snelheidsbeperkingen kan een onderbord bijv. de geldigheid beperken tot bepaalde voertuigtypen, tijdvensters of weersomstandigheden.</skos:example>
-    <skos:editorialNote xml:lang="nl">Bevat een onderbord altijd een conditie?</skos:editorialNote>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236446358"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772187355998">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
     <skos:prefLabel xml:lang="en">Traffic decision</skos:prefLabel>
     <skos:prefLabel xml:lang="nl">Verkeersbesluit</skos:prefLabel>
     <skos:definition xml:lang="en">Written decision by the competent authority deciding on the placement, modification, or removal of traffic signs and supplementary signs designated by Order in Council insofar as this creates or modifies a command or prohibition, or on measures on or along the road that lead to a restriction or expansion of the number of categories of road users.</skos:definition>
@@ -134,68 +20,120 @@ Het A bord en L401 bord hebben geen koppelstreepje.</skos:editorialNote>
     <dct:source>https://wetten.overheid.nl/jci1.3:c:BWBR0006622&amp;artikel=26</dct:source>
     <dct:source>https://wetten.overheid.nl/jci1.3:c:BWBR0006622&amp;artikel=15</dct:source>
     <dct:source>https://wetten.overheid.nl/jci1.3:c:BWBR0006622&amp;artikel=21</dct:source>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"/>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237259923">
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772185159176">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Inner regime</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Inliggend regime</skos:prefLabel>
-    <skos:definition xml:lang="nl">Een zone die genest is binnen een omsluitende zone en waarvan de snelheidsbeperking voorrang heeft boven die van de omsluitende zone zolang de weggebruiker zich binnen de inliggende zone bevindt.</skos:definition>
-    <skos:scopeNote xml:lang="en">The inner zone concept describes the cascading effect of nested zones. When entering an inner zone, the speed restriction of the enclosing zone is temporarily suspended. When exiting, the speed restriction of the enclosing zone becomes active again. This mechanism works recursively: multiple levels of nesting are possible.</skos:scopeNote>
-    <skos:scopeNote xml:lang="nl">Het concept inliggende zone beschrijft het cascaderend effect van geneste zones. Bij het inrijden van een inliggende zone wordt de snelheidsbeperking van de omsluitende zone tijdelijk opgeschort. Bij het uitrijden wordt de snelheidsbeperking van de omsluitende zone weer actief. Dit mechanisme werkt recursief: meerdere niveaus van nesting zijn mogelijk.</skos:scopeNote>
-    <skos:broader rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Traffic sign</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Verkeersbord</skos:prefLabel>
+    <skos:altLabel xml:lang="nl">Verkeersplaat</skos:altLabel>
+    <skos:definition xml:lang="en">The physical object — a panel (the 'plate'), normally mounted on a post or other support — bearing a traffic sign symbol, whose physical execution is legally prescribed.</skos:definition>
+    <skos:definition xml:lang="nl">Het fysieke object — een paneel (de 'plaat'), doorgaans bevestigd op een paal of andere drager — waarop een verkeersteken als is aangebracht, en waarvan de uitvoering wettelijk is voorgeschreven.</skos:definition>
+    <dct:source>https://wetten.overheid.nl/jci1.3:c:BWBR0009104&amp;hoofdstuk=2</dct:source>
+    <dct:source>https://wetten.overheid.nl/jci1.3:c:BWBR0004825&amp;bijlage=1</dct:source>
+    <skos:narrower rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235385932"/>
+    <skos:narrower rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238610163"/>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236355335"/>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771857141294"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N056bbbbcb8b644b2bda68ee7b0bca22e">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238916868"/>
-    <rdf:rest rdf:nodeID="Nde458c67c9cf42c2a9cf1dd8dba97a98"/>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/zonale-snelheidsbeperking">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Zonale snelheidsbeperking</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Zonale snelheidsbeperking</skos:prefLabel>
+    <skos:memberList rdf:nodeID="Nb611e57c8f5e41ccb63ee40147487325"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134">
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238916868">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Speedlimit</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Snelheidsbeperking</skos:prefLabel>
-    <skos:definition xml:lang="en">Nog te bepalen</skos:definition>
-    <skos:definition xml:lang="nl">De toegestane snelheid op een weg of weggedeelte, uitgedrukt in kilometers per uur (km/h). In Nederland wordt de maximumsnelheid bepaald door: 
-
-(1) de wettelijke standaardlimieten 
-(2) door middel van verkeersborden 
-(3) dynamisch ingestelde limieten via digitale borden.</skos:definition>
-    <skos:scopeNote xml:lang="nl">In Nederland gaat het voornamelijk over maximum snelheden. Minimum snelheden zijn afhankelijk van het voertuigtype.</skos:scopeNote>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860"/>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Speed Limit Data Type</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Gegevenstype Snelheidsbeperkingen</skos:prefLabel>
+    <skos:definition xml:lang="nl">Gegevenstype binnen de RTTI-context dat de verzameling van concepten beschrijft die nodig zijn om een snelheidsbeperking op het Nederlandse wegennet eenduidig vast te leggen en uit te wisselen. Omvat de waarde van de snelheidsbeperking, de locatie, de geldigheid, de aanduiding en eventuele uitzonderingen.</skos:definition>
+    <skos:scopeNote xml:lang="nl">Dit gegevenstype is gedefinieerd als onderdeel van de Nederlandse implementatie van de ITS-richtlijn (Richtlijn 2010/40/EU) en de daaronder vallende Gedelegeerde Verordening RTTI (EU) 2022/670.</skos:scopeNote>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N4b5418fcc9d940308cb4c313119d55f6">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"/>
-    <rdf:rest rdf:nodeID="Ne1d8e5325e8f43e2af0151640194c9d0"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186695677">
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235164125">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Line geometry</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Lijngeometrie</skos:prefLabel>
-    <skos:definition xml:lang="en">A one-dimensional geometric primitive representing a line: a continuous curve, measurable in length within a coordinate system, composed of one or more connected line segments in which the end point of each segment — except the last — coincides with the start point of the next. Line geometry is used to spatially represent linear features such as a road; designated GM_Curve in ISO 19107 and Curve/LineString in OGC Simple Features</skos:definition>
-    <skos:definition xml:lang="nl">Een ééndimensionale geometrische primitief die een lijn representeert: een continue, in een coördinatensysteem meetbare lijn die bestaat uit één of meer onderling verbonden lijnsegmenten, waarbij het eindpunt van elk segment — op het laatste na — verbonden is met het beginpunt van het volgende. Lijngeometrie wordt gebruikt om lijnvormige objecten, zoals een weg, ruimtelijk vast te leggen; in ISO 19107 aangeduid als GM_Curve en Curve/LineString in OGC simple features.</skos:definition>
-    <dct:source>https://docs.geostandaarden.nl/nen3610/gimeg/</dct:source>
-    <dct:source>https://modellen.geostandaarden.nl/def/nen3610-2022/</dct:source>
-    <dct:source>http://www.opengis.net/ont/sf</dct:source>
-    <skos:broader rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Residential Area</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Woonerf</skos:prefLabel>
+    <skos:definition xml:lang="en">Nog bepalen</skos:definition>
+    <skos:definition xml:lang="nl">Een als erf aangeduid deel van de openbare weg, begrensd door bord G5 (begin erf) en bord G6 (einde erf). Op een erf geldt een maximumsnelheid van 15 km/h.</skos:definition>
+    <skos:scopeNote xml:lang="nl">HR 1 november 2011, ECLI:NL:HR:2011:BR5927; voorheen 'stapvoets'</skos:scopeNote>
+    <skos:broader rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186704395"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N98f96f37e9224f2d93175a93d63761bf">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235164125"/>
-    <rdf:rest rdf:nodeID="N22cf9329c8744e659084abd881c35c7b"/>
+  <rdf:Description rdf:nodeID="N1128f208569b4a79ad4dabfc40fa2c1e">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236090614"/>
+    <rdf:rest rdf:nodeID="N6eee788ab3d748f6b9d21ecd52106e84"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncbe0984a106c4ea0936ec012811ec788">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238916868"/>
-    <rdf:rest rdf:nodeID="N8bb21dca2ca746a9b3612c2a4be486df"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N966821f3e7de4e1882fed1a2ca5fcfb2">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"/>
-    <rdf:rest rdf:nodeID="N9d1de1d9f445422aa9cdd7556bdca782"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236355335">
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235022627">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Outer regime</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Omsluitend regime</skos:prefLabel>
+    <skos:definition xml:lang="en">Nog bepalen</skos:definition>
+    <skos:definition xml:lang="nl">Een afgebakend gebied waarbinnen een specifieke snelheidsbeperking van kracht is. Zones kunnen genest zijn: een zone kan zich binnen een omsluitende zone bevinden, waardoor meerdere snelheidsbeperkingen gelijktijdig van toepassing zijn in een cascaderende structuur. Bij het verlaten van een binnenste zone vervalt de daar geldende snelheidsbeperking en valt de geldende snelheid terug op die van de omsluitende zone.</skos:definition>
+    <skos:example xml:lang="en">A road user enters a built-up area (50 km/h). Subsequently, they enter a residential area (15 km/h). The active speed restriction is now 15 km/h. Upon leaving the residential area, 50 km/h applies again, because the built-up area as enclosing zone is still in effect.</skos:example>
+    <skos:example xml:lang="nl">Een weggebruiker rijdt een bebouwde kom in (50 km/h). Vervolgens rijdt deze een woonerf in (15 km/h). De actieve snelheidsbeperking is nu 15 km/h. Bij het verlaten van het woonerf geldt weer 50 km/h, omdat de bebouwde kom als omsluitende zone nog steeds van kracht is.</skos:example>
+    <skos:broader rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860"/>
+    <skos:narrower rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237259923"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236172013">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Indication</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Aanduiding</skos:prefLabel>
+    <skos:altLabel xml:lang="nl">Verkeersbord</skos:altLabel>
+    <skos:definition xml:lang="nl">Het blikken- of digitale bord waarmee een snelheidsbeperking aan de weggebruiker kenbaar wordt gemaakt.</skos:definition>
+    <skos:scopeNote xml:lang="nl">Dit omvat verkeersborden (zowel statische 'blikken borden' als dynamische elektronische signaleringsborden), matrixborden boven rijstroken en in-car systemen.</skos:scopeNote>
+    <skos:editorialNote xml:lang="nl">altLabel "Verkeersbord" toegevoegd</skos:editorialNote>
+    <skos:narrower rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772185159176"/>
+    <skos:narrower rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236355335"/>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237259923"/>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236462476"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186704395">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Area geometry</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Vlak geometrie</skos:prefLabel>
+    <skos:definition xml:lang="nl">nader te bepalen</skos:definition>
+    <skos:broader rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186160984">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Time window</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Tijdvenster</skos:prefLabel>
+    <skos:definition xml:lang="en">The days and/or hours indicated on a supplementary sign that imply a limitation of the temporal scope of application of the indication on the overlying traffic sign; in particular, for speed limits, the period during which the maximum speed indicated on the traffic sign applies.</skos:definition>
+    <skos:definition xml:lang="nl">De op een onderbord vermelde dagen en/of uren die een beperking van de werkingssfeer in de tijd inhouden van de aanduiding op het bovenliggende verkeersbord; in het bijzonder, voor snelheidsbeperkingen, het tijdvak waarbinnen de op het verkeersbord aangeduide maximumsnelheid geldt.</skos:definition>
+    <skos:scopeNote xml:lang="en">The term 'time window' does not appear as such in the legislation; the legal basis lies in the limitation of the scope and is referred to as a 'time window' by Rijkswaterstaat and CROW. The concept has a dual realization: as a physical supplementary sign beneath a metal sign, or as a time condition within a digital/electronic sign. Not to be confused with 'window times' (loading and unloading times for urban logistics), which are incorporated into the Goods Delivery model.</skos:scopeNote>
+    <skos:scopeNote xml:lang="nl">De term 'tijdvenster' komt niet als zodanig voor in de wetgeving; de juridische grondslag ligt in de beperking van de werkingssfeer en wordt door Rijkswaterstaat en CROW als 'tijdvenster' aangeduid. Het concept kent een dubbele realisatie: als fysiek onderbord onder een blikken bord, of als tijdsconditie binnen een digitaal/elektronisch bord. Niet te verwarren met 'venstertijden' (laad- en lostijden voor stadslogistiek), dat in het model Goederenlevering is ondergebracht.</skos:scopeNote>
+    <dct:source>https://kennisbank.crow.nl/public/gastgebruiker/FVV/Verkeerstekens_(toepassing,_plaatsing_en_uitvoering)/Hoofdstuk_C._Geslotenverklaring/29510</dct:source>
+    <dct:source>https://wetten.overheid.nl/BWBR0004826/</dct:source>
+    <dct:source>https://www.rijkswaterstaat.nl/wegen/wetten-regels-en-vergunningen/verkeerswetten/maximumsnelheid</dct:source>
+    <dct:source>https://wetten.overheid.nl/BWBR0004825/</dct:source>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N93fc931b5ed947219084053465072455">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236944308"/>
+    <rdf:rest rdf:nodeID="N7e12311c291f4ba5a14016db5df5786b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4792da7c738c4c72807b4601ac822572">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771857141294"/>
+    <rdf:rest rdf:nodeID="Nf48774422626428788e8f534ac96dba0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236028582">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Weather Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Weersomstandigheden</skos:prefLabel>
+    <skos:definition xml:lang="nl">Meteorologische condities (zoals regen, mist, sneeuw, ijzel of storm) die aanleiding geven tot een aangepaste snelheidsbeperking. 
+In Nederland worden weersafhankelijke snelheidsbeperkingen met name dynamisch ingesteld via matrixsignalering op autosnelwegen (RWS – Praktijkrichtlijn Dynamisch Verkeersmanagement) of statisch aangegeven via onderborden (bijv. 'bij nat wegdek').</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236355335">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
     <skos:prefLabel xml:lang="en">Digital Sign</skos:prefLabel>
     <skos:prefLabel xml:lang="nl">Digitaal bord</skos:prefLabel>
     <skos:definition xml:lang="nl">Elektronisch signaleringsbord waarop verkeersborden dynamisch kunnen worden weergegeven. Een digitaal bord kan een lagere snelheid aangeven dan het statische ('blikken') bord; in dat geval geldt de lagere snelheid van het digitale bord. Pas wanneer het digitale bord een einde-aanduiding toont of blanco is, herleeft de snelheidsbeperking van het statische bord. Digitale borden worden met name ingezet op autosnelwegen via matrixsignalering (RWS).</skos:definition>
@@ -205,16 +143,25 @@ Pas als als het digitale bord een einde aanduiding aangeeft, dan geld het blikke
 
 "Zie het als een digitale zone"</skos:scopeNote>
   </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/collections/snelheidsbeperking-borden">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Snelheidsbeperking borden</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Snelheidsbeperking borden</skos:prefLabel>
-    <skos:memberList rdf:nodeID="Ncbe0984a106c4ea0936ec012811ec788"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235085917">
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236446358">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Condition</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Conditie</skos:prefLabel>
+    <skos:definition xml:lang="nl">Een conditie waardoor de standaard snelheidsbeperking op een wegvak wordt gemodificeerd. Uitzonderingen worden in de Nederlandse praktijk kenbaar gemaakt via onderborden en kunnen betrekking hebben op voertuigtype, tijdvenster, weersomstandigheden of andere voorwaarden.</skos:definition>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236028582"/>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186160984"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/snelheidsbeperking-o-b-v-voertuigtype">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Snelheidsbeperking o.b.v. voertuigtype</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Snelheidsbeperking o.b.v. voertuigtype</skos:prefLabel>
+    <skos:memberList rdf:nodeID="Nb01f890e3fdc449091ef742636952ba9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235085917">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
     <skos:prefLabel xml:lang="en">Road section</skos:prefLabel>
     <skos:prefLabel xml:lang="nl">Wegvak</skos:prefLabel>
     <skos:definition xml:lang="en">Nog bepalen</skos:definition>
@@ -222,311 +169,364 @@ Pas als als het digitale bord een einde aanduiding aangeeft, dan geld het blikke
 
 In het Nationaal Wegenbestand (NWB) is een wegvak de kleinste eenheid waarvoor wegkenmerken worden geregistreerd.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb40c4e1fa41444a991a60ac9a07c2f67">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236355335"/>
-    <rdf:rest rdf:nodeID="N1fd7e5a23c4e47e1835a4d6ab68b19c9"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2ae73d2033b84003a8749c2def871176">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186704395"/>
-    <rdf:rest rdf:nodeID="N8394de40918a4491ad8447f74dbeb2be"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238610163">
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235620358">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">A Sign</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">A bord</skos:prefLabel>
-    <skos:definition xml:lang="nl">Het verkeersbord A1 geeft een maximumsnelheid aan; bord A2 duidt het einde van een maximumsnelheid aan. De plaatsing van A-borden voor snelheidslimieten geschiedt krachtens een verkeersbesluit. Op A-borden kan de snelheid zonaal worden toegepast met zone-indicatie (bijv. A01-30-ZB).</skos:definition>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Carriageway</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Rijbaan</skos:prefLabel>
+    <skos:definition xml:lang="nl">Elk voor rijdend verkeer bestemd weggedeelte, met uitzondering van de fietspaden en de fiets/bromfietspaden.</skos:definition>
+    <skos:scopeNote xml:lang="nl">In het kader van snelheidsbeperkingen kan een aanduiding specifiek betrekking hebben op één rijbaan van een weg.</skos:scopeNote>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186214125"/>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235638908"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186214125">
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236944308">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="nl">Rijrichting</skos:prefLabel>
-    <skos:definition xml:lang="nl">De richting waarin het verkeer zich op een rijbaan of rijstrook voortbeweegt. Relevant voor snelheidsbeperkingen waar een beperking slechts geldt voor één rijrichting, bijv. bij gescheiden rijbanen of bij borden die aan één zijde van de weg zijn geplaatst.</skos:definition>
-    <skos:scopeNote xml:lang="nl">Er is bepaalt dat de toepassing van verkeersborden kan worden beperkt tot rijstroken, wat impliceert dat richting van belang is.</skos:scopeNote>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nde458c67c9cf42c2a9cf1dd8dba97a98">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"/>
-    <rdf:rest rdf:nodeID="N7ebac1d8b3d8458abdc9d8ac13df30d9"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235331951">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Motorway</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Autosnelweg</skos:prefLabel>
-    <skos:definition xml:lang="nl">Weg, aangeduid door bord G1. Buiten de bebouwde kom geldt op autosnelwegen een wettelijke maximumsnelheid van 130 km/h voor motorvoertuigen tenzij anders aangegeven.
-
-Op autosnelwegen mogen uitsluitend motorvoertuigen rijden die minimaal 60 km/h kunnen en mogen rijden.</skos:definition>
-    <skos:scopeNote xml:lang="nl">Langs autosnelwegen gelegen parkeerplaatsen, tankstations en bushalteplaatsen maken geen deel van de autosnelweg uit.</skos:scopeNote>
-    <skos:broader rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186695677"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236446358">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Condition</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Conditie</skos:prefLabel>
-    <skos:definition xml:lang="nl">Een conditie waardoor de standaard snelheidsbeperking op een wegvak wordt gemodificeerd. Uitzonderingen worden in de Nederlandse praktijk kenbaar gemaakt via onderborden en kunnen betrekking hebben op voertuigtype, tijdvenster, weersomstandigheden of andere voorwaarden.</skos:definition>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236028582"/>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186160984"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nccd082aa3fe24b0fa9a71e645a7928d8">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186160984"/>
-    <rdf:rest rdf:nodeID="Neb109be92c7c4998ab3393039c300913"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne78230aae2e744049013566c370e58e5">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236446358"/>
-    <rdf:rest rdf:nodeID="Nccd082aa3fe24b0fa9a71e645a7928d8"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9d1de1d9f445422aa9cdd7556bdca782">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238916868"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236028582">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Weather Conditions</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Weersomstandigheden</skos:prefLabel>
-    <skos:definition xml:lang="nl">Meteorologische condities (zoals regen, mist, sneeuw, ijzel of storm) die aanleiding geven tot een aangepaste snelheidsbeperking. 
-In Nederland worden weersafhankelijke snelheidsbeperkingen met name dynamisch ingesteld via matrixsignalering op autosnelwegen (RWS – Praktijkrichtlijn Dynamisch Verkeersmanagement) of statisch aangegeven via onderborden (bijv. 'bij nat wegdek').</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7ebac1d8b3d8458abdc9d8ac13df30d9">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235874098"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772187859423">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="nl">N-weg</skos:prefLabel>
-    <skos:definition xml:lang="nl">Het gebied buiten de door de gemeenteraad vastgestelde bebouwde kom. Buiten de bebouwde kom gelden de maximumsnelheden  130 km/h op autosnelwegen, 100 km/h op autowegen en 80 km/h op overige wegen, tenzij door verkeersborden anders is aangegeven.</skos:definition>
-    <skos:editorialNote xml:lang="nl">Is dit een goede toevoeging voor 'rest categorie'? RobS: RVV noemt dit "andere wegen" https://wetten.overheid.nl/jci1.3:c:BWBR0004825&amp;hoofdstuk=II&amp;paragraaf=8&amp;artikel=21&amp;z=2026-01-01&amp;g=2026-01-01</skos:editorialNote>
-    <skos:broader rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186695677"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771857141294">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">L401 Sign</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">L401 bord</skos:prefLabel>
-    <skos:definition xml:lang="nl">Informatie bord om mensen te informeren over de verkeersregels.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na248b1c2d0b84d17897d398de2f17eb5">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235022627"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235638908">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Lane</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Rijstrook</skos:prefLabel>
-    <skos:definition xml:lang="nl">Door doorgetrokken of onderbroken strepen gemarkeerd gedeelte van de rijbaan van zodanige breedte dat bestuurders van motorvoertuigen op meer dan twee wielen daarvan gebruik kunnen maken. 
-
-Bij toepassing van een verkeersbord op specifieke rijstroken kan een snelheidsbeperking beperkt worden tot één of meer rijstroken.
-Bijvoorbeeld bij spitsstroken of matrixborden.</skos:definition>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186214125"/>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235085917"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8394de40918a4491ad8447f74dbeb2be">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236944308"/>
-    <rdf:rest rdf:nodeID="N52c9615819a246e6974a134facbebe02"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235164125">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Residential Area</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Woonerf</skos:prefLabel>
-    <skos:definition xml:lang="en">Nog bepalen</skos:definition>
-    <skos:definition xml:lang="nl">Een als erf aangeduid deel van de openbare weg, begrensd door bord G5 (begin erf) en bord G6 (einde erf). Op een erf geldt een maximumsnelheid van 15 km/h.</skos:definition>
-    <skos:scopeNote xml:lang="nl">HR 1 november 2011, ECLI:NL:HR:2011:BR5927; voorheen 'stapvoets'</skos:scopeNote>
-    <skos:broader rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186704395"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236090614">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Start Indication</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Aanduiding begin</skos:prefLabel>
-    <skos:definition xml:lang="nl">Het verkeersteken dat het beginpunt aangeeft van de geldigheid van een snelheidsbeperking.</skos:definition>
-    <skos:scopeNote xml:lang="nl">Dit kan zijn: een bord A1 (maximumsnelheid) of een zonebord (bijv. A01-30-ZB voor begin 30 km/h-zone), een bord G1/G3/G5 (begin autosnelweg/autoweg/erf), of de activering van een elektronisch signaleringsbord.</skos:scopeNote>
-    <skos:broader rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/collections/zonale-snelheidsbeperking">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Zonale snelheidsbeperking</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Zonale snelheidsbeperking</skos:prefLabel>
-    <skos:memberList rdf:nodeID="N9c8684a7f94748d9ab0112083e67064e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5e78ade1a6364123b562c9364b603024">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236944308"/>
-    <rdf:rest rdf:nodeID="N98f96f37e9224f2d93175a93d63761bf"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236944308">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
     <skos:prefLabel xml:lang="en">Built-Up Area</skos:prefLabel>
     <skos:prefLabel xml:lang="nl">Bebouwde kom</skos:prefLabel>
     <skos:definition xml:lang="nl">Het gebied dat als bebouwde kom is vastgesteld door de gemeenteraad.
 
 De bebouwde kom wordt aangeduid door de borden H1 (begin bebouwde kom) en H2 (einde bebouwde kom). De snelheidsbeperking van 50 km/h is van toepassing tenzij door verkeersborden anders is aangegeven.</skos:definition>
-    <skos:broader rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186704395"/>
+    <skos:broader rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186704395"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N22cf9329c8744e659084abd881c35c7b">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235313383"/>
-    <rdf:rest rdf:nodeID="N38fb8913cb324601b2585e56a6b7e356"/>
+  <rdf:Description rdf:nodeID="Nebd38e48efd24f64896c8d0e58799758">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238610163"/>
+    <rdf:rest rdf:nodeID="N4792da7c738c4c72807b4601ac822572"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860">
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/snelheidsbeperking-borden">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Snelheidsbeperking borden</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Snelheidsbeperking borden</skos:prefLabel>
+    <skos:memberList rdf:nodeID="Nea366d718cd34565a9cbd7cf5e3e76f6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7c7d6e3dc1a14ee0a4b6ff9d4e4b57a9">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236142216"/>
+    <rdf:rest rdf:nodeID="Nbb1a8bcfa7194c7f978b2f6b9ccd8c1c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237259923">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Inner regime</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Inliggend regime</skos:prefLabel>
+    <skos:definition xml:lang="nl">Een zone die genest is binnen een omsluitende zone en waarvan de snelheidsbeperking voorrang heeft boven die van de omsluitende zone zolang de weggebruiker zich binnen de inliggende zone bevindt.</skos:definition>
+    <skos:scopeNote xml:lang="en">The inner zone concept describes the cascading effect of nested zones. When entering an inner zone, the speed restriction of the enclosing zone is temporarily suspended. When exiting, the speed restriction of the enclosing zone becomes active again. This mechanism works recursively: multiple levels of nesting are possible.</skos:scopeNote>
+    <skos:scopeNote xml:lang="nl">Het concept inliggende zone beschrijft het cascaderend effect van geneste zones. Bij het inrijden van een inliggende zone wordt de snelheidsbeperking van de omsluitende zone tijdelijk opgeschort. Bij het uitrijden wordt de snelheidsbeperking van de omsluitende zone weer actief. Dit mechanisme werkt recursief: meerdere niveaus van nesting zijn mogelijk.</skos:scopeNote>
+    <skos:broader rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2643ab1f5e5249bba97e34d3bd290ca4">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235331951"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
     <skos:prefLabel xml:lang="en">Geometry</skos:prefLabel>
     <skos:prefLabel xml:lang="nl">Geometrie</skos:prefLabel>
     <skos:definition xml:lang="nl">Een ruimtelijk afgebakend gebied waarbinnen een uniform verkeersregime geldt, begrensd door verkeerstekens die het begin en het einde van het regime aanduiden. 
 
 Binnen de context van snelheidsbeperkingen is een gesloten zone een gebied waarvan de grenzen worden gemarkeerd door zoneborden (bijv. bord A01-30-ZB / A01-30-ZE voor een 30 km/h-zone, of bord G5/G6 voor een erf).</skos:definition>
     <skos:scopeNote xml:lang="nl">Het BABW art. 9 bepaalt dat in een verkeersbesluit kan worden bepaald dat geboden of verboden gelden in een bepaald gebied (zonale toepassing).</skos:scopeNote>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236142216"/>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236090614"/>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236090614"/>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236142216"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nee5a4e9bc26e4884927f913e9a23ac02">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236090614"/>
-    <rdf:rest rdf:nodeID="N213b7b2a12824371a2d42bee3534fc0e"/>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/dynamische-snelheidsbeperking">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Dynamische snelheidsbeperking</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Dynamische snelheidsbeperking</skos:prefLabel>
+    <skos:memberList rdf:nodeID="Nb42d6b009740411aaef65744df0063f8"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N213b7b2a12824371a2d42bee3534fc0e">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237259923"/>
-    <rdf:rest rdf:nodeID="Na248b1c2d0b84d17897d398de2f17eb5"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5a1f5e0709ce453884364b603d5ffe9a">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237259923"/>
-    <rdf:rest rdf:nodeID="N7118b4e4112144f6b2a2fb8751c0f15c"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9c8684a7f94748d9ab0112083e67064e">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771237797860"/>
-    <rdf:rest rdf:nodeID="N2ae73d2033b84003a8749c2def871176"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nafee63e91d734841a3d689e814d0752d">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238610163"/>
-    <rdf:rest rdf:nodeID="Nf5d9a3ac95ae451f9092c1fd3cc024ab"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N38fb8913cb324601b2585e56a6b7e356">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772187859423"/>
-    <rdf:rest rdf:nodeID="N3810ca13d95f46df84cdf5aaf319bb2c"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Neb109be92c7c4998ab3393039c300913">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236028582"/>
-    <rdf:rest rdf:nodeID="N59bd04a37a584c60962d8ef59027a51a"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235620358">
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186485225">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Carriageway</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Rijbaan</skos:prefLabel>
-    <skos:definition xml:lang="nl">Elk voor rijdend verkeer bestemd weggedeelte, met uitzondering van de fietspaden en de fiets/bromfietspaden.</skos:definition>
-    <skos:scopeNote xml:lang="nl">In het kader van snelheidsbeperkingen kan een aanduiding specifiek betrekking hebben op één rijbaan van een weg.</skos:scopeNote>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186214125"/>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235638908"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="nl">Weg</skos:prefLabel>
+    <skos:definition xml:lang="nl">nader te bepalen</skos:definition>
+    <skos:narrower rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235313383"/>
+    <skos:narrower rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772187859423"/>
+    <skos:narrower rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235331951"/>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235620358"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf117c2c333c544e6802b3159b6b5ba43">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236355335"/>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235385932">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">G Sign</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">G-bord</skos:prefLabel>
+    <skos:definition xml:lang="nl">Verkeersbord zoals beschreven in de verkeersregels.</skos:definition>
+    <skos:scopeNote xml:lang="nl">Binnen de context van snelheidsbeperkingen zijn relevant: G1/G2 (begin/einde autosnelweg), G3/G4 (begin/einde autoweg), G5/G6 (begin/einde erf), G7/G8 (begin/einde voetgangersgebied), G11/G12 (begin/einde fietspad).</skos:scopeNote>
+    <skos:editorialNote xml:lang="nl">Voorstel: " Bord uit het Hoofdstuk G. 'Verkeersregels' van het RVV-1990 (link: https://wetten.overheid.nl/BWBR0004825/2026-01-01#Bijlage1)" oid
+Het A bord en L401 bord hebben geen koppelstreepje.</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N69d044bcabfc45c7b41888f70c0ce240">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772187859423"/>
+    <rdf:rest rdf:nodeID="N2643ab1f5e5249bba97e34d3bd290ca4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd929925706354233bd63fa35973fc496">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236355335"/>
+    <rdf:rest rdf:nodeID="N47b865118e2f45fb8261826a0effb6b2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb42d6b009740411aaef65744df0063f8">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238916868"/>
+    <rdf:rest rdf:nodeID="N0c94266f0ae2452db3ca799c5a9017b0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186214125">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="nl">Rijrichting</skos:prefLabel>
+    <skos:definition xml:lang="nl">De richting waarin het verkeer zich op een rijbaan of rijstrook voortbeweegt. Relevant voor snelheidsbeperkingen waar een beperking slechts geldt voor één rijrichting, bijv. bij gescheiden rijbanen of bij borden die aan één zijde van de weg zijn geplaatst.</skos:definition>
+    <skos:scopeNote xml:lang="nl">Er is bepaalt dat de toepassing van verkeersborden kan worden beperkt tot rijstroken, wat impliceert dat richting van belang is.</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4d553139f6f848d6930801cb1fad478e">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235022627"/>
+    <rdf:rest rdf:nodeID="N9a68e7e273714024960d945d4bed40e0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf48774422626428788e8f534ac96dba0">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235385932"/>
+    <rdf:rest rdf:nodeID="Ne1bb5da564bb47d981639799e9e8d189"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N103e436c67df4cef85fc1ad14dd26818">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235874098"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/collections/snelheidsbeperking-o-b-v-voertuigtype">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Snelheidsbeperking o.b.v. voertuigtype</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Snelheidsbeperking o.b.v. voertuigtype</skos:prefLabel>
-    <skos:memberList rdf:nodeID="N056bbbbcb8b644b2bda68ee7b0bca22e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne1d8e5325e8f43e2af0151640194c9d0">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236172013"/>
-    <rdf:rest rdf:nodeID="Nf117c2c333c544e6802b3159b6b5ba43"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nffacdbc5ca03488c80283532c135ad11">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236462476"/>
-    <rdf:rest rdf:nodeID="Ne78230aae2e744049013566c370e58e5"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235874098">
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235638908">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Lane</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Rijstrook</skos:prefLabel>
+    <skos:definition xml:lang="nl">Door doorgetrokken of onderbroken strepen gemarkeerd gedeelte van de rijbaan van zodanige breedte dat bestuurders van motorvoertuigen op meer dan twee wielen daarvan gebruik kunnen maken. 
+
+Bij toepassing van een verkeersbord op specifieke rijstroken kan een snelheidsbeperking beperkt worden tot één of meer rijstroken.
+Bijvoorbeeld bij spitsstroken of matrixborden.</skos:definition>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235085917"/>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186214125"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236142216">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">End Indication</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Aanduiding einde</skos:prefLabel>
+    <skos:definition xml:lang="nl">Het verkeersteken dat het eindpunt aangeeft van de geldigheid van een snelheidsbeperking.</skos:definition>
+    <skos:example xml:lang="nl">Dit kan zijn: een bord A2 (einde maximumsnelheid), een zonebord (bijv. A01-30-ZE voor einde 30 km/h-zone), een bord G2/G4/G6 (einde autosnelweg/autoweg/erf), het deactiveren van een elektronisch signaleringsbord, of het bereiken van een kruispunt waarachter een ander regime geldt.</skos:example>
+    <skos:broader rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236172013"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne1bb5da564bb47d981639799e9e8d189">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236462476"/>
+    <rdf:rest rdf:nodeID="N51b0e467f5d341fa895e45714a4443f4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771857141294">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">L401 Sign</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">L401 bord</skos:prefLabel>
+    <skos:definition xml:lang="nl">Informatie bord om mensen te informeren over de verkeersregels.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236090614">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Start Indication</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Aanduiding begin</skos:prefLabel>
+    <skos:definition xml:lang="nl">Het verkeersteken dat het beginpunt aangeeft van de geldigheid van een snelheidsbeperking.</skos:definition>
+    <skos:scopeNote xml:lang="nl">Dit kan zijn: een bord A1 (maximumsnelheid) of een zonebord (bijv. A01-30-ZB voor begin 30 km/h-zone), een bord G1/G3/G5 (begin autosnelweg/autoweg/erf), of de activering van een elektronisch signaleringsbord.</skos:scopeNote>
+    <skos:broader rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236172013"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238610163">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">A Sign</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">A bord</skos:prefLabel>
+    <skos:definition xml:lang="nl">Het verkeersbord A1 geeft een maximumsnelheid aan; bord A2 duidt het einde van een maximumsnelheid aan. De plaatsing van A-borden voor snelheidslimieten geschiedt krachtens een verkeersbesluit. Op A-borden kan de snelheid zonaal worden toegepast met zone-indicatie (bijv. A01-30-ZB).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na663e2e96e034f118a0fa72fcd59e8b0">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236028582"/>
+    <rdf:rest rdf:nodeID="Nad70a60316414dada5773a5aeaf54a93"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8fd9c24f939847c3b61daa9cee1d4c1f">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237259923"/>
+    <rdf:rest rdf:nodeID="N4d553139f6f848d6930801cb1fad478e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186695677">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Line geometry</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Lijngeometrie</skos:prefLabel>
+    <skos:definition xml:lang="en">A one-dimensional geometric primitive representing a line: a continuous curve, measurable in length within a coordinate system, composed of one or more connected line segments in which the end point of each segment — except the last — coincides with the start point of the next. Line geometry is used to spatially represent linear features such as a road; designated GM_Curve in ISO 19107 and Curve/LineString in OGC Simple Features</skos:definition>
+    <skos:definition xml:lang="nl">Een ééndimensionale geometrische primitief die een lijn representeert: een continue, in een coördinatensysteem meetbare lijn die bestaat uit één of meer onderling verbonden lijnsegmenten, waarbij het eindpunt van elk segment — op het laatste na — verbonden is met het beginpunt van het volgende. Lijngeometrie wordt gebruikt om lijnvormige objecten, zoals een weg, ruimtelijk vast te leggen; in ISO 19107 aangeduid als GM_Curve en Curve/LineString in OGC simple features.</skos:definition>
+    <dct:source>https://docs.geostandaarden.nl/nen3610/gimeg/</dct:source>
+    <dct:source>https://modellen.geostandaarden.nl/def/nen3610-2022/</dct:source>
+    <dct:source>http://www.opengis.net/ont/sf</dct:source>
+    <skos:broader rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Speedlimit</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Snelheidsbeperking</skos:prefLabel>
+    <skos:definition xml:lang="en">Nog te bepalen</skos:definition>
+    <skos:definition xml:lang="nl">De toegestane snelheid op een weg of weggedeelte, uitgedrukt in kilometers per uur (km/h). In Nederland wordt de maximumsnelheid bepaald door: 
+
+(1) de wettelijke standaardlimieten 
+(2) door middel van verkeersborden 
+(3) dynamisch ingestelde limieten via digitale borden.</skos:definition>
+    <skos:scopeNote xml:lang="nl">In Nederland gaat het voornamelijk over maximum snelheden. Minimum snelheden zijn afhankelijk van het voertuigtype.</skos:scopeNote>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236172013"/>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235331951">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Motorway</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Autosnelweg</skos:prefLabel>
+    <skos:definition xml:lang="nl">Weg, aangeduid door bord G1. Buiten de bebouwde kom geldt op autosnelwegen een wettelijke maximumsnelheid van 130 km/h voor motorvoertuigen tenzij anders aangegeven.
+
+Op autosnelwegen mogen uitsluitend motorvoertuigen rijden die minimaal 60 km/h kunnen en mogen rijden.</skos:definition>
+    <skos:scopeNote xml:lang="nl">Langs autosnelwegen gelegen parkeerplaatsen, tankstations en bushalteplaatsen maken geen deel van de autosnelweg uit.</skos:scopeNote>
+    <skos:broader rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186695677"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N32553ac467754ac5b547a1c2f35e3806">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"/>
+    <rdf:rest rdf:nodeID="N103e436c67df4cef85fc1ad14dd26818"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4aa81ea080ed4460b54a114620afcba5">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235313383"/>
+    <rdf:rest rdf:nodeID="N69d044bcabfc45c7b41888f70c0ce240"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772187859423">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="nl">N-weg</skos:prefLabel>
+    <skos:definition xml:lang="nl">Het gebied buiten de door de gemeenteraad vastgestelde bebouwde kom. Buiten de bebouwde kom gelden de maximumsnelheden  130 km/h op autosnelwegen, 100 km/h op autowegen en 80 km/h op overige wegen, tenzij door verkeersborden anders is aangegeven.</skos:definition>
+    <skos:editorialNote xml:lang="nl">Is dit een goede toevoeging voor 'rest categorie'? RobS: RVV noemt dit "andere wegen" https://wetten.overheid.nl/jci1.3:c:BWBR0004825&amp;hoofdstuk=II&amp;paragraaf=8&amp;artikel=21&amp;z=2026-01-01&amp;g=2026-01-01</skos:editorialNote>
+    <skos:broader rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186695677"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4fe19e87951445dabd9fe9a284f5b220">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235164125"/>
+    <rdf:rest rdf:nodeID="N7c7d6e3dc1a14ee0a4b6ff9d4e4b57a9"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfb059ff1cf6446deb276a6db8d212ee7">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"/>
+    <rdf:rest rdf:nodeID="N2ca068b4e7894498a1213bbc1e37907b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235874098">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
     <skos:prefLabel xml:lang="en">Vehicle Type</skos:prefLabel>
     <skos:prefLabel xml:lang="nl">Voertuigtype</skos:prefLabel>
     <skos:definition xml:lang="nl">Classificatie van een voertuig op basis van de wettelijke indeling in het RVV 1990 en het Voertuigreglement. 
 
 Relevant voor snelheidsbeperkingen omdat de wet bijzondere maximumsnelheden per voertuigcategorie vaststelt.</skos:definition>
     <skos:example xml:lang="nl">T-100 bus mag maximaal 100 km/h</skos:example>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"/>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/collections/geometrisch">
+  <rdf:Description rdf:nodeID="Nad70a60316414dada5773a5aeaf54a93">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236142216"/>
+    <rdf:rest rdf:nodeID="N1128f208569b4a79ad4dabfc40fa2c1e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb01f890e3fdc449091ef742636952ba9">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238916868"/>
+    <rdf:rest rdf:nodeID="N32553ac467754ac5b547a1c2f35e3806"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6eee788ab3d748f6b9d21ecd52106e84">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237259923"/>
+    <rdf:rest rdf:nodeID="N27a67c3eb2644fb29b3e6578e988428d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbb1a8bcfa7194c7f978b2f6b9ccd8c1c">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236090614"/>
+    <rdf:rest rdf:nodeID="N8fd9c24f939847c3b61daa9cee1d4c1f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <dct:title xml:lang="nl">RTTI - Snelheidsbeperkingen (concept)</dct:title>
+    <dct:description xml:lang="nl">RTTI - Snelheidsbeperkingen</dct:description>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-07-17T08:06:42.571793+00:00</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-07-17T08:06:42.572020+00:00</dct:modified>
+    <owl:versionInfo>0.0.1</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236462476">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
+    <skos:prefLabel xml:lang="en">Supplementary Sign</skos:prefLabel>
+    <skos:prefLabel xml:lang="nl">Onderbord</skos:prefLabel>
+    <skos:definition xml:lang="nl">Bord dat onder een verkeersbord wordt aangebracht ter nadere aanduiding van de werking van dat verkeersbord. Vanuit wetgeving is bepaald welke typen onderborden zijn toegestaan, waaronder: een aanduiding van het soort weggebruiker waarvoor het bord geldt, een tijdsaanduiding, of een afstandsaanduiding.</skos:definition>
+    <skos:example xml:lang="nl">Bij snelheidsbeperkingen kan een onderbord bijv. de geldigheid beperken tot bepaalde voertuigtypen, tijdvensters of weersomstandigheden.</skos:example>
+    <skos:editorialNote xml:lang="nl">Bevat een onderbord altijd een conditie?</skos:editorialNote>
+    <skos:related rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236446358"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/geometrisch">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
     <skos:prefLabel xml:lang="en">Geometrisch</skos:prefLabel>
     <skos:prefLabel xml:lang="nl">Geometrisch</skos:prefLabel>
-    <skos:memberList rdf:nodeID="N5e78ade1a6364123b562c9364b603024"/>
+    <skos:memberList rdf:nodeID="N93fc931b5ed947219084053465072455"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N5dd89e350e824caab5da7451cad06625">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235385932"/>
-    <rdf:rest rdf:nodeID="Nffacdbc5ca03488c80283532c135ad11"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238916868">
+  <rdf:Description rdf:about="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235313383">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Speed Limit Data Type</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Gegevenstype Snelheidsbeperkingen</skos:prefLabel>
-    <skos:definition xml:lang="nl">Gegevenstype binnen de RTTI-context dat de verzameling van concepten beschrijft die nodig zijn om een snelheidsbeperking op het Nederlandse wegennet eenduidig vast te leggen en uit te wisselen. Omvat de waarde van de snelheidsbeperking, de locatie, de geldigheid, de aanduiding en eventuele uitzonderingen.</skos:definition>
-    <skos:scopeNote xml:lang="nl">Dit gegevenstype is gedefinieerd als onderdeel van de Nederlandse implementatie van de ITS-richtlijn (Richtlijn 2010/40/EU) en de daaronder vallende Gedelegeerde Verordening RTTI (EU) 2022/670.</skos:scopeNote>
-    <skos:related rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N52c9615819a246e6974a134facbebe02">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235164125"/>
-    <rdf:rest rdf:nodeID="N2ce6532a1ec242a19fae82cac744b65a"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235313383">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
+    <skos:inScheme rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26"/>
     <skos:prefLabel xml:lang="en">Expressway</skos:prefLabel>
     <skos:prefLabel xml:lang="nl">Autoweg</skos:prefLabel>
     <skos:definition xml:lang="nl">Weg, aangeduid door bord G3. Buiten de bebouwde kom geldt op autowegen een wettelijke maximumsnelheid van 100 km/h voor motorvoertuigen tenzij anders aangegeven.
 
 Op autowegen mogen uitsluitend motorvoertuigen rijden die minimaal 50 km/h kunnen en mogen rijden.</skos:definition>
     <skos:scopeNote xml:lang="nl">Langs autowegen gelegen parkeerplaatsen, tankstations en bushalteplaatsen maken geen deel van de autoweg uit.</skos:scopeNote>
-    <skos:broader rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772186695677"/>
+    <skos:broader rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186695677"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N59bd04a37a584c60962d8ef59027a51a">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236142216"/>
-    <rdf:rest rdf:nodeID="Nee5a4e9bc26e4884927f913e9a23ac02"/>
+  <rdf:Description rdf:nodeID="N2ca068b4e7894498a1213bbc1e37907b">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236172013"/>
+    <rdf:rest rdf:nodeID="Nd929925706354233bd63fa35973fc496"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/collections/dynamische-snelheidsbeperking">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
-    <skos:inScheme rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen"/>
-    <skos:prefLabel xml:lang="en">Dynamische snelheidsbeperking</skos:prefLabel>
-    <skos:prefLabel xml:lang="nl">Dynamische snelheidsbeperking</skos:prefLabel>
-    <skos:memberList rdf:nodeID="Ne57e185b92114ba2bc95e25b7023b9ac"/>
+  <rdf:Description rdf:nodeID="N4252eca192d045f1ac9d59708cce7469">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186160984"/>
+    <rdf:rest rdf:nodeID="Na663e2e96e034f118a0fa72fcd59e8b0"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Na9fa328a0de943fab45d31e55cfb20af">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236090614"/>
-    <rdf:rest rdf:nodeID="N5a1f5e0709ce453884364b603d5ffe9a"/>
+  <rdf:Description rdf:nodeID="N0942c7e6e58946098f2a75ceb2b2d25c">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236944308"/>
+    <rdf:rest rdf:nodeID="N4fe19e87951445dabd9fe9a284f5b220"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N2ce6532a1ec242a19fae82cac744b65a">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771236142216"/>
-    <rdf:rest rdf:nodeID="Na9fa328a0de943fab45d31e55cfb20af"/>
+  <rdf:Description rdf:nodeID="Ne1db555e943b4ba38ad219441da5740e">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236172013"/>
+    <rdf:rest rdf:nodeID="N051630cb180c4e709797c00c3bdc9c50"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N8bb21dca2ca746a9b3612c2a4be486df">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235237134"/>
-    <rdf:rest rdf:nodeID="Na39e55706fdf4222bf289b66bd62d7d6"/>
+  <rdf:Description rdf:nodeID="Nb611e57c8f5e41ccb63ee40147487325">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771237797860"/>
+    <rdf:rest rdf:nodeID="N5f69cdb1d22147b4ae43ffa95d30b5d0"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N1fd7e5a23c4e47e1835a4d6ab68b19c9">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1772185159176"/>
-    <rdf:rest rdf:nodeID="Nafee63e91d734841a3d689e814d0752d"/>
+  <rdf:Description rdf:nodeID="N0c94266f0ae2452db3ca799c5a9017b0">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"/>
+    <rdf:rest rdf:nodeID="Ne1db555e943b4ba38ad219441da5740e"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N7118b4e4112144f6b2a2fb8751c0f15c">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235022627"/>
-    <rdf:rest rdf:nodeID="N966821f3e7de4e1882fed1a2ca5fcfb2"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf5d9a3ac95ae451f9092c1fd3cc024ab">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771857141294"/>
-    <rdf:rest rdf:nodeID="N5dd89e350e824caab5da7451cad06625"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3810ca13d95f46df84cdf5aaf319bb2c">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771235331951"/>
+  <rdf:Description rdf:nodeID="N0e519b696e414e09b449bae9face5076">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238916868"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne57e185b92114ba2bc95e25b7023b9ac">
-    <rdf:first rdf:resource="https://gegevenscatalogus.gov/rtti-snelheidsbeperkingen/concept-1771238916868"/>
-    <rdf:rest rdf:nodeID="N4b5418fcc9d940308cb4c313119d55f6"/>
+  <rdf:Description rdf:nodeID="N51b0e467f5d341fa895e45714a4443f4">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236446358"/>
+    <rdf:rest rdf:nodeID="N4252eca192d045f1ac9d59708cce7469"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N47b865118e2f45fb8261826a0effb6b2">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772185159176"/>
+    <rdf:rest rdf:nodeID="Nebd38e48efd24f64896c8d0e58799758"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N27a67c3eb2644fb29b3e6578e988428d">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235022627"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5f69cdb1d22147b4ae43ffa95d30b5d0">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1772186704395"/>
+    <rdf:rest rdf:nodeID="N0942c7e6e58946098f2a75ceb2b2d25c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9a68e7e273714024960d945d4bed40e0">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235237134"/>
+    <rdf:rest rdf:nodeID="N0e519b696e414e09b449bae9face5076"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7e12311c291f4ba5a14016db5df5786b">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771235164125"/>
+    <rdf:rest rdf:nodeID="N4aa81ea080ed4460b54a114620afcba5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nea366d718cd34565a9cbd7cf5e3e76f6">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771238916868"/>
+    <rdf:rest rdf:nodeID="Nfb059ff1cf6446deb276a6db8d212ee7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N051630cb180c4e709797c00c3bdc9c50">
+    <rdf:first rdf:resource="https://xcalibur1978.github.io/temp/id/fc47556b-385f-45ac-94e4-828536c3cb26/concept-1771236355335"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
 </rdf:RDF>

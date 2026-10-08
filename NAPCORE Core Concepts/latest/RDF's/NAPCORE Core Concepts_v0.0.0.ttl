@@ -2,7 +2,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026299910> a skos:Concept ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026299910> a skos:Concept ;
     skos:altLabel "Портал за данни"@bg,
         "Datový portál"@cs,
         "Dataportalen"@da,
@@ -51,7 +51,7 @@
         "Národný prístupový bod je digitálne rozhranie zriadené členským štátom na poskytovanie jednotného prístupu k údajom v súlade s delegovanými nariadeniami Európskej komisie, ktoré stanovujú funkčné, technické, organizačné a servisné ustanovenia na zaručenie kompatibility, interoperability a kontinuity pri zavádzaní a prevádzkovom využívaní inteligentných dopravných systémov. NAP organizujú prístup k údajom súvisiacim s dopravou a ich opätovné použitie s cieľom podporiť poskytovanie interoperabilných cestovných a dopravných služieb ITS v rámci celej EÚ koncovým používateľom."@sk,
         "Nacionalna dostopna točka je digitalni vmesnik, ki ga vzpostavi država članica za zagotavljanje enotne točke dostopa do podatkov v skladu z delegiranimi uredbami Evropske komisije, ki določajo funkcionalne, tehnične, organizacijske in storitvene določbe za zagotavljanje združljivosti, interoperabilnosti in kontinuitete pri uvajanju in operativni uporabi inteligentnih prometnih sistemov. NDT organizirajo dostop do prometnih podatkov in njihovo ponovno uporabo za podporo zagotavljanju interoperabilnih potovalnih in prometnih storitev ITS po vsej EU za končne uporabnike."@sl,
         "En nationell åtkomstpunkt är ett digitalt gränssnitt som inrättats av en medlemsstat för att tillhandahålla åtkomst till data från en enda punkt, i enlighet med Europeiska kommissionens delegerade förordningar som fastställer funktionella, tekniska, organisatoriska och tjänsterelaterade bestämmelser för att garantera kompatibilitet, driftskompatibilitet och kontinuitet vid införande och operativ användning av intelligenta transportsystem. NAP:erna organiserar tillgång till och vidareutnyttjande av transportrelaterade data för att stödja tillhandahållandet av EU-omfattande driftskompatibla rese- och trafiktjänster inom ITS för slutanvändare."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Национална точка за достъп (НТД)"@bg,
         "Národní přístupový bod (NAP)"@cs,
         "Nationalt adgangspunkt (NAP)"@da,
@@ -76,11 +76,11 @@
         "Národný prístupový bod (NAP)"@sk,
         "Nacionalna dostopna točka (NDT)"@sl,
         "Nationell åtkomstpunkt (NAP)"@sv ;
-    skos:related <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026521678>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026715185>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027256396> .
+    skos:related <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026521678>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026715185>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027256396> .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026675566> a skos:Concept ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026675566> a skos:Concept ;
     skos:altLabel "Национален орган"@bg,
         "Národní orgán"@cs,
         "Nationalt organ"@da,
@@ -129,7 +129,7 @@
         "Príslušný orgán / Národný orgán je organizácia určená členským štátom na monitorovanie prevádzky Národného prístupového bodu a na overovanie súladu s požiadavkami stanovenými smernicou o IDS a jej delegovanými nariadeniami vrátane predpísaných požiadaviek na dostupnosť, formát a kvalitu údajov a služieb sprístupnených prostredníctvom Národného prístupového bodu. Poznámka: Pojem Národný orgán sa môže používať zameniteľne s Príslušný orgán, ale nesie dodatočnú požiadavku nestrannosti a nezávislosti organizácie voči poskytovateľom služieb, verejným a súkromným prevádzkovateľom ciest, prevádzkovateľom parkovísk a vysielateľom. Pojem zostáva platný v súčasnej legislatíve."@sk,
         "Pristojni organ / Nacionalni organ je organizacija, ki jo država članica imenuje za spremljanje delovanja Nacionalne dostopne točke in za preverjanje skladnosti z zahtevami, določenimi z Direktivo o ITS in njenimi delegiranimi uredbami, vključno s predpisanimi zahtevami glede razpoložljivosti, formata in kakovosti podatkov in storitev, dostopnih prek Nacionalne dostopne točke. Opomba: Izraz Nacionalni organ se lahko uporablja zamenljivo s Pristojni organ, vendar vključuje dodatno zahtevo po nepristranskosti in neodvisnosti organizacije do ponudnikov storitev, javnih in zasebnih upravljavcev cest, upravljavcev parkirišč in izdajateljev. Izraz ostaja veljaven v veljavni zakonodaji."@sl,
         "En behörig myndighet / nationellt organ är en organisation utsedd av en medlemsstat för att övervaka driften av den nationella åtkomstpunkten och verifiera efterlevnaden av kraven i ITS-direktivet och dess delegerade förordningar, inklusive de föreskrivna kraven på tillgänglighet, format och kvalitet för data och tjänster som är åtkomliga via den nationella åtkomstpunkten. Anmärkning: Termen nationellt organ kan användas utbytbart med behörig myndighet, men medför ett ytterligare krav på opartiskhet och oberoende för organisationen gentemot tjänsteleverantörer, offentliga och privata vägoperatörer, parkeringsoperatörer och sändningsföretag. Termen förblir giltig i gällande lagstiftning."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Компетентен орган"@bg,
         "Příslušný orgán"@cs,
         "Kompetent myndighed"@da,
@@ -155,7 +155,7 @@
         "Pristojni organ"@sl,
         "Behörig myndighet"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026873821> a skos:Concept ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026873821> a skos:Concept ;
     skos:definition "Доставчик на ИТС услуга, независимо дали е публичен или частен."@bg,
         "Poskytovatel služby ITS, ať již veřejný nebo soukromý."@cs,
         "Udbyder af en ITS-tjeneste, uanset om den er offentlig eller privat."@da,
@@ -180,7 +180,7 @@
         "Poskytovateľ služby IDS, či už verejný alebo súkromný."@sk,
         "Ponudnik storitve ITS, bodisi javni ali zasebni."@sl,
         "Leverantör av en ITS-tjänst, oavsett om den är offentlig eller privat."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Доставчик на услуги на ИТС"@bg,
         "Poskytovatel služeb ITS"@cs,
         "ITS-tjenesteudbyder"@da,
@@ -206,7 +206,7 @@
         "Ponudnik storitev ITS"@sl,
         "ITS-tjänsteleverantör"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026896596> a skos:Concept ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026896596> a skos:Concept ;
     skos:definition "Всеки публичен или частен доставчик на поне една услуга за пътна и транспортна информация за потребители на данни и крайни потребители, с изключение на простото преобразуване на информация."@bg,
         "Jakýkoli veřejný nebo soukromý poskytovatel alespoň jedné služby cestovních a dopravních informací uživatelům dat a koncovým uživatelům, s výjimkou pouhého převodce informací."@cs,
         "Enhver offentlig eller privat udbyder af mindst én rejse- og trafikinformationstjeneste til databrugere og slutbrugere, med undtagelse af en ren konverter af information."@da,
@@ -231,7 +231,7 @@
         "Akýkoľvek verejný alebo súkromný poskytovateľ aspoň jednej služby cestovných a dopravných informácií používateľom údajov a koncovým používateľom, s výnimkou jednoduchého prevodníka informácií."@sk,
         "Vsak javni ali zasebni ponudnik vsaj ene storitve potovalnih in prometnih informacij uporabnikom podatkov in končnim uporabnikom, razen zgolj pretvornika informacij."@sl,
         "Varje offentlig eller privat leverantör av minst en rese- och trafikinformationstjänst till dataanvändare och slutanvändare, med undantag för en enkel informationsomvandlare."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Доставчик на услуги за пътна информация"@bg,
         "Poskytovatel cestovních informačních služeb"@cs,
         "Udbyder af rejseinformationstjenester"@da,
@@ -257,7 +257,7 @@
         "Ponudnik potovalnih informacijskih storitev"@sl,
         "Leverantör av reseinformationstjänster"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026978939> a skos:Concept ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026978939> a skos:Concept ;
     skos:definition "Всеки публичен или частен доставчик на услуга за пътна информация в реално време, с изключение на простото предаване на данни на потребители на данни."@bg,
         "Jakýkoli veřejný nebo soukromý poskytovatel služby dopravních informací v reálném čase, s výjimkou pouhého předávání dat uživatelům dat."@cs,
         "Enhver offentlig eller privat udbyder af en trafikinformationstjeneste i realtid, med undtagelse af en ren formidler af data til databrugere."@da,
@@ -282,7 +282,7 @@
         "Akýkoľvek verejný alebo súkromný poskytovateľ služby dopravných informácií v reálnom čase, s výnimkou jednoduchého prenášača údajov používateľom údajov."@sk,
         "Vsak javni ali zasebni ponudnik storitve prometnih informacij v realnem času, razen zgolj posrednika podatkov uporabnikom podatkov."@sl,
         "Varje offentlig eller privat leverantör av en trafikinformationstjänst i realtid, med undantag för en enkel vidarebefordrare av data till dataanvändare."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Доставчик на транспорт при поискване"@bg,
         "Poskytovatel dopravy na vyžádání"@cs,
         "Udbyder af transport efter behov"@da,
@@ -308,7 +308,7 @@
         "Ponudnik prevoza na zahtevo"@sl,
         "Leverantör av beställningstrafik"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027031933> a skos:Concept ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027031933> a skos:Concept ;
     skos:definition "Юридическо лице, което предоставя услуги срещу заплащане на краен потребител, включително продажбата на услуги за зареждане с електричество или зареждане с гориво."@bg,
         "Právnická osoba, která poskytuje služby za úplatu koncovému uživateli, včetně prodeje služeb dobíjení nebo tankování."@cs,
         "En juridisk person, der leverer tjenester mod betaling til en slutbruger, herunder salg af opladnings- eller optankningsydelser."@da,
@@ -333,7 +333,7 @@
         "Právnická osoba, ktorá poskytuje služby za odplatu koncovému používateľovi, vrátane predaja služieb nabíjania alebo tankovania."@sk,
         "Pravna oseba, ki zagotavlja storitve proti plačilu končnemu uporabniku, vključno s prodajo storitev polnjenja ali oskrbe z gorivom."@sl,
         "Juridisk person som tillhandahåller tjänster mot ersättning till en slutanvändare, inklusive försäljning av laddnings- eller tankningstjänster."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Доставчик на услуги за мобилност"@bg,
         "Poskytovatel služeb mobility"@cs,
         "Mobilitetsudbyder"@da,
@@ -359,7 +359,7 @@
         "Ponudnik storitev mobilnosti"@sl,
         "Mobilitetstjänsteleverantör"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026558478> a skos:Concept ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026558478> a skos:Concept ;
     skos:definition "Конкретен портал за данни за мобилност, т.е. уеб портал, в който свързаните с мобилността набори от данни и техните разпространения са описани чрез метаданни и могат да бъдат открити от потребителите на данни, напр. уеб порталът на Националната точка за достъп."@bg,
         "Konkrétní portál pro data o mobilitě, tj. webový portál, kde jsou datové sady týkající se mobility a jejich distribuce popsány prostřednictvím metadat a jsou zjistitelné pro uživatele dat, např. webový portál Národního přístupového bodu."@cs,
         "En konkret mobilitetsdata-portal, dvs. en webportal, hvor mobilitetsrelaterede datasæt og deres distributioner er beskrevet via metadata og kan opdages af databrugere, f.eks. webportalen for det nationale adgangspunkt."@da,
@@ -384,7 +384,7 @@
         "Konkrétny portál údajov o mobilite, t. j. webový portál, kde sú súbory údajov súvisiacich s mobilitou a ich distribúcie opísané prostredníctvom metaúdajov a sú objaviteľné pre používateľov údajov, napr. webový portál Národného prístupového bodu."@sk,
         "Konkreten portal za podatke o mobilnosti, tj. spletni portal, na katerem so nabori podatkov, povezanih z mobilnostjo, in njihova razširjanje opisani z metapodatki ter jih lahko odkrijejo uporabniki podatkov, npr. spletni portal Nacionalne dostopne točke."@sl,
         "En konkret mobilitetsdata-portal, dvs. en webbportal, där mobilitetsrelaterade datamängder och deras distributioner beskrivs med hjälp av metadata och kan upptäckas av dataanvändare, t.ex. webbportalen för den nationella åtkomstpunkten."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Каталог"@bg,
         "Katalog"@cs,
         "Katalog"@da,
@@ -409,10 +409,10 @@
         "Katalóg"@sk,
         "Katalog"@sl,
         "Katalog"@sv ;
-    skos:related <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027311097> .
+    skos:related <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027311097> .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026587532> a skos:Concept ;
-    skos:broader <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026521678> ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026587532> a skos:Concept ;
+    skos:broader <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026521678> ;
     skos:definition "Директорията с метаданни е национална точка за достъп, която съдържа описания на данните и услугите, съществени за тяхната идентификация, оценка и абониране, т.е. метаданни. Тя предоставя средства за удостоверяване на доставчиците на данни и функционалност за въвеждане на записи с метаданни. Директорията с метаданни предлага услуги за търсене и откриване на хостваните записи на крайните потребители и чрез машинночетимо съдържание на други портали. Директорията с метаданни не участва пряко в обмена на данни между доставчиците и потребителите на данни."@bg,
         "Adresář metadat je Národní přístupový bod, který obsahuje popisy dat a služeb nezbytné pro jejich identifikaci, posouzení a odběr, tj. metadata. Poskytuje prostředky pro ověření poskytovatelů dat a funkce pro vložení záznamů metadat. Adresář metadat nabízí služby vyhledávání a zjišťování hostovaných záznamů koncovým uživatelům a prostřednictvím strojově čitelného obsahu dalším portálům. Adresář metadat není přímo zapojen do výměny dat mezi poskytovateli a spotřebiteli dat."@cs,
         "Et metadataregister er et nationalt adgangspunkt, der indeholder beskrivelser af de data og tjenester, der er væsentlige for deres identifikation, vurdering og abonnement, dvs. metadata. Det tilbyder faciliteter til at autentificere dataudbydere og funktionalitet til at indsætte metadataposter. Metadataregistret tilbyder søge- og opdagelsestjenester for de hostede poster til slutbrugere og via maskinlæsbart indhold til andre portaler. Metadataregistret er ikke direkte involveret i dataudvekslingen mellem dataudbydere og dataforbrugere."@da,
@@ -437,7 +437,7 @@
         "Adresár metaúdajov je Národný prístupový bod, ktorý obsahuje opisy údajov a služieb podstatných pre ich identifikáciu, posúdenie a predplatné, t. j. metaúdaje. Poskytuje prostriedky na overovanie poskytovateľov údajov a funkcie na vkladanie záznamov metaúdajov. Adresár metaúdajov ponúka služby vyhľadávania a objavovania hostovaných záznamov koncovým používateľom a prostredníctvom strojovo čitateľného obsahu iným portálom. Adresár metaúdajov nie je priamo zapojený do výmeny údajov medzi poskytovateľmi a spotrebiteľmi údajov."@sk,
         "Imenik metapodatkov je Nacionalna dostopna točka, ki vsebuje opise podatkov in storitev, bistvenih za njihovo identifikacijo, ocenjevanje in naročilo, tj. metapodatke. Zagotavlja zmogljivosti za preverjanje pristnosti ponudnikov podatkov in funkcionalnost za vnos zapisov metapodatkov. Imenik metapodatkov ponuja storitve iskanja in odkrivanja gostujočih zapisov končnim uporabnikom in prek strojno berljivih vsebin drugim portalom. Imenik metapodatkov ni neposredno vključen v izmenjavo podatkov med ponudniki in porabniki podatkov."@sl,
         "En metadatakatalog är en nationell åtkomstpunkt som innehåller beskrivningar av de data och tjänster som är väsentliga för deras identifiering, bedömning och prenumeration, dvs. metadata. Den tillhandahåller möjligheter att autentisera dataleverantörer och funktionalitet för att infoga metadataposter. Metadatakatalogen erbjuder sök- och upptäcktstjänster för de publicerade posterna till slutanvändare och, via maskinläsbart innehåll, till andra portaler. Metadatakatalogen är inte direkt involverad i datautbytet mellan dataleverantörer och datakonsumenter."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Справочник за метаданни"@bg,
         "Adresář metadat"@cs,
         "Metadatakatalog"@da,
@@ -463,8 +463,8 @@
         "Imenik metapodatkov"@sl,
         "Metadatakatalog"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026631078> a skos:Concept ;
-    skos:broader <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026521678> ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026631078> a skos:Concept ;
+    skos:broader <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026521678> ;
     skos:definition "Платформа за данни е национална точка за достъп, която съдържа описания на данните и услугите, важни за тяхната идентификация, оценка и абониране, т.е. метаданни, заедно със самите данни и/или услуги. Тя предоставя средства за удостоверяване на доставчиците на данни и по избор на потребителите на данни и позволява данни и записи с метаданни да бъдат вмъквани във вътрешната база данни на НТД. Платформата за данни предоставя услуги за търсене и откриване на хостваните записи на крайните потребители и чрез машинночетимо съдържание на други портали и интерфейси за разпространение. Платформата за данни е посредник между доставчика и потребителя на данни, но данните остават собственост на доставчика."@bg,
         "Datová platforma je Národní přístupový bod, který obsahuje popisy dat a služeb důležitých pro jejich identifikaci, posouzení a odběr, tj. metadata, spolu se samotnými daty a/nebo službami. Poskytuje prostředky pro ověření poskytovatelů dat a volitelně spotřebitelů dat a umožňuje vkládání dat a záznamů metadat do interní databáze NPB. Datová platforma poskytuje služby vyhledávání a zjišťování hostovaných záznamů koncovým uživatelům a prostřednictvím strojově čitelného obsahu jiným portálům a distribučním rozhraním. Datová platforma je prostředníkem mezi poskytovatelem a spotřebitelem dat, avšak data zůstávají ve vlastnictví poskytovatele."@cs,
         "En dataplatform er et nationalt adgangspunkt, der indeholder beskrivelser af de data og tjenester, der er vigtige for deres identifikation, vurdering og abonnement, dvs. metadata, sammen med selve dataene og/eller tjenesterne. Det tilbyder faciliteter til at autentificere dataudbydere og eventuelt dataforbrugere og tillader data og metadataposter at blive indsat i NAP's interne database. Dataplatformen tilbyder søge- og opdagelsestjenester for de hostede poster til slutbrugere og via maskinlæsbart indhold til andre portaler og distributionsgrænseflader. Dataplatformen fungerer som mellemmand mellem dataudbyder og dataforbruger, men dataene forbliver i databyderens ejerskab."@da,
@@ -489,7 +489,7 @@
         "Údajová platforma je Národný prístupový bod, ktorý obsahuje opisy údajov a služieb dôležitých pre ich identifikáciu, posúdenie a predplatné, t. j. metaúdaje, spolu so samotnými údajmi a/alebo službami. Poskytuje prostriedky na overovanie poskytovateľov údajov a voliteľne spotrebiteľov údajov a umožňuje vkladanie údajov a záznamov metaúdajov do internej databázy NPB. Údajová platforma ponúka služby vyhľadávania a objavovania hostovaných záznamov koncovým používateľom a prostredníctvom strojovo čitateľného obsahu iným portálom a distribučným rozhraniám. Údajová platforma je sprostredkovateľ medzi poskytovateľom a spotrebiteľom údajov, ale údaje zostávajú vo vlastníctve poskytovateľa údajov."@sk,
         "Podatkovna platforma je Nacionalna dostopna točka, ki vsebuje opise podatkov in storitev, pomembnih za njihovo identifikacijo, ocenjevanje in naročilo, tj. metapodatke, skupaj s podatki in/ali storitvami samimi. Zagotavlja zmogljivosti za preverjanje pristnosti ponudnikov podatkov in neobvezno porabnikov podatkov ter omogoča vnos podatkov in zapisov metapodatkov v notranjo bazo podatkov NDT. Podatkovna platforma ponuja storitve iskanja in odkrivanja gostujočih zapisov končnim uporabnikom in prek strojno berljivih vsebin drugim portalom in distribucijskim vmesnikom. Podatkovna platforma je posrednik med ponudnikom in porabnikom podatkov, vendar podatki ostanejo v lasti ponudnika podatkov."@sl,
         "En dataplattform är en nationell åtkomstpunkt som innehåller beskrivningar av de data och tjänster som är viktiga för deras identifiering, bedömning och prenumeration, dvs. metadata, tillsammans med själva data och/eller tjänsterna. Den tillhandahåller möjligheter att autentisera dataleverantörer och valfritt datakonsumenter och möjliggör infogning av data och metadataposter i NAP:s interna databas. Dataplattformen erbjuder sök- och upptäcktstjänster för de publicerade posterna till slutanvändare och, via maskinläsbart innehåll, till andra portaler och distributionsgränssnitt. Dataplattformen är en mellanhand mellan dataleverantör och datakonsument, men data förblir i dataleverantörens ägo."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Платформа за данни"@bg,
         "Datová platforma"@cs,
         "Dataplatform"@da,
@@ -515,8 +515,8 @@
         "Podatkovna platforma"@sl,
         "Dataplattform"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026769925> a skos:Concept ;
-    skos:broader <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027256396> ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026769925> a skos:Concept ;
+    skos:broader <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027256396> ;
     skos:definition "Субект (организация), отговорен за предоставянето на каталога. Тази организация е прекият контакт за потребителите на платформата, които имат въпроси или проблеми относно платформата и нейната система."@bg,
         "Subjekt (organizace) odpovědný za zpřístupnění katalogu. Tato organizace je přímým kontaktem pro uživatele platformy, kteří mají dotazy nebo problémy týkající se platformy a jejího systému."@cs,
         "En enhed (organisation) ansvarlig for at gøre kataloget tilgængeligt. Denne organisation er den direkte kontakt for platformens brugere, der har spørgsmål eller problemer vedrørende platformen og dens system."@da,
@@ -541,7 +541,7 @@
         "Subjekt (organizácia) zodpovedný za sprístupnenie Katalógu. Táto organizácia je priamym kontaktom pre používateľov platformy, ktorí majú otázky alebo problémy týkajúce sa platformy a jej systému."@sk,
         "Subjekt (organizacija), odgovoren za zagotavljanje Kataloga. Ta organizacija je neposredni stik za uporabnike platforme, ki imajo vprašanja ali težave glede platforme in njenega sistema."@sl,
         "En enhet (organisation) som ansvarar för att göra katalogen tillgänglig. Denna organisation är den direkta kontakten för plattformens användare som har frågor eller problem angående plattformen och dess system."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Издател"@bg,
         "Vydavatel"@cs,
         "Udgiver"@da,
@@ -567,8 +567,8 @@
         "Izdajatelj"@sl,
         "Utgivare"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026799001> a skos:Concept ;
-    skos:broader <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027256396> ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026799001> a skos:Concept ;
+    skos:broader <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027256396> ;
     skos:definition "Организация или субект, който предоставя съдържание (напр. данни, метаданни, документи) на Националната точка за достъп, предоставяйки го за повторна употреба в съответствие с изискванията на Директивата за ИТС и нейните делегирани регламенти. Забележка: В зависимост от контекста могат да се използват подобни, по-точни или специфични термини: Притежател на данни, Доставчик на данни, Доставчик на услуги, за описване на същата роля на предоставяне на съдържание на Националната точка за достъп. Някои примери за доставчици на съдържание: публични и частни пътни оператори, излъчватели, посветени на пътна информация, оператори на паркинги, пътни органи, производители на цифрови карти, транспортни органи, оператори на пътнически транспорт, управители на инфраструктура, доставчици на транспорт при поискване, доставчици на информационни услуги за пътуване."@bg,
         "Organizace nebo subjekt, který dodává obsah (např. data, metadata, dokumenty) Národnímu přístupovému bodu a zpřístupňuje ho k opětovnému použití v souladu s požadavky směrnice o ITS a jejích přenesených nařízení. Poznámka: V závislosti na kontextu mohou být použity podobné, přesnější nebo specifičtější termíny: Držitel dat, Poskytovatel dat, Poskytovatel služeb, k popisu stejné role dodávání obsahu Národnímu přístupovému bodu. Některé příklady poskytovatelů obsahu: veřejní a soukromí provozovatelé silnic, vysílači zaměření na dopravní informace, provozovatelé parkovišť, silniční orgány, výrobci digitálních map, dopravní orgány, provozovatelé osobní dopravy, správci infrastruktury, poskytovatelé dopravy na vyžádání, poskytovatelé informačních služeb o cestování."@cs,
         "En organisation eller enhed, der leverer indhold (f.eks. data, metadata, dokumenter) til det nationale adgangspunkt og gør det tilgængeligt til genbrug i overensstemmelse med kravene i ITS-direktivet og dets delegerede forordninger. Bemærk: Afhængigt af konteksten kan lignende, mere præcise eller specifikke termer bruges: Dataholder, Dataudbyder, Tjenesteudbyder, til at beskrive samme rolle med at levere indhold til det nationale adgangspunkt. Nogle eksempler på indholdsudbydere: offentlige og private vejoperatører, radioselskaber dedikeret til trafikinformation, parkeringsoperatører, vejmyndigheder, digitale kortproducenter, transportmyndigheder, persontrafikoperatører, infrastrukturforvaltere, udbydere af transport efter behov, udbydere af rejseinformationstjenester."@da,
@@ -593,7 +593,7 @@
         "Organizácia alebo subjekt, ktorý dodáva obsah (napr. údaje, metaúdaje, dokumenty) Národnému prístupovému bodu a sprístupňuje ho na opätovné použitie v súlade s požiadavkami smernice o IDS a jej delegovaných nariadení. Poznámka: V závislosti od kontextu sa môžu používať podobné, presnejšie alebo špecifickejšie pojmy: Držiteľ údajov, Poskytovateľ údajov, Poskytovateľ služieb, na opis rovnakej úlohy dodávania obsahu Národnému prístupovému bodu. Niektoré príklady poskytovateľov obsahu: verejní a súkromní prevádzkovatelia ciest, vysielatelia venujúci sa dopravným informáciám, prevádzkovatelia parkovísk, cestné orgány, výrobcovia digitálnych máp, dopravné orgány, prevádzkovatelia osobnej dopravy, správcovia infraštruktúry, poskytovatelia dopravy na požiadanie, poskytovatelia informačných služieb o cestovaní."@sk,
         "Organizacija ali subjekt, ki zagotavlja vsebino (npr. podatke, metapodatke, dokumente) Nacionalni dostopni točki in jo daje na voljo za ponovno uporabo v skladu z zahtevami Direktive o ITS in njenih delegiranih uredbah. Opomba: Odvisno od konteksta se lahko uporabljajo podobni, natančnejši ali bolj specifični izrazi: Imetnik podatkov, Ponudnik podatkov, Ponudnik storitev, za opis iste vloge zagotavljanja vsebine Nacionalni dostopni točki. Nekateri primeri ponudnikov vsebine: javni in zasebni upravljavci cest, izdajatelji, namenjeni prometnim informacijam, upravljavci parkirišč, cestni organi, proizvajalci digitalnih zemljevidov, prometni organi, izvajalci potniškega prevoza, upravljavci infrastrukture, ponudniki prevoza na zahtevo, ponudniki storitev potovalnih informacij."@sl,
         "Organisation eller enhet som tillhandahåller innehåll (t.ex. data, metadata, dokument) till den nationella åtkomstpunkten och gör det tillgängligt för vidareutnyttjande i enlighet med kraven i ITS-direktivet och dess delegerade förordningar. Anmärkning: Beroende på sammanhanget kan liknande, mer precisa eller specifika termer användas: Datainnehavare, Dataleverantör, Tjänsteleverantör, för att beskriva samma roll att tillhandahålla innehåll till den nationella åtkomstpunkten. Några exempel på innehållsleverantörer: offentliga och privata vägoperatörer, sändningsföretag för trafikinformation, parkeringsoperatörer, vägmyndigheter, producenter av digitala kartor, transportmyndigheter, persontransportörer, infrastrukturförvaltare, leverantörer av beställningstransport, leverantörer av reseinformationstjänster."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Доставчик на съдържание"@bg,
         "Poskytovatel obsahu"@cs,
         "Indholdsudbyder"@da,
@@ -619,8 +619,8 @@
         "Ponudnik vsebine"@sl,
         "Innehållsleverantör"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026821724> a skos:Concept ;
-    skos:broader <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027256396> ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026821724> a skos:Concept ;
+    skos:broader <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027256396> ;
     skos:definition "Всяко юридическо лице, публично или частно, като транспортни органи, транспортни оператори, управители на инфраструктура или доставчици на транспортни услуги при поискване, което има право да предостави достъп до или да споделя данните под негов контрол."@bg,
         "Jakákoli právnická osoba, veřejná nebo soukromá, jako jsou dopravní orgány, dopravní operátoři, správci infrastruktury nebo poskytovatelé dopravy na vyžádání, která má právo poskytnout přístup k údajům nebo sdílet údaje pod svou kontrolou."@cs,
         "Enhver juridisk person, offentlig eller privat, som f.eks. transportmyndigheder, transportoperatører, infrastrukturforvaltere eller udbydere af transport efter behov, der har ret til at give adgang til eller dele de data under dens kontrol."@da,
@@ -645,7 +645,7 @@
         "Akákoľvek právnická osoba, verejná alebo súkromná, ako napríklad dopravné orgány, dopravní operátori, správcovia infraštruktúry alebo poskytovatelia služieb dopravy na požiadanie, ktorá má právo poskytnúť prístup k údajom pod jej kontrolou alebo ich zdieľať."@sk,
         "Vsaka pravna oseba, javna ali zasebna, kot so prometni organi, prevozniki, upravljavci infrastrukture ali ponudniki prevoznih storitev na zahtevo, ki ima pravico odobriti dostop do podatkov pod njenim nadzorom ali jih deliti."@sl,
         "Varje juridisk person, offentlig eller privat, som transportmyndigheter, transportoperatörer, infrastrukturförvaltare eller leverantörer av beställningstransporttjänster, som har rätt att bevilja åtkomst till eller dela de data som den förfogar över."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Притежател на данни"@bg,
         "Držitel dat"@cs,
         "Dataholder"@da,
@@ -671,8 +671,8 @@
         "Imetnik podatkov"@sl,
         "Datainnehavare"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026852941> a skos:Concept ;
-    skos:broader <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027256396> ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026852941> a skos:Concept ;
+    skos:broader <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027256396> ;
     skos:definition "Публичен или частен доставчик на услуга. Специфичните тълкувания на термина варират в законодателството на ЕС, като специализирани определения са установени в делегираните регламенти, приети съгласно Директивата за ИТС, и в Регламента за разгръщане на инфраструктура за алтернативни горива."@bg,
         "Veřejný nebo soukromý poskytovatel služby. Konkrétní výklady tohoto termínu se liší v rámci legislativy EU, přičemž specializované definice jsou stanoveny v přenesených nařízeních přijatých podle směrnice o ITS a v nařízení o zavádění infrastruktury pro alternativní paliva."@cs,
         "En offentlig eller privat udbyder af en tjeneste. De specifikke fortolkninger af begrebet varierer på tværs af EU-lovgivning, med specialiserede definitioner fastsat i de delegerede forordninger vedtaget i henhold til ITS-direktivet og i forordningen om etablering af infrastruktur for alternative brændstoffer."@da,
@@ -697,7 +697,7 @@
         "Verejný alebo súkromný poskytovateľ služby. Konkrétne výklady tohto pojmu sa líšia v rámci legislatívy EÚ, pričom špecializované definície sú stanovené v delegovaných nariadeniach prijatých podľa smernice o IDS a v nariadení o zavádzaní infraštruktúry pre alternatívne palivá."@sk,
         "Javni ali zasebni ponudnik storitve. Specifične razlage izraza se razlikujejo v zakonodaji EU, pri čemer so specializirane opredelitve določene v delegiranih uredbah, sprejetih na podlagi Direktive o ITS, in v Uredbi o vzpostavitvi infrastrukture za alternativna goriva."@sl,
         "Offentlig eller privat leverantör av en tjänst. De specifika tolkningarna av termen varierar i EU-lagstiftningen, med specialiserade definitioner i de delegerade förordningar som antagits enligt ITS-direktivet och i förordningen om utbyggnad av infrastruktur för alternativa bränslen."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Доставчик на услуги"@bg,
         "Poskytovatel služeb"@cs,
         "Tjenesteudbyder"@da,
@@ -723,8 +723,8 @@
         "Ponudnik storitev"@sl,
         "Tjänsteleverantör"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027057267> a skos:Concept ;
-    skos:broader <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027256396> ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027057267> a skos:Concept ;
+    skos:broader <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027256396> ;
     skos:definition "Организация или субект, който достъпва, извлича или използва данни или информация, предоставени чрез Националната точка за достъп, с цел разработване на услуги, приложения или анализи."@bg,
         "Organizace nebo subjekt, který přistupuje k datům nebo informacím, získává je nebo je využívá prostřednictvím Národního přístupového bodu za účelem vývoje služeb, aplikací nebo analýz."@cs,
         "En organisation eller enhed, der tilgår, henter eller bruger data eller information, der er gjort tilgængelig via det nationale adgangspunkt, med henblik på at udvikle tjenester, applikationer eller analyser."@da,
@@ -749,7 +749,7 @@
         "Organizácia alebo subjekt, ktorý pristupuje, získava alebo používa údaje alebo informácie sprístupnené prostredníctvom Národného prístupového bodu na účely vývoja služieb, aplikácií alebo analýz."@sk,
         "Organizacija ali subjekt, ki dostopa do podatkov ali informacij, jih pridobiva ali uporablja prek Nacionalne dostopne točke za namen razvoja storitev, aplikacij ali analiz."@sl,
         "Organisation eller enhet som åtkommer, hämtar eller använder data eller information som görs tillgänglig via den nationella åtkomstpunkten i syfte att utveckla tjänster, applikationer eller analyser."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Потребител на съдържание"@bg,
         "Příjemce obsahu"@cs,
         "Indholdsforbruger"@da,
@@ -775,8 +775,8 @@
         "Porabnik vsebine"@sl,
         "Innehållskonsument"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027177007> a skos:Concept ;
-    skos:broader <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027256396> ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027177007> a skos:Concept ;
+    skos:broader <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027256396> ;
     skos:definition "Субект, система или приложение, което консумира само данните, предоставени чрез Националната точка за достъп, като набори от данни, API интерфейси или други машинночетими данни, обикновено за техническа, аналитична или оперативна обработка."@bg,
         "Subjekt, systém nebo aplikace, která konzumuje pouze data zpřístupněná prostřednictvím Národního přístupového bodu, jako jsou datové sady, API nebo jiná strojově čitelná data, obvykle pro technické, analytické nebo provozní zpracování."@cs,
         "En enhed, et system eller en applikation, der kun forbruger de data, der er gjort tilgængelige via det nationale adgangspunkt, såsom datasæt, API'er eller andre maskinlæsbare data, typisk til teknisk, analytisk eller operationel behandling."@da,
@@ -801,7 +801,7 @@
         "Subjekt, systém alebo aplikácia, ktorá spotrebúva iba údaje sprístupnené prostredníctvom Národného prístupového bodu, ako napríklad súbory údajov, API alebo iné strojovo čitateľné údaje, zvyčajne na technické, analytické alebo prevádzkové spracovanie."@sk,
         "Subjekt, sistem ali aplikacija, ki porablja le podatke, dostopne prek Nacionalne dostopne točke, kot so nabori podatkov, API-ji ali drugi strojno berljivi podatki, običajno za tehnično, analitično ali operativno obdelavo."@sl,
         "Enhet, system eller applikation som enbart konsumerar de data som görs tillgängliga via den nationella åtkomstpunkten, såsom datamängder, API:er eller andra maskinläsbara data, vanligtvis för teknisk, analytisk eller operativ bearbetning."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Потребител на данни"@bg,
         "Spotřebitel dat"@cs,
         "Dataforbruger"@da,
@@ -827,7 +827,7 @@
         "Porabnik podatkov"@sl,
         "Datakonsument"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027354843> a skos:Concept ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027354843> a skos:Concept ;
     skos:definition "Услуга, позволяваща търсене на исканите данни чрез съдържанието на съответните метаданни и показваща такова съдържание."@bg,
         "Služba umožňující vyhledávání požadovaných dat pomocí obsahu odpovídajících metadat a zobrazení takového obsahu."@cs,
         "En tjeneste, der muliggør søgning efter de anmodede data ved hjælp af indholdet af de tilsvarende metadata og visning af sådant indhold."@da,
@@ -852,7 +852,7 @@
         "Služba umožňujúca vyhľadávanie požadovaných údajov pomocou obsahu zodpovedajúcich metaúdajov a zobrazenie takéhoto obsahu."@sk,
         "Storitev, ki omogoča iskanje zahtevanih podatkov z uporabo vsebine ustreznih metapodatkov in prikazuje takšno vsebino."@sl,
         "Tjänst som möjliggör sökning av de begärda uppgifterna med hjälp av innehållet i motsvarande metadata och visning av sådant innehåll."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Услуга за откриване"@bg,
         "Vyhledávací služba"@cs,
         "Søgetjeneste"@da,
@@ -878,8 +878,8 @@
         "Storitev odkrivanja"@sl,
         "Söktjänst"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026715185> a skos:Concept ;
-    skos:broader <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027256396> ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026715185> a skos:Concept ;
+    skos:broader <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027256396> ;
     skos:definition "Публична или частна организация, определена да управлява, поддържа и оперира Националната точка за достъп, като осигурява достъпността на данните и функционирането на НТД в съответствие с изискванията на Директивата за ИТС и нейните делегирани регламенти, доуточнени в националното законодателство или управленски документи. Забележка: Обикновено отдел на министерството на транспорта на държавата членка, държавна организация или научноизследователска институция изпълнява ролята на оператор на НТД. Организацията, изпълняваща тази роля, обикновено е изрично определена в националното законодателство или свързани управленски документи."@bg,
         "Veřejná nebo soukromá organizace určená k řízení, údržbě a provozu Národního přístupového bodu, zajišťující dostupnost dat a fungování NPB v souladu s požadavky směrnice o ITS a jejích přenesených nařízení, dále specifikovaných v národní legislativě nebo dokumentech o správě. Poznámka: Obvykle oddělení ministerstva dopravy členského státu, státní organizace nebo výzkumná instituce působí jako provozovatel NPB. Organizace plnící tuto roli je obecně výslovně určena v národní legislativě nebo souvisejících dokumentech o správě."@cs,
         "En offentlig eller privat organisation udpeget til at forvalte, vedligeholde og drive det nationale adgangspunkt, der sikrer tilgængeligheden af data, og at NAP fungerer i overensstemmelse med kravene i ITS-direktivet og dets delegerede forordninger, yderligere specificeret i national lovgivning eller styringsdokumenter. Bemærk: Normalt fungerer en afdeling under medlemsstatens transportministerium, en statslig organisation eller en forskningsinstitution som NAP-operatør. Den organisation, der udfylder denne rolle, er generelt udtrykkeligt udpeget i national lovgivning eller relaterede styringsdokumenter."@da,
@@ -904,7 +904,7 @@
         "Verejná alebo súkromná organizácia určená na riadenie, údržbu a prevádzku Národného prístupového bodu, zabezpečujúca dostupnosť údajov a fungovanie NPB v súlade s požiadavkami smernice o IDS a jej delegovaných nariadení, bližšie špecifikovaných v národnej legislatíve alebo dokumentoch o riadení. Poznámka: Zvyčajne oddelenie ministerstva dopravy členského štátu, štátna organizácia alebo výskumná inštitúcia pôsobí ako prevádzkovateľ NPB. Organizácia plniaca túto úlohu je vo všeobecnosti výslovne určená v národnej legislatíve alebo súvisiacich dokumentoch o riadení."@sk,
         "Javna ali zasebna organizacija, imenovana za upravljanje, vzdrževanje in upravljanje Nacionalne dostopne točke, ki zagotavlja dostopnost podatkov in delovanje NDT v skladu z zahtevami Direktive o ITS in njenih delegiranih uredbah, podrobneje določenih v nacionalni zakonodaji ali dokumentih o upravljanju. Opomba: Običajno oddelek ministrstva za promet države članice, državna organizacija ali raziskovalna ustanova deluje kot operater NDT. Organizacija, ki opravlja to vlogo, je praviloma izrecno določena v nacionalni zakonodaji ali povezanih dokumentih o upravljanju."@sl,
         "En offentlig eller privat organisation som utsetts att förvalta, underhålla och driva den nationella åtkomstpunkten, som säkerställer datatillgängligheten och att NAP fungerar i enlighet med kraven i ITS-direktivet och dess delegerade förordningar, vilka specificeras närmare i nationell lagstiftning eller styrdokument. Anmärkning: Vanligtvis fungerar en avdelning vid medlemsstatens transportministerium, en statlig organisation eller ett forskningsinstitut som NAP-operatör. Den organisation som uppfyller denna roll anges i allmänhet uttryckligen i nationell lagstiftning eller relaterade styrdokument."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Оператор на НТД"@bg,
         "Provozovatel NAP"@cs,
         "NAP-operatør"@da,
@@ -930,8 +930,8 @@
         "Upravljavec NDT"@sl,
         "NAP-operatör"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027204203> a skos:Concept ;
-    skos:broader <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027256396> ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027204203> a skos:Concept ;
+    skos:broader <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027256396> ;
     skos:definition "Всеки публичен или частен субект, като транспортни органи, транспортни оператори, доставчици на услуги и управители на инфраструктура, научноизследователски или неправителствени организации, за създаване на мултимодална пътническа информация, създаване на услуги или извършване на изследвания или анализи, или когато е предвидено в условията, определени от притежателя на данните, за използване на данните за други цели."@bg,
         "Jakýkoli veřejný nebo soukromý subjekt, jako jsou dopravní orgány, dopravní operátoři, poskytovatelé služeb a správci infrastruktury, výzkumné nebo nevládní organizace, za účelem vytváření multimodálních cestovních informací, vytváření služeb nebo provádění výzkumu nebo analýz, nebo v případech stanovených podmínkami určenými držitelem dat pro využití dat k jiným účelům."@cs,
         "Enhver offentlig eller privat enhed, som f.eks. transportmyndigheder, transportoperatører, tjenesteudbydere og infrastrukturforvaltere, forsknings- eller ikke-statslige organisationer, til at skabe multimodal rejseinformation, skabe tjenester eller udføre forskning eller analyse, eller hvor det er fastsat i de vilkår og betingelser, der er fastlagt af dataholder, til at bruge dataene til andre formål."@da,
@@ -956,8 +956,8 @@
         "Akýkoľvek verejný alebo súkromný subjekt, ako napríklad dopravné orgány, dopravní operátori, poskytovatelia služieb a správcovia infraštruktúry, výskumné alebo mimovládne organizácie, na vytváranie multimodálnych cestovných informácií, vytváranie služieb alebo vykonávanie výskumu alebo analýz, alebo keď to stanovujú podmienky určené držiteľom údajov, na používanie údajov na iné účely."@sk,
         "Vsak javni ali zasebni subjekt, kot so prometni organi, prevozniki, ponudniki storitev in upravljavci infrastrukture, raziskovalne ali nevladne organizacije, za ustvarjanje multimodalnih potovalnih informacij, ustvarjanje storitev ali izvajanje raziskav ali analiz, ali kadar to predvidevajo pogoji, ki jih določi imetnik podatkov, za uporabo podatkov v druge namene."@sl,
         "Varje offentlig eller privat enhet, som transportmyndigheter, transportoperatörer, tjänsteleverantörer och infrastrukturförvaltare, forsknings- eller icke-statliga organisationer, för att skapa multimodal reseinformation, skapa tjänster eller bedriva forskning eller analys, eller när de villkor som datainnehavaren fastställt föreskriver det, för att använda uppgifterna för andra ändamål."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
-    skos:narrower <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027237243> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
+    skos:narrower <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027237243> ;
     skos:prefLabel "Ползвател на данни"@bg,
         "Uživatel dat"@cs,
         "Databruger"@da,
@@ -983,9 +983,9 @@
         "Uporabnik podatkov"@sl,
         "Dataanvändare"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027237243> a skos:Concept ;
-    skos:broader <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027204203>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027256396> ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027237243> a skos:Concept ;
+    skos:broader <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027204203>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027256396> ;
     skos:definition "Физическо или юридическо лице, което има право да получи достъп до данните, произведени и предоставени от притежателя на данните, при определени условия за достъп с цел употреба."@bg,
         "Fyzická nebo právnická osoba, která má právo přistupovat k údajům vytvořeným a zpřístupněným držitelem dat za stanovených podmínek přístupu k použití."@cs,
         "En fysisk eller juridisk person, der har ret til at få adgang til de data, der er produceret og gjort tilgængelige af dataholder, under specificerede adgangsbetingelser til brug."@da,
@@ -1010,7 +1010,7 @@
         "Fyzická alebo právnická osoba, ktorá má právo na prístup k údajom vyrobeným a sprístupneným držiteľom údajov za stanovených podmienok prístupu na účely použitia."@sk,
         "Fizična ali pravna oseba, ki ima pravico dostopa do podatkov, ki jih je izdelal in dal na voljo imetnik podatkov, pod določenimi pogoji dostopa za uporabo."@sl,
         "Fysisk eller juridisk person som har rätt att få åtkomst till de data som produceras och görs tillgängliga av datainnehavaren under specificerade åtkomstvillkor för användning."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Получател на данни"@bg,
         "Příjemce dat"@cs,
         "Datamodtager"@da,
@@ -1036,7 +1036,7 @@
         "Prejemnik podatkov"@sl,
         "Datamottagare"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027311097> a skos:Concept ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027311097> a skos:Concept ;
     skos:definition "Структурирано описание на съдържанието на данните, улесняващо откриването и използването на данните."@bg,
         "Strukturovaný popis obsahu dat usnadňující jejich vyhledávání a používání."@cs,
         "En struktureret beskrivelse af indholdet af data, der letter opdagelsen og brugen af dataene."@da,
@@ -1061,7 +1061,7 @@
         "Štruktúrovaný opis obsahu údajov uľahčujúci vyhľadávanie a používanie údajov."@sk,
         "Strukturiran opis vsebine podatkov, ki olajša odkrivanje in uporabo podatkov."@sl,
         "Strukturerad beskrivning av datainnehållet som underlättar upptäckt och användning av data."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
     skos:prefLabel "Метаданни"@bg,
         "Metadata"@cs,
         "Metadata"@da,
@@ -1087,7 +1087,7 @@
         "Metapodatki"@sl,
         "Metadata"@sv .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026521678> a skos:Concept ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026521678> a skos:Concept ;
     skos:definition "Уеб базирана система, която съдържа каталог с описания на набори от данни и предоставя услуги, позволяващи откриването и повторната употреба на тези набори от данни. В контекста на мобилността синоним на портал за данни е Национална точка за достъп (НТД), която представлява възел, в който данните, свързани с ИТС, са концентрирани и публикувани под формата на набори от данни. Тя е създадена за улесняване на достъпа, лесния обмен и повторната употреба на свързаните с транспорта данни в Европа с цел подпомагане на предоставянето на оперативно съвместими услуги за пътуване и трафик в целия ЕС на крайните потребители."@bg,
         "Webový systém, který obsahuje datový katalog s popisy datových sad a poskytuje služby umožňující vyhledávání a opakované použití datových sad. V kontextu mobility je synonymem pro datový portál Národní přístupový bod (NAP), což je uzel, v němž jsou data související s ITS soustředěna a publikována ve formě datových sad. Je zřízen za účelem usnadnění přístupu, snadné výměny a opakovaného použití dat souvisejících s dopravou v Evropě na podporu poskytování interoperabilních cestovních a dopravních služeb v celé EU koncovým uživatelům."@cs,
         "Et webbaseret system, der indeholder et datakatalog med beskrivelser af datasæt og leverer tjenester, der muliggør opdagelse og genbrug af datasættene. I forbindelse med mobilitet er et synonym for dataportal et nationalt adgangspunkt (NAP), som er et knudepunkt, hvor ITS-relaterede data er koncentreret og offentliggjort i form af datasæt. Det er oprettet for at lette adgang, nem udveksling og genbrug af transportrelaterede data i Europa for at støtte levering af interoperable rejse- og trafiktjenester i hele EU til slutbrugere."@da,
@@ -1112,9 +1112,9 @@
         "Webový systém, ktorý obsahuje dátový katalóg s popismi dátových súborov a poskytuje služby umožňujúce vyhľadávanie a opakované použitie dátových súborov. V kontexte mobility je synonymom pre dátový portál Národný prístupový bod (NAP), čo je uzol, v ktorom sú údaje súvisiace s IDS sústredené a uverejnené vo forme dátových súborov. Je zriadený na uľahčenie prístupu, jednoduchej výmeny a opakovaného použitia údajov súvisiacich s dopravou v Európe s cieľom podporiť poskytovanie interoperabilných cestovných a dopravných služieb v rámci celej EÚ koncovým používateľom."@sk,
         "Spletni sistem, ki vsebuje podatkovni katalog z opisi podatkovnih nizov in zagotavlja storitve, ki omogočajo odkrivanje in ponovno uporabo podatkovnih nizov. V kontekstu mobilnosti je sinonim za podatkovni portal Nacionalna dostopna točka (NDT), ki je vozlišče, v katerem so podatki, povezani z ITS, zbrani in objavljeni v obliki podatkovnih nizov. Vzpostavljen je za olajšanje dostopa, enostavne izmenjave in ponovne uporabe podatkov, povezanih s prometom, v Evropi, da se podpre zagotavljanje interoperabilnih potovalnih in prometnih storitev po vsej EU za končne uporabnike."@sl,
         "Ett webbaserat system som innehåller en datakatalog med beskrivningar av dataset och tillhandahåller tjänster som möjliggör upptäckt och vidareutnyttjande av dataseten. I mobilitetssammanhang är en synonym för dataportal en nationell åtkomstpunkt (NAP), som är en knutpunkt där ITS-relaterade data samlas och publiceras i form av dataset. Den har inrättats för att underlätta åtkomst, enkelt utbyte och vidareutnyttjande av transportrelaterade data i Europa, för att stödja tillhandahållandet av EU-omfattande driftskompatibla rese- och trafiktjänster för slutanvändare."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
-    skos:narrower <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026587532>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026631078> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
+    skos:narrower <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026587532>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026631078> ;
     skos:prefLabel "Портал за данни"@bg,
         "Datový portál"@cs,
         "Dataportal"@da,
@@ -1139,11 +1139,11 @@
         "Dátový portál"@sk,
         "Podatkovni portal"@sl,
         "Dataportal"@sv ;
-    skos:related <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026558478>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027311097>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027354843> .
+    skos:related <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026558478>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027311097>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027354843> .
 
-<https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027256396> a skos:Concept ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027256396> a skos:Concept ;
     skos:definition "Всяко физическо или юридическо лице, което получава, достъпва или се възползва от свързани с транспорта услуги, като услуги за пътническа информация, услуги за информация за пътна безопасност или услуги за инфраструктура за алтернативни горива."@bg,
         "Jakákoli fyzická nebo právnická osoba, která přijímá, využívá nebo má prospěch ze služeb souvisejících s dopravou, jako jsou služby cestovních informací, služby dopravních informací týkajících se bezpečnosti silničního provozu nebo služby infrastruktury pro alternativní paliva."@cs,
         "Enhver fysisk eller juridisk person, der modtager, tilgår eller drager fordel af transportrelaterede tjenester, såsom rejseinformationstjenester, trafikinformationstjenester vedrørende trafiksikkerhed eller tjenester for infrastruktur til alternative brændstoffer."@da,
@@ -1168,16 +1168,16 @@
         "Akákoľvek fyzická alebo právnická osoba, ktorá prijíma, pristupuje alebo má prospech zo služieb súvisiacich s dopravou, ako sú služby cestovných informácií, služby dopravných informácií súvisiacich s bezpečnosťou cestnej premávky alebo služby infraštruktúry pre alternatívne palivá."@sk,
         "Vsaka fizična ali pravna oseba, ki prejema, dostopa ali ima korist od storitev, povezanih s prometom, kot so storitve potovalnih informacij, storitve prometnih informacij v zvezi z varnostjo v cestnem prometu ali storitve infrastrukture za alternativna goriva."@sl,
         "Varje fysisk eller juridisk person som tar emot, får åtkomst till eller drar nytta av transportrelaterade tjänster, såsom reseinformationstjänster, trafikinformationstjänster relaterade till trafiksäkerhet eller tjänster för infrastruktur för alternativa bränslen."@sv ;
-    skos:inScheme <https://napcore.ontologica.nl/schemes/napcore-core-concepts> ;
-    skos:narrower <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026715185>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026769925>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026799001>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026821724>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775026852941>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027057267>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027177007>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027204203>,
-        <https://github.com/NAPCORE/NAP-Reference-Architecture/concept-1775027237243> ;
+    skos:inScheme <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> ;
+    skos:narrower <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026715185>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026769925>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026799001>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026821724>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775026852941>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027057267>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027177007>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027204203>,
+        <https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1/concept-1775027237243> ;
     skos:prefLabel "Краен потребител"@bg,
         "Koncový uživatel"@cs,
         "Slutbruger"@da,
@@ -1203,7 +1203,7 @@
         "Končni uporabnik"@sl,
         "Slutanvändare"@sv .
 
-<https://napcore.ontologica.nl/schemes/napcore-core-concepts> a skos:ConceptScheme ;
+<https://xcalibur1978.github.io/temp/id/58104514-c42f-4e76-be82-91767f9282a1> a skos:ConceptScheme ;
     dct:created "2026-05-18T08:34:47.245288+00:00"^^xsd:dateTime ;
     dct:description "Основна терминология на референтната архитектура на NAPCORE за националните точки за достъп, обхващаща видове НТД, роли в екосистемата и ключови концепции за услуги в мобилността."@bg,
         "Základní terminologie referenční architektury NAPCORE pro národní přístupové body, zahrnující typy NAP, role v ekosystému a klíčové pojmy služeb mobility."@cs,
